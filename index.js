@@ -1,4 +1,4 @@
-// https://github.com/jseijas/bot-nlp/blob/master/basic.js
+// Build on basis of: https://github.com/jseijas/bot-nlp/blob/master/basic.js
 
 require('dotenv').config();
 const builder = require('botbuilder');
@@ -8,6 +8,8 @@ const { Recognizer } = require('node-nlp');
 const modelName = './model.nlp';
 const { locale } = require('./config/config');
 const { sendAnswer } = require('./helpers/sendAnswer');
+const { es } = require('./helpers/es');
+const { presentPlays } = require('./helpers/presentPlays');
 
 const l10n = require(`./locales/${locale}.json`);
 
@@ -29,25 +31,36 @@ app.post('/api/messages', connector.listen());
 
 // Creates a node-nlp recognizer for the bot
 const recognizer = new Recognizer();
-recognizer.load(modelName);
+recognizer.load(`./nlp/${modelName}`);
 
 // Creates the bot using a memory storage, with a main dialog that
 // use the node-nlp recognizer to calculate the answer.
 const bot = new builder.UniversalBot(connector, (session) => {
-  recognizer.recognize(session, (err, data) => {
+  recognizer.recognize(session, async (err, data) => {
+    console.log('\n\nDATA:');
+    console.dir(data); // temp
+
     if (err) {
       console.log(`Error: ${err}`);
       sendAnswer(session, l10n.error_happened);
     }
     if (!data.answer) {
       // Try to search users's input in texts using ElasticSearch
-      // ES();
-
-      // If nothing found - Default fallback answer
-      sendAnswer(session, l10n.dont_understand);
+      console.log(`\ndata.utterance: ${data.utterance}`);
+      const esResult = await es(data.utterance);
+      console.log(`\nesResult: ${esResult}`);
+      if (esResult) {
+        console.log('ES found something, sending...');
+        presentPlays(session, esResult);
+      } else {
+        // If nothing found - Default fallback answer
+        console.log('ES failed to find anything, default fallback response');
+        sendAnswer(session, l10n.dont_understand);
+      }
+    } else {
+      console.log('\ndata:'); // temp
+      console.dir(data); // temp
+      sendAnswer(session, data.answer);
     }
-    console.log('\ndata:'); // temp
-    console.dir(data); // temp
-    sendAnswer(session, data.answer);
   });
 }).set('storage', new builder.MemoryBotStorage());
