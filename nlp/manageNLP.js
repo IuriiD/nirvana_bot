@@ -1,6 +1,4 @@
-// So far the NPL model generated from xls file gives strange results
-// so generating it with the following script
-// Source: https://github.com/axa-group/nlp.js/blob/master/examples/console-bot/train-nlp.js
+// Built on the base of: https://github.com/axa-group/nlp.js/blob/master/examples/console-bot/train-nlp.js
 
 const { NlpManager } = require('node-nlp');
 
@@ -309,62 +307,62 @@ manager.addAnswer(
 );
 manager.addAnswer(
   'ru',
-  '{stickers}143|12|22|43|47|66|80|84|102|108|116|124|135',
   'smalltalk.agent.beautiful',
+  '{stickers}143|12|22|43|47|66|80|84|102|108|116|124|135',
 );
-manager.addAnswer('ru', '{stickers}144|62|72|88|99|108', 'smalltalk.agent.birth_date');
-manager.addAnswer('ru', '{stickers}13|18|20|29|44|60|83|99|108|123|136', 'smalltalk.agent.boss');
+manager.addAnswer('ru', 'smalltalk.agent.birth_date', '{stickers}144|62|72|88|99|108');
+manager.addAnswer('ru', 'smalltalk.agent.boss', '{stickers}13|18|20|29|44|60|83|99|108|123|136');
 manager.addAnswer(
   'ru',
-  '{stickers}36|9|15|25|29|33|40|44|50|59|79|95|99|123|127|137|140',
   'smalltalk.agent.can_you_help',
+  '{stickers}36|9|15|25|29|33|40|44|50|59|79|95|99|123|127|137|140',
 );
 
 manager.addAnswer(
   'ru',
-  '{stickers}13|7|44|49|60|72|80|84|88|95|109|115|127|135',
   'smalltalk.agent.chatbot',
+  '{stickers}13|7|44|49|60|72|80|84|88|95|109|115|127|135',
 );
 manager.addAnswer(
   'ru',
-  '{stickers}20|21|29|56|77|84|89|98|123|124|127|135',
   'smalltalk.agent.crazy',
+  '{stickers}20|21|29|56|77|84|89|98|123|124|127|135',
 );
-manager.addAnswer('ru', '{stickers}146|11|22|47|58|84', 'smalltalk.agent.funny');
-manager.addAnswer('ru', '{stickers}43|84|102|135', 'smalltalk.agent.happy');
-manager.addAnswer('ru', '{stickers}147|88|99|142', 'smalltalk.agent.hobby');
+manager.addAnswer('ru', 'smalltalk.agent.funny', '{stickers}146|11|22|47|58|84');
+manager.addAnswer('ru', 'smalltalk.agent.happy', '{stickers}43|84|102|135');
+manager.addAnswer('ru', 'smalltalk.agent.hobby', '{stickers}147|88|99|142');
 
 manager.addAnswer(
   'ru',
-  '{stickers}22|33|44|53|58|77|95|127|134|140|149',
   'smalltalk.agent.my_friend',
+  '{stickers}22|33|44|53|58|77|95|127|134|140|149',
 );
-manager.addAnswer('ru', '{stickers}44|48|53|65|83|98|108|117', 'smalltalk.agent.ready');
-manager.addAnswer('ru', '{stickers}9|13|29|44|140', 'smalltalk.agent.residence');
-manager.addAnswer('ru', '{stickers}77|84|124|150|151', 'smalltalk.agent.right');
-manager.addAnswer('ru', '{stickers}25|61', 'smalltalk.agent.sure');
-manager.addAnswer('ru', '{stickers}1|32|108|130', 'smalltalk.agent.talk_to_me');
-manager.addAnswer('ru', '{stickers}58|165|100|127|134|140|142|149', 'smalltalk.agent.there');
+manager.addAnswer('ru', 'smalltalk.agent.ready', '{stickers}44|48|53|65|83|98|108|117');
+manager.addAnswer('ru', 'smalltalk.agent.residence', '{stickers}9|13|29|44|140');
+manager.addAnswer('ru', 'smalltalk.agent.right', '{stickers}77|84|124|150|151');
+manager.addAnswer('ru', 'smalltalk.agent.sure', '{stickers}25|61');
+manager.addAnswer('ru', 'smalltalk.agent.talk_to_me', '{stickers}1|32|108|130');
+manager.addAnswer('ru', 'smalltalk.agent.there', '{stickers}58|165|100|127|134|140|142|149');
 manager.addAnswer(
   'ru',
-  '{stickers}15|29|19|76|84|90|98|101|106|107|116|123',
   'smalltalk.appraisal.bad',
+  '{stickers}15|29|19|76|84|90|98|101|106|107|116|123',
 );
-manager.addAnswer('ru', '{stickers}47|58|66|84|124|151', 'smalltalk.appraisal.good');
-manager.addAnswer('ru', '{stickers}113|39|47|69|73|88|109|116', 'smalltalk.appraisal.thank_you');
-manager.addAnswer('ru', '{stickers}47|117', 'smalltalk.appraisal.welcome');
-manager.addAnswer('ru', '{stickers}4|48|84|98', 'smalltalk.confirmation.cancel');
-manager.addAnswer('ru', '{stickers}8|33|44|48|60', 'smalltalk.confirmation.no');
-manager.addAnswer('ru', '{stickers}78|84|87|99|108|116|123', 'smalltalk.confirmation.yes');
-manager.addAnswer('ru', '{stickers}7|25|29|33|88|89', 'smalltalk.dialog.hold_on');
-manager.addAnswer('ru', '{stickers}3|60', 'smalltalk.dialog.sorry');
-manager.addAnswer('ru', '{stickers}18|24|40|130', 'smalltalk.dialog.what_do_you_mean');
-manager.addAnswer('ru', '{stickers}28|44', 'smalltalk.greetings.bye');
-manager.addAnswer('ru', '{stickers}152|1|48|104|127', 'smalltalk.greetings.hello');
-manager.addAnswer('ru', '{stickers}25|92|128|136', 'smalltalk.greetings.how_are_you');
-manager.addAnswer('ru', '{stickers}6|11|63|116|127', 'smalltalk.user.joking');
-manager.addAnswer('ru', '{stickers}20|22|30|46|48|87|109|130', 'smalltalk.user.testing_agent');
-manager.addAnswer('ru', '{stickers}46', 'smalltalk.user.rude');
+manager.addAnswer('ru', 'smalltalk.appraisal.good', '{stickers}47|58|66|84|124|151');
+manager.addAnswer('ru', 'smalltalk.appraisal.thank_you', '{stickers}113|39|47|69|73|88|109|116');
+manager.addAnswer('ru', 'smalltalk.appraisal.welcome', '{stickers}47|117');
+manager.addAnswer('ru', 'smalltalk.confirmation.cancel', '{stickers}4|48|84|98');
+manager.addAnswer('ru', 'smalltalk.confirmation.no', '{stickers}8|33|44|48|60');
+manager.addAnswer('ru', 'smalltalk.confirmation.yes', '{stickers}78|84|87|99|108|116|123');
+manager.addAnswer('ru', 'smalltalk.dialog.hold_on', '{stickers}7|25|29|33|88|89');
+manager.addAnswer('ru', 'smalltalk.dialog.sorry', '{stickers}3|60');
+manager.addAnswer('ru', 'smalltalk.dialog.what_do_you_mean', '{stickers}18|24|40|130');
+manager.addAnswer('ru', 'smalltalk.greetings.bye', '{stickers}28|44');
+manager.addAnswer('ru', 'smalltalk.greetings.hello', '{stickers}152|1|48|104|127');
+manager.addAnswer('ru', 'smalltalk.greetings.how_are_you', '{stickers}25|92|128|136');
+manager.addAnswer('ru', 'smalltalk.user.joking', '{stickers}6|11|63|116|127');
+manager.addAnswer('ru', 'smalltalk.user.testing_agent', '{stickers}20|22|30|46|48|87|109|130');
+manager.addAnswer('ru', 'smalltalk.user.rude', '{stickers}46');
 
 // Train and save the model.
 (async () => {

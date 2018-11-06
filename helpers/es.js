@@ -43,15 +43,36 @@ async function es(searchQuery) {
 
 module.exports = { es };
 
-/*
 const {
-  doslidy, vasilisa, pizdets, patzavataStory, timeHero1, timeHero2,
+  doslidy,
+  vasilisa,
+  pizdets,
+  patzavataStory,
+  timeHero1,
+  timeHero2,
+  katzapy,
+  mistzeVstrechi,
+  ivasyk,
+  danko,
+  morozov,
+  hamlet,
+  mgnovenie,
+  snobs,
+  litr,
+  nirvana,
+  jogy,
+  repka,
+  joko,
+  janMare,
+  utopia,
+  diana,
+  mnozhennyaVUmi,
+  irzhyk,
 } = require('./texts');
-*/
 
 /*
 // Create index
-eClient.indices.create({ index: 'plays' }, (err, resp, status) => {
+eClient.indices.create({ index: 'plays' }, (err, resp) => {
   if (err) {
     console.log(err);
   } else {
@@ -98,6 +119,114 @@ const allPlays = [
     url: timeHero2.url,
     text: timeHero2.text,
   },
+  { index: { _index: 'plays', _type: 'play', _id: '7' } },
+  {
+    title: katzapy.title,
+    url: katzapy.url,
+    text: katzapy.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '8' } },
+  {
+    title: mistzeVstrechi.title,
+    url: mistzeVstrechi.url,
+    text: mistzeVstrechi.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '9' } },
+  {
+    title: ivasyk.title,
+    url: ivasyk.url,
+    text: ivasyk.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '10' } },
+  {
+    title: danko.title,
+    url: danko.url,
+    text: danko.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '11' } },
+  {
+    title: morozov.title,
+    url: morozov.url,
+    text: morozov.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '12' } },
+  {
+    title: hamlet.title,
+    url: hamlet.url,
+    text: hamlet.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '13' } },
+  {
+    title: mgnovenie.title,
+    url: mgnovenie.url,
+    text: mgnovenie.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '14' } },
+  {
+    title: snobs.title,
+    url: snobs.url,
+    text: snobs.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '15' } },
+  {
+    title: litr.title,
+    url: litr.url,
+    text: litr.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '16' } },
+  {
+    title: nirvana.title,
+    url: nirvana.url,
+    text: nirvana.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '17' } },
+  {
+    title: jogy.title,
+    url: jogy.url,
+    text: jogy.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '18' } },
+  {
+    title: repka.title,
+    url: repka.url,
+    text: repka.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '19' } },
+  {
+    title: joko.title,
+    url: joko.url,
+    text: joko.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '20' } },
+  {
+    title: janMare.title,
+    url: janMare.url,
+    text: janMare.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '21' } },
+  {
+    title: utopia.title,
+    url: utopia.url,
+    text: utopia.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '22' } },
+  {
+    title: diana.title,
+    url: diana.url,
+    text: diana.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '23' } },
+  {
+    title: mnozhennyaVUmi.title,
+    url: mnozhennyaVUmi.url,
+    text: mnozhennyaVUmi.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '24' } },
+  {
+    title: irzhyk.title,
+    url: irzhyk.url,
+    text: irzhyk.text,
+  },
 ];
 */
 
@@ -132,7 +261,7 @@ eClient.count({ index: 'plays', type: 'play' }, (err, resp, status) => {
 
 /*
 // Delete index
-eClient.indices.delete({ index: 'plays' }, (err, resp, status) => {
+eClient.indices.delete({ index: '_all' }, (err, resp) => {
   console.log('delete', resp);
 });
 */
