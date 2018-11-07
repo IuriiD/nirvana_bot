@@ -56,19 +56,20 @@ manager.addDocument('ru', 'твій день народження', 'smalltalk.a
 manager.addDocument('ru', 'на кого ти працюєш', 'smalltalk.agent.boss');
 manager.addDocument('ru', 'хто твій власник', 'smalltalk.agent.boss');
 manager.addDocument('ru', 'хто твій бос', 'smalltalk.agent.boss');
-manager.addDocument('ru', 'допоможи', 'smalltalk.agent.can_you_help');
-manager.addDocument('ru', 'можеш допомогти', 'smalltalk.agent.can_you_help');
-manager.addDocument('ru', 'треба допомога', 'smalltalk.agent.can_you_help');
-manager.addDocument('ru', 'треба твоя допомога', 'smalltalk.agent.can_you_help');
-manager.addDocument('ru', 'допоможи мені', 'smalltalk.agent.can_you_help');
-manager.addDocument('ru', 'мені треба твоя допомога', 'smalltalk.agent.can_you_help');
-manager.addDocument('ru', 'потрібна поміч', 'smalltalk.agent.can_you_help');
-manager.addDocument('ru', 'будь ласка допоможи', 'smalltalk.agent.can_you_help');
-manager.addDocument('ru', 'будь-ласка допоможи', 'smalltalk.agent.can_you_help');
-manager.addDocument('ru', 'допоможеш мені', 'smalltalk.agent.can_you_help');
-manager.addDocument('ru', 'зроби послугу', 'smalltalk.agent.can_you_help');
-manager.addDocument('ru', 'ти мені потрібен', 'smalltalk.agent.can_you_help');
-manager.addDocument('ru', 'хелп', 'smalltalk.agent.can_you_help');
+manager.addDocument('ru', 'допоможи', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'можеш допомогти', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'треба допомога', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'треба твоя допомога', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'допоможи мені', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'мені треба твоя допомога', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'потрібна поміч', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'будь ласка допоможи', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'будь-ласка допоможи', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'допоможеш мені', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'зроби послугу', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'ти мені потрібен', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'хелп', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'що тут робити', 'smalltalk.user.get_help');
 manager.addDocument('ru', 'ти бот', 'smalltalk.agent.chatbot');
 manager.addDocument('ru', 'ти чатбот', 'smalltalk.agent.chatbot');
 manager.addDocument('ru', 'ти робот', 'smalltalk.agent.chatbot');
@@ -111,7 +112,7 @@ manager.addDocument('ru', 'твоє хоббі', 'smalltalk.agent.hobby');
 manager.addDocument('ru', 'твоє хобі', 'smalltalk.agent.hobby');
 manager.addDocument('ru', 'яке твое хоббі', 'smalltalk.agent.hobby');
 manager.addDocument('ru', 'чим ти цікавишся', 'smalltalk.agent.hobby');
-manager.addDocument('ru', 'що ти любиш', 'smalltalk.agent.hobby');
+manager.addDocument('ru', 'що ти любиш', 'smalltalk.agent.hobby'); 
 manager.addDocument('ru', 'давай дружити', 'smalltalk.agent.my_friend');
 manager.addDocument('ru', 'ти мій друг', 'smalltalk.agent.my_friend');
 manager.addDocument('ru', 'будеш моїм другом?', 'smalltalk.agent.my_friend');
@@ -285,17 +286,167 @@ manager.addDocument('ru', 'нахуя', 'smalltalk.user.rude');
 manager.addDocument('ru', 'пізда', 'smalltalk.user.rude');
 manager.addDocument('ru', 'пизда', 'smalltalk.user.rude');
 manager.addDocument('ru', 'піздато', 'smalltalk.user.rude');
+manager.addDocument('ru', 'випадковий стікер', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'рандомний стікер', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'будь-який стікер', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'будь який стікер', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'покажий випадковий стікер', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'покажи випадкову картинку', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'покажи випадковий малюнок', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'покажи випадкову цитату', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'випадкова цитата', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'випадкова фраза', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'рандомна фраза', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'случайный стикер', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'стікер на твій вибір', 'smalltalk.user.random_stiker');
+
+manager.addDocument('ru', 'Цiкaвi дослiди', 'smalltalk.show_play_doslidy');
+manager.addDocument('ru', 'пєса Цiкaвi дослiди', 'smalltalk.show_play_doslidy');
+manager.addDocument('ru', 'покажи Цiкaвi дослiди', 'smalltalk.show_play_doslidy');
+manager.addDocument('ru', 'читай Цiкaвi дослiди', 'smalltalk.show_play_doslidy');
+
+manager.addDocument('ru', 'Вaсiлiсa Єгоровнa i мужичкi', 'smalltalk.show_play_vasilisa');
+manager.addDocument('ru', 'пєса Вaсiлiсa Єгоровнa i мужичкi', 'smalltalk.show_play_vasilisa');
+manager.addDocument('ru', 'покажи Вaсiлiсa Єгоровнa i мужичкi', 'smalltalk.show_play_vasilisa');
+manager.addDocument('ru', 'читай Вaсiлiсa Єгоровнa i мужичкi', 'smalltalk.show_play_vasilisa');
+
+manager.addDocument('ru', 'Піздєц', 'smalltalk.show_play_pizdets');
+manager.addDocument('ru', 'пєса Піздєц', 'smalltalk.show_play_pizdets');
+manager.addDocument('ru', 'покажи Піздєц', 'smalltalk.show_play_pizdets');
+manager.addDocument('ru', 'читай Піздєц', 'smalltalk.show_play_pizdets');
+
+manager.addDocument('ru', 'Пацавата історія', 'smalltalk.show_play_patzavataStory');
+manager.addDocument('ru', 'пєса Пацавата історія', 'smalltalk.show_play_patzavataStory');
+manager.addDocument('ru', 'покажи Пацавата історія', 'smalltalk.show_play_patzavataStory');
+manager.addDocument('ru', 'читай Пацавата історія', 'smalltalk.show_play_patzavataStory');
+
+manager.addDocument('ru', 'Герой нaшого чaсу. Повiсть першa', 'smalltalk.show_play_timeHero1');
+manager.addDocument('ru', 'Герой нaшого чaсу. Повiсть 1', 'smalltalk.show_play_timeHero1');
+manager.addDocument('ru', 'пєса Герой нaшого чaсу. Повiсть першa', 'smalltalk.show_play_timeHero1');
+manager.addDocument('ru', 'покажи Герой нaшого чaсу. Повiсть першa', 'smalltalk.show_play_timeHero1');
+manager.addDocument('ru', 'читай Герой нaшого чaсу. Повiсть першa', 'smalltalk.show_play_timeHero1');
+
+manager.addDocument('ru', 'Герой нaшого чaсу. Повiсть другa', 'smalltalk.show_play_timeHero2');
+manager.addDocument('ru', 'Герой нaшого чaсу. Повiсть 2', 'smalltalk.show_play_timeHero2');
+manager.addDocument('ru', 'пєса Герой нaшого чaсу. Повiсть другa', 'smalltalk.show_play_timeHero2');
+manager.addDocument('ru', 'покажи Герой нaшого чaсу. Повiсть другa', 'smalltalk.show_play_timeHero2');
+manager.addDocument('ru', 'читай Герой нaшого чaсу. Повiсть другa', 'smalltalk.show_play_timeHero2');
+
+manager.addDocument('ru', 'Кaцaпи', 'smalltalk.show_play_katzapy');
+manager.addDocument('ru', 'пєса Кaцaпи', 'smalltalk.show_play_katzapy');
+manager.addDocument('ru', 'покажи Кaцaпи', 'smalltalk.show_play_katzapy');
+manager.addDocument('ru', 'читай Кaцaпи', 'smalltalk.show_play_katzapy');
+
+manager.addDocument('ru', 'Місце встрєчі ізмєніть ніззя, блядь!', 'smalltalk.show_play_mistzeVstrechi');
+manager.addDocument('ru', 'пєса Місце встрєчі ізмєніть ніззя, блядь!', 'smalltalk.show_play_mistzeVstrechi');
+manager.addDocument('ru', 'покажи Місце встрєчі ізмєніть ніззя, блядь!', 'smalltalk.show_play_mistzeVstrechi');
+manager.addDocument('ru', 'читай Місце встрєчі ізмєніть ніззя, блядь!', 'smalltalk.show_play_mistzeVstrechi');
+
+manager.addDocument('ru', 'Хвороба Івасика', 'smalltalk.show_play_ivasyk');
+manager.addDocument('ru', 'пєса Хвороба Івасика', 'smalltalk.show_play_ivasyk');
+manager.addDocument('ru', 'покажи Хвороба Івасика', 'smalltalk.show_play_ivasyk');
+manager.addDocument('ru', 'читай Хвороба Івасика', 'smalltalk.show_play_ivasyk');
+
+manager.addDocument('ru', 'Данко', 'smalltalk.show_play_danko');
+manager.addDocument('ru', 'пєса Данко', 'smalltalk.show_play_danko');
+manager.addDocument('ru', 'покажи Данко', 'smalltalk.show_play_danko');
+manager.addDocument('ru', 'читай Данко', 'smalltalk.show_play_danko');
+
+manager.addDocument('ru', 'Павлік Морозов', 'smalltalk.show_play_morozov');
+manager.addDocument('ru', 'пєса Павлік Морозов', 'smalltalk.show_play_morozov');
+manager.addDocument('ru', 'покажи Павлік Морозов', 'smalltalk.show_play_morozov');
+manager.addDocument('ru', 'читай Павлік Морозов', 'smalltalk.show_play_morozov');
+
+manager.addDocument('ru', 'Гамлєт, або Феномен датського кацапізма', 'smalltalk.show_play_hamlet');
+manager.addDocument('ru', 'пєса Гамлєт, або Феномен датського кацапізма', 'smalltalk.show_play_hamlet');
+manager.addDocument('ru', 'покажи Гамлєт, або Феномен датського кацапізма', 'smalltalk.show_play_hamlet');
+manager.addDocument('ru', 'читай Гамлєт, або Феномен датського кацапізма', 'smalltalk.show_play_hamlet');
+manager.addDocument('ru', 'читай Гамлєта', 'smalltalk.show_play_hamlet');
+manager.addDocument('ru', 'читай Гамлета', 'smalltalk.show_play_hamlet');
+
+manager.addDocument('ru', 'Остановісь, мгновєньє – ти прєкрасно!', 'smalltalk.show_play_mgnovenie');
+manager.addDocument('ru', 'пєса Остановісь, мгновєньє – ти прєкрасно!', 'smalltalk.show_play_mgnovenie');
+manager.addDocument('ru', 'покажи Остановісь, мгновєньє – ти прєкрасно!', 'smalltalk.show_play_mgnovenie');
+manager.addDocument('ru', 'читай Остановісь, мгновєньє – ти прєкрасно!', 'smalltalk.show_play_mgnovenie');
+
+manager.addDocument('ru', 'Сноби', 'smalltalk.show_play_snobs');
+manager.addDocument('ru', 'пєса Сноби', 'smalltalk.show_play_snobs');
+manager.addDocument('ru', 'покажи Сноби', 'smalltalk.show_play_snobs');
+manager.addDocument('ru', 'читай Сноби', 'smalltalk.show_play_snobs');
+
+manager.addDocument('ru', 'Король Літр', 'smalltalk.show_play_litr');
+manager.addDocument('ru', 'пєса Король Літр', 'smalltalk.show_play_litr');
+manager.addDocument('ru', 'покажи Король Літр', 'smalltalk.show_play_litr');
+manager.addDocument('ru', 'читай Король Літр', 'smalltalk.show_play_litr');
+
+manager.addDocument('ru', 'Нірвана', 'smalltalk.show_play_nirvana');
+manager.addDocument('ru', 'пєса Нірвана', 'smalltalk.show_play_nirvana');
+manager.addDocument('ru', 'покажи Нірвана', 'smalltalk.show_play_nirvana');
+manager.addDocument('ru', 'читай Нірвана', 'smalltalk.show_play_nirvana');
+
+manager.addDocument('ru', 'Йоги', 'smalltalk.show_play_jogy');
+manager.addDocument('ru', 'пєса Йоги', 'smalltalk.show_play_jogy');
+manager.addDocument('ru', 'покажи Йоги', 'smalltalk.show_play_jogy');
+manager.addDocument('ru', 'читай Йоги', 'smalltalk.show_play_jogy');
+
+manager.addDocument('ru', 'Казка про рєпку, або Хулі не ясно?', 'smalltalk.show_play_repka');
+manager.addDocument('ru', 'Казка про рєпку', 'smalltalk.show_play_repka');
+manager.addDocument('ru', 'пєса Казка про рєпку, або Хулі не ясно?', 'smalltalk.show_play_repka');
+manager.addDocument('ru', 'покажи Казка про рєпку, або Хулі не ясно?', 'smalltalk.show_play_repka');
+manager.addDocument('ru', 'читай Казка про рєпку, або Хулі не ясно?', 'smalltalk.show_play_repka');
+
+manager.addDocument('ru', 'До хуя масла', 'smalltalk.show_play_maslo');
+manager.addDocument('ru', 'Дохуя масла', 'smalltalk.show_play_maslo');
+manager.addDocument('ru', 'пєса До хуя масла', 'smalltalk.show_play_maslo');
+manager.addDocument('ru', 'покажи До хуя масла', 'smalltalk.show_play_maslo');
+manager.addDocument('ru', 'читай До хуя масла', 'smalltalk.show_play_maslo');
+
+manager.addDocument('ru', 'Йоко і самураї', 'smalltalk.show_play_joko');
+manager.addDocument('ru', 'пєса Йоко і самураї', 'smalltalk.show_play_joko');
+manager.addDocument('ru', 'покажи Йоко і самураї', 'smalltalk.show_play_joko');
+manager.addDocument('ru', 'читай Йоко і самураї', 'smalltalk.show_play_joko');
+
+manager.addDocument('ru', 'Рух життя, або Динамо', 'smalltalk.show_play_dynamo');
+manager.addDocument('ru', 'пєса Рух життя, або Динамо', 'smalltalk.show_play_dynamo');
+manager.addDocument('ru', 'покажи Рух життя, або Динамо', 'smalltalk.show_play_dynamo');
+manager.addDocument('ru', 'читай Рух життя, або Динамо', 'smalltalk.show_play_dynamo');
+
+manager.addDocument('ru', 'Жан Маре та інші', 'smalltalk.show_play_janMare');
+manager.addDocument('ru', 'пєса Жан Маре та інші', 'smalltalk.show_play_janMare');
+manager.addDocument('ru', 'покажи Жан Маре та інші', 'smalltalk.show_play_janMare');
+manager.addDocument('ru', 'читай Жан Маре та інші', 'smalltalk.show_play_janMare');
+
+manager.addDocument('ru', 'Утопія', 'smalltalk.show_play_utopia');
+manager.addDocument('ru', 'пєса Утопія', 'smalltalk.show_play_utopia');
+manager.addDocument('ru', 'покажи Утопія', 'smalltalk.show_play_utopia');
+manager.addDocument('ru', 'читай Утопія', 'smalltalk.show_play_utopia');
+
+manager.addDocument('ru', 'Діана', 'smalltalk.show_play_diana');
+manager.addDocument('ru', 'пєса Діана', 'smalltalk.show_play_diana');
+manager.addDocument('ru', 'покажи Діана', 'smalltalk.show_play_diana');
+manager.addDocument('ru', 'читай Діана', 'smalltalk.show_play_diana');
+
+manager.addDocument('ru', 'Множення в умі, або Плинність часу', 'smalltalk.show_play_mnozhennyaVUmi');
+manager.addDocument('ru', 'пєса Множення в умі, або Плинність часу', 'smalltalk.show_play_mnozhennyaVUmi');
+manager.addDocument('ru', 'пєса Множення в умі', 'smalltalk.show_play_mnozhennyaVUmi');
+manager.addDocument('ru', 'покажи Множення в умі, або Плинність часу', 'smalltalk.show_play_mnozhennyaVUmi');
+manager.addDocument('ru', 'читай Множення в умі, або Плинність часу', 'smalltalk.show_play_mnozhennyaVUmi');
+
+manager.addDocument('ru', 'Іржик', 'smalltalk.show_play_irzhyk');
+manager.addDocument('ru', 'пєса Іржик', 'smalltalk.show_play_irzhyk');
+manager.addDocument('ru', 'покажи Іржик', 'smalltalk.show_play_irzhyk');
+manager.addDocument('ru', 'читай Іржик', 'smalltalk.show_play_irzhyk');
 
 // Bot's responses
 manager.addAnswer(
   'ru',
   'smalltalk.agent.acquaintance',
-  'Я чатбот, що звусь Nirvana! В мені - вся мудрість творів пана Леся.{stickers}1|48|32',
+  'Я чатбот, що звусь Nirvana! В мені - вся мудрість творів пана Леся{stickers}1|48|32',
 );
 manager.addAnswer(
   'ru',
   'smalltalk.agent.acquaintance',
-  "Мене звуть Nirvana. Я чатбот, що говорить фразами із творів Леся Подерв'янського.{stickers}1|48|32",
+  "Мене звуть Nirvana. Я чатбот, що говорить фразами із творів Леся Подерв'янського{stickers}1|48|32",
 );
 manager.addAnswer('ru', 'smalltalk.agent.age', '{stickers}122');
 manager.addAnswer('ru', 'smalltalk.agent.annoying', '{stickers}141');
@@ -312,11 +463,6 @@ manager.addAnswer(
 );
 manager.addAnswer('ru', 'smalltalk.agent.birth_date', '{stickers}144|62|72|88|99|108');
 manager.addAnswer('ru', 'smalltalk.agent.boss', '{stickers}13|18|20|29|44|60|83|99|108|123|136');
-manager.addAnswer(
-  'ru',
-  'smalltalk.agent.can_you_help',
-  '{stickers}36|9|15|25|29|33|40|44|50|59|79|95|99|123|127|137|140',
-);
 
 manager.addAnswer(
   'ru',
@@ -363,13 +509,43 @@ manager.addAnswer('ru', 'smalltalk.greetings.how_are_you', '{stickers}25|92|128|
 manager.addAnswer('ru', 'smalltalk.user.joking', '{stickers}6|11|63|116|127');
 manager.addAnswer('ru', 'smalltalk.user.testing_agent', '{stickers}20|22|30|46|48|87|109|130');
 manager.addAnswer('ru', 'smalltalk.user.rude', '{stickers}46');
+manager.addAnswer('ru', 'smalltalk.user.random_stiker', '{stickers}1|2|3|4|6|7|8|9|11|12|13|15|18|19|20|21|22|24|25|28|29|30|32|33|36|39|40|41|43|44|45|46|47|48|49|50|51|53|56|58|59|60|61|62|63|65|66|69|72|73|76|77|78|79|80|82|83|84|87|88|89|90|92|95|96|98|99|100|101|102|104|106|107|108|109|113|115|116|122|123|124|127|128|130|134|135|136|137|140|141|142|143|144|146|147|149|150|151|152');
+manager.addAnswer('ru', 'smalltalk.user.get_help', 'Можна запросити конкретну п\'єсу (напр., "Павлік Морозов" або "покажи Гамлета"), випадковий стікер ("покажи випадковий стікер") або спробувати просто побалакати ;){stickers}1|20|24|32|40|41|48');
+manager.addAnswer('ru', 'smalltalk.user.get_help', 'Можна запросити конкретну п\'єсу (напр., "Павлік Морозов" або "покажи Гамлета"), випадковий стікер ("покажи випадковий стікер") або спробувати просто побалакати ;){stickers}1|20|24|32|40|41|48');
+manager.addAnswer('ru', 'smalltalk.show_play_doslidy', '{stickers}153');
+manager.addAnswer('ru', 'smalltalk.show_play_vasilisa', '{stickers}154');
+manager.addAnswer('ru', 'smalltalk.show_play_pizdets', '{stickers}155');
+manager.addAnswer('ru', 'smalltalk.show_play_patzavataStory', '{stickers}156');
+manager.addAnswer('ru', 'smalltalk.show_play_timeHero1', '{stickers}157');
+manager.addAnswer('ru', 'smalltalk.show_play_timeHero2', '{stickers}158');
+manager.addAnswer('ru', 'smalltalk.show_play_katzapy', '{stickers}159');
+manager.addAnswer('ru', 'smalltalk.show_play_mistzeVstrechi', '{stickers}160');
+manager.addAnswer('ru', 'smalltalk.show_play_ivasyk', '{stickers}161');
+manager.addAnswer('ru', 'smalltalk.show_play_danko', '{stickers}162');
+manager.addAnswer('ru', 'smalltalk.show_play_morozov', '{stickers}163');
+manager.addAnswer('ru', 'smalltalk.show_play_hamlet', '{stickers}164');
+manager.addAnswer('ru', 'smalltalk.show_play_mgnovenie', '{stickers}165');
+manager.addAnswer('ru', 'smalltalk.show_play_snobs', '{stickers}166');
+manager.addAnswer('ru', 'smalltalk.show_play_litr', '{stickers}167');
+manager.addAnswer('ru', 'smalltalk.show_play_nirvana', '{stickers}168');
+manager.addAnswer('ru', 'smalltalk.show_play_jogy', '{stickers}169');
+manager.addAnswer('ru', 'smalltalk.show_play_repka', '{stickers}170');
+manager.addAnswer('ru', 'smalltalk.show_play_maslo', '{stickers}171');
+manager.addAnswer('ru', 'smalltalk.show_play_joko', '{stickers}172');
+manager.addAnswer('ru', 'smalltalk.show_play_dynamo', '{stickers}173');
+manager.addAnswer('ru', 'smalltalk.show_play_janMare', '{stickers}174');
+manager.addAnswer('ru', 'smalltalk.show_play_utopia', '{stickers}175');
+manager.addAnswer('ru', 'smalltalk.show_play_diana', '{stickers}176');
+manager.addAnswer('ru', 'smalltalk.show_play_mnozhennyaVUmi', '{stickers}177');
+manager.addAnswer('ru', 'smalltalk.show_play_irzhyk', '{stickers}178');
 
-// Train and save the model.
-(async () => {
-  await manager.train();
-  manager.save('./model.nlp');
-  console.log('\nModel training finished');
-  manager.load('./model.nlp');
-  const response = await manager.process('ru', 'як справи');
-  console.log(response);
-})();
+  // Train and save the model
+  async () => {
+    await manager.train();
+    manager.save('./model.nlp');
+    console.log('\nModel training finished');
+    manager.load('./model.nlp');
+    const response = await manager.process('ru', 'як справи');
+    console.log(response);
+  },
+)();

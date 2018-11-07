@@ -8,12 +8,12 @@ function sendAnswer(session, answer) {
   if (text) session.send(text);
   if (sticker) {
     session.send({
-      text: sticker,
+      text: '',
       attachments: [
         {
           contentType: 'image/png',
-          contentUrl: 'https://iuriid.github.io/public/img/moc_logo.png',
-          name: '1.png',
+          contentUrl: `https://raw.githubusercontent.com/IuriiD/nirvana_bot/master/stickers/${sticker}.png`,
+          name: `${sticker}.png`,
         },
       ],
     });

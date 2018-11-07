@@ -14,11 +14,13 @@ function parseAnswer(phrases, botReply) {
     if (oneOrSeveralStickers.includes('|')) {
       stickers = oneOrSeveralStickers.split('|');
       const randStickerIndex = Math.floor(Math.random() * stickers.length);
-      if (stickers[randStickerIndex] !== 0) {
+      output.sticker = stickers[randStickerIndex];
+      /* if (stickers[randStickerIndex] !== 0) {
         output.sticker = phrases[stickers[randStickerIndex]].telegramStickerId;
-      }
+      } */
     } else {
-      output.sticker = phrases[oneOrSeveralStickers].telegramStickerId;
+      // output.sticker = phrases[oneOrSeveralStickers].telegramStickerId;
+      output.sticker = oneOrSeveralStickers;
     }
   } else {
     output.text = botReply;
