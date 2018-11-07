@@ -10,12 +10,13 @@ const { locale } = require('./config/config');
 const { sendAnswer } = require('./helpers/sendAnswer');
 const { es } = require('./helpers/es');
 const { presentPlays } = require('./helpers/presentPlays');
+const firstRunDialog = require('./dialogs/firstRun');
 
-const l10n = require(`./locales/${locale}.json`);
+const l10n = require(`./locales/${locale}`);
 
 // Creates the express application
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 app.listen(port);
 console.log(`Chatbot listening on port ${port}`);
 
@@ -36,31 +37,40 @@ recognizer.load(`./nlp/${modelName}`);
 // Creates the bot using a memory storage, with a main dialog that
 // use the node-nlp recognizer to calculate the answer.
 const bot = new builder.UniversalBot(connector, (session) => {
-  recognizer.recognize(session, async (err, data) => {
-    console.log('\n\nDATA:');
-    console.dir(data); // temp
-
-    if (err) {
-      console.log(`Error: ${err}`);
-      sendAnswer(session, l10n.error_happened);
-    }
-    if (!data.answer) {
-      // Try to search users's input in texts using ElasticSearch
-      console.log(`\ndata.utterance: ${data.utterance}`);
-      const esResult = await es(data.utterance);
-      console.log(`\nesResult: ${esResult}`);
-      if (esResult) {
-        console.log('ES found something, sending...');
-        presentPlays(session, esResult);
-      } else {
-        // If nothing found - Default fallback answer
-        console.log('ES failed to find anything, default fallback response');
-        sendAnswer(session, l10n.dont_understand);
-      }
-    } else {
-      console.log('\ndata:'); // temp
+  // session.userData.firstRun = false; // temp, needed at dev stage
+  console.dir(session.message);
+  if (session.message.text) {
+    recognizer.recognize(session, async (err, data) => {
+      console.log('\n\nDATA:');
       console.dir(data); // temp
-      sendAnswer(session, data.answer);
-    }
-  });
+
+      if (err) {
+        console.log(`Error: ${err}`);
+        sendAnswer(session, l10n.error_happened);
+      }
+      if (!data.answer) {
+        // Try to search users's input in texts using ElasticSearch
+        console.log(`\ndata.utterance: ${data.utterance}`);
+        const esResult = await es(data.utterance);
+        console.log(`\nesResult: ${esResult}`);
+        if (esResult) {
+          console.log('ES found something, sending...');
+          presentPlays(session, esResult);
+        } else {
+          // If nothing found - Default fallback answer
+          console.log('ES failed to find anything, default fallback response');
+          sendAnswer(session, l10n.dont_understand);
+        }
+      } else {
+        console.log('\ndata:'); // temp
+        console.dir(data); // temp
+        sendAnswer(session, data.answer);
+      }
+    });
+  } else if (session.message.attachments && session.message.attachments.length > 0) {
+    sendAnswer(session, l10n.dont_understand);
+  }
 }).set('storage', new builder.MemoryBotStorage());
+
+// First run dialog
+bot.dialog('firstRunDialog', firstRunDialog(bot));

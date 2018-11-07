@@ -1,0 +1,15 @@
+{
+    "name": "nirvana",
+    "description": "",
+    "secretKey": "",
+    "services": [
+        {
+            "id": "d73f6010-e19d-11e8-b93c-4b0079627a32",
+            "name": "http://localhost:4000/api/messages",
+            "type": "endpoint",
+            "appId": "f8059dc4-587c-426f-a211-ab93b87cf905",
+            "appPassword": "ySJX_(lirfrxIYIL44518+]",
+            "endpoint": "http://localhost:4000/api/messages"
+        }
+    ]
+}

@@ -43,6 +43,7 @@ async function es(searchQuery) {
 
 module.exports = { es };
 
+/*
 const {
   doslidy,
   vasilisa,
@@ -71,6 +72,7 @@ const {
   mnozhennyaVUmi,
   irzhyk,
 } = require('./texts');
+*/
 
 /*
 // Create index
@@ -193,7 +195,7 @@ const allPlays = [
     url: repka.url,
     text: repka.text,
   },
-    { index: { _index: 'plays', _type: 'play', _id: '19' } },
+  { index: { _index: 'plays', _type: 'play', _id: '19' } },
   {
     title: maslo.title,
     url: maslo.url,

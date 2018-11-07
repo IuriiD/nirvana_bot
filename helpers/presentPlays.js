@@ -1,7 +1,7 @@
 const plays = require('./plays');
 const { locale } = require('../config/config');
 
-const l10n = require(`../locales/${locale}.json`);
+const l10n = require(`../locales/${locale}`);
 
 function presentPlays(session, esFoundPlays) {
   if (esFoundPlays.length > 1) {
@@ -10,7 +10,18 @@ function presentPlays(session, esFoundPlays) {
     session.send(l10n.relevant_play);
   }
   esFoundPlays.forEach((play) => {
-    session.send(`"${play}"\n${plays[play].telegramStickerId}\n${plays[play].url}`);
+    session.send({
+      text: `"${play}"\n${plays[play].url}`,
+      attachments: [
+        {
+          contentType: 'image/png',
+          contentUrl: `https://raw.githubusercontent.com/IuriiD/nirvana_bot/master/stickers/${
+            plays[play].telegramStickerId
+          }.png`,
+          name: `${plays[play].telegramStickerId}.png`,
+        },
+      ],
+    });
   });
 }
 
