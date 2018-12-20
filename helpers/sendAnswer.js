@@ -1,39 +1,31 @@
 // Sends text and stickers. DRY
-const builder = require('botbuilder');
 const { parseAnswer } = require('./parseAnswer');
 const phrases = require('./phrases');
+const { getCard, getCarousel } = require('./templates');
+const { locale } = require('../config/config');
+
+const l10n = require(`../locales/${locale}`);
 
 function sendAnswer(session, answer) {
   const { text, sticker } = parseAnswer(phrases, answer);
   if (text) session.send(text);
   if (sticker) {
-    const card = new builder.Message(session);
-    card.attachments([
-      new builder.HeroCard(session)
-        .title('Classic White T-Shirt')
-        .subtitle('100% Soft and Luxurious Cotton')
-        .text('Price is $25 and carried in sizes (S, M, L, and XL)')
-        .images([
-          builder.CardImage.create(
-            session,
-            `https://raw.githubusercontent.com/IuriiD/nirvana_bot/master/stickers/${sticker}.png`,
-          ),
-        ])
-        .buttons([builder.CardAction.imBack(session, 'buy classic white t-shirt', 'Buy')]),
-    ]);
-    session.send(card);
-    /*
-    session.send({
-      text: '',
-      attachments: [
-        {
-          contentType: 'image/png',
-          contentUrl: `https://raw.githubusercontent.com/IuriiD/nirvana_bot/master/stickers/${sticker}.png`,
-          name: `${sticker}.png`,
-        },
-      ],
-    }); */
+    const ourCard = getCard(session, sticker);
+    session.send(ourCard);
   }
 }
 
-module.exports = { sendAnswer };
+function presentPlays(session, esFoundPlays) {
+  if (esFoundPlays.length > 1) {
+    session.send(l10n.relevant_plays, esFoundPlays.length);
+  } else {
+    session.send(l10n.relevant_play);
+  }
+
+  const carousel = getCarousel(session, esFoundPlays);
+  console.log('\nCarousel');
+  console.log(JSON.stringify(carousel.data));
+  session.send(carousel);
+}
+
+module.exports = { sendAnswer, presentPlays };

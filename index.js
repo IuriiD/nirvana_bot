@@ -7,9 +7,8 @@ const { Recognizer } = require('node-nlp');
 
 const modelName = './model.nlp';
 const { locale } = require('./config/config');
-const { sendAnswer } = require('./helpers/sendAnswer');
+const { sendAnswer, presentPlays } = require('./helpers/sendAnswer');
 const { es } = require('./helpers/es');
-const { presentPlays } = require('./helpers/presentPlays');
 const firstRunDialog = require('./dialogs/firstRun');
 
 const l10n = require(`./locales/${locale}`);
@@ -38,19 +37,23 @@ recognizer.load(`./nlp/${modelName}`);
 // use the node-nlp recognizer to calculate the answer.
 const bot = new builder.UniversalBot(connector, (session) => {
   // session.userData.firstRun = false; // temp, needed at dev stage
+  console.log('\n\nsession.message$');
   console.dir(session.message);
   if (session.message.text) {
     recognizer.recognize(session, async (err, data) => {
-      console.log('\n\nDATA:');
+      console.log('\n\nrecognizer.recognize - data:');
       console.dir(data); // temp
 
       if (err) {
         console.log(`Error: ${err}`);
         sendAnswer(session, l10n.error_happened);
       }
+
       if (!data.answer) {
         // Try to search users's input in texts using ElasticSearch
         console.log(`\ndata.utterance: ${data.utterance}`);
+        sendAnswer(session, 'Here goes result of searching in ES');
+
         const esResult = await es(data.utterance);
         console.log(`\nesResult: ${esResult}`);
         if (esResult) {
@@ -62,7 +65,7 @@ const bot = new builder.UniversalBot(connector, (session) => {
           sendAnswer(session, l10n.dont_understand);
         }
       } else {
-        console.log('\ndata:'); // temp
+        console.log('\ndata.answer:'); // temp
         console.dir(data); // temp
         sendAnswer(session, data.answer);
       }
