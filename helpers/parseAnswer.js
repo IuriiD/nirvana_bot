@@ -15,9 +15,6 @@ function parseAnswer(phrases, botReply) {
       stickers = oneOrSeveralStickers.split('|');
       const randStickerIndex = Math.floor(Math.random() * stickers.length);
       output.sticker = stickers[randStickerIndex];
-      /* if (stickers[randStickerIndex] !== 0) {
-        output.sticker = phrases[stickers[randStickerIndex]].telegramStickerId;
-      } */
     } else {
       // output.sticker = phrases[oneOrSeveralStickers].telegramStickerId;
       output.sticker = oneOrSeveralStickers;
@@ -25,8 +22,6 @@ function parseAnswer(phrases, botReply) {
   } else {
     output.text = botReply;
   }
-
-  console.dir(output);
   return output;
 }
 

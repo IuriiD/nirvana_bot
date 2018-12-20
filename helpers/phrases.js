@@ -1,73 +1,74 @@
 module.exports = {
   1: {
-    phrase: 'І аб чом же у нас будєт разгавор?',
-    play: 'Васiлiса Егоровна i мужичкi',
-    phraseN: '101',
-    telegramStickerId: 'CAADAgADBAAD09KeCnfMl_xO0kSQAg',
+    // key of level 1 = <name of file>.png
+    phrase: 'І аб чом же у нас будєт разгавор?', // Exact phrase
+    play: 'Васiлiса Єгоровна i мужичкi', // Play title
+    phraseN: '101', // # of sentence in the play, may be needed for pagination
+    telegramStickerId: 'CAADAgADBAAD09KeCnfMl_xO0kSQAg', // ID of Telegram sticker; if empty - not image
   },
   2: {
     phrase: 'Я етого нє люблю',
-    play: 'Васiлiса Егоровна i мужичкi',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '23',
     telegramStickerId: 'CAADAgADCAAD09KeCtGzuj4pydzrAg',
   },
   3: {
     phrase: 'Ну нє абіжайся',
-    play: 'Васiлiса Егоровна i мужичкi',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '53',
     telegramStickerId: 'CAADAgADCQAD09KeCsntGtCPqKDIAg',
   },
   4: {
     phrase: 'Єсть',
-    play: 'Васiлiса Егоровна i мужичкi',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '85',
     telegramStickerId: 'CAADAgADCgAD09KeClr9ZjkHoEBbAg',
   },
   5: {
     phrase: 'Ну как ето об чьом, Васіліса Єгоровна? Разниє єсть інтєрєсниє для нас обоїх вєщі',
-    play: 'Васiлiса Егоровна i мужичкi',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '103',
     telegramStickerId: '',
   },
   6: {
     phrase: 'Мінє оні уже давно нє інтєрєсниє еті вєщі',
-    play: 'Васiлiса Егоровна i мужичкi',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '106',
     telegramStickerId: 'CAADAgADCwAD09KeCrwL3nrMBuz',
   },
   7: {
     phrase: 'Ето, Вася, шо, нада понімать как визов?',
-    play: 'Васiлiса Егоровна i мужичкi',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '109',
     telegramStickerId: 'CAADAgADDAAD09KeCiuvBB5ohNT8Ag',
   },
   8: {
     phrase: 'Ні, то нє, то я так',
-    play: 'Васiлiса Егоровна i мужичкi',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '124',
     telegramStickerId: 'CAADAgADDQAD09KeCp__ooxRu1DmAg',
   },
   9: {
     phrase: 'А ти хуй в бєлки видів?',
-    play: 'Васiлiса Егоровна i мужичкi',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '139',
     telegramStickerId: 'CAADAgADDgAD09KeCrj7rRDLaF8nAg',
   },
   10: {
     phrase: 'Ну шо як відімость?',
-    play: 'Васiлiса Егоровна i мужичкi',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '162',
     telegramStickerId: '',
   },
   11: {
     phrase: 'Та, то найобки єщо хуйня',
-    play: 'Васiлiса Егоровна i мужичкi',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '168',
     telegramStickerId: 'CAADAgADDwAD09KeCntwXnKhIseBAg',
   },
   12: {
     phrase: 'А мої прєдки були дворянє',
-    play: 'Васiлiса Егоровна i мужичкi',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '222',
     telegramStickerId: 'CAADAgADEAAD09KeCooWmyZ53gniAg',
   },
@@ -924,7 +925,7 @@ module.exports = {
   },
   154: {
     phrase: '',
-    play: 'Вaсiлiсa Єгоровнa i мужичкi',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '',
     telegramStickerId: '154',
   },
