@@ -1,11 +1,9 @@
 /**
- *
  * Platform-specific templates used in bot's replies
  * # Facebook: a single generict template (GT) for replies or
  * a carousel of GT for results of Elastic Search (ES)
  * # Telegram: a single block 'sticker + 2 buttons' or
  * an array of such blocks, respectively
- *
  */
 
 const builder = require('botbuilder');
@@ -18,18 +16,11 @@ const plays = require('./data/plays');
  * https://developers.facebook.com/docs/messenger-platform/send-messages/template/generic
  * @param {string} imageId # of a sticker ('1', '20' etc)
  * @param {object} allPlays Object with info about plays
+ * @param {object} allPhrases Object with info about phrases
  */
 function fbCard(imageId, allPlays, allPhrases) {
-  console.log('\nfbCard');
-  console.log(`imageId: ${imageId}`);
-  console.log(typeof imageId);
-  // console.dir(phrases['168']);
-  // const ourPlay = Object.keys(allPlays).filter(play => phrases[play].stickerId === imageId);
   const { play } = allPhrases[imageId];
-  // const ourPlay = allPlays.filter(play => play.stickerId === imageId);
-  // const play = Object.keys(ourPlay)[0];
-  console.log(`ourPlay - ${play}`);
-  const { url, audio } = allPlays[play];
+  const { url } = allPlays[play];
 
   return {
     attachment: {
@@ -48,8 +39,8 @@ function fbCard(imageId, allPlays, allPhrases) {
                 title: i18n.__('read'),
               },
               {
-                type: 'web_url',
-                url: audio,
+                type: 'postback',
+                payload: `[### play ###]${play}`,
                 title: i18n.__('listen'),
               },
             ],
@@ -67,33 +58,21 @@ function fbCard(imageId, allPlays, allPhrases) {
  * https://developers.facebook.com/docs/messenger-platform/send-messages/template/generic#carousel
  * @param {array} foundPlays A list of plays' titles
  * @param {object} allPlays Object with info about plays
+ * @param {object} allPhrases Object with info about phrases
  */
 async function fbCarousel(foundPlays, allPlays, allPhrases) {
-  console.log('\nfbCarousel');
-  console.log(`found plays: ${foundPlays}`);
-  console.log(typeof foundPlays);
-
   if (foundPlays.length < 1) {
     return false;
   }
 
   if (foundPlays.length === 1) {
     const { stickerId } = allPlays[foundPlays[0]];
-    console.log(`\n\nstikerId: ${stickerId}`);
-    console.log(typeof stickerId);
     const singleFbCard = fbCard(stickerId, allPlays, allPhrases);
     return singleFbCard;
   }
 
   const fbCardsCarousel = [];
-  console.log('for each play...');
   foundPlays.forEach((play) => {
-    console.log(`play - ${play}`);
-    console.log('object for play');
-    console.dir(allPlays[play]);
-    console.log(`image_url: ${process.env.imgBaseUrl}/stickers/${allPlays[play].stickerId}.png`);
-    console.log(`allPlays[play].url: ${allPlays[play].url}`);
-
     fbCardsCarousel.push({
       title: i18n.__('what_to_do'),
       image_url: `${process.env.imgBaseUrl}/stickers/${allPlays[play].stickerId}.png`,
@@ -105,8 +84,8 @@ async function fbCarousel(foundPlays, allPlays, allPhrases) {
           title: i18n.__('read'),
         },
         {
-          type: 'web_url',
-          url: allPlays[play].audio,
+          type: 'postback',
+          payload: `[### play ###]${play}`,
           title: i18n.__('listen'),
         },
       ],
@@ -132,19 +111,11 @@ async function fbCarousel(foundPlays, allPlays, allPhrases) {
  * https://core.telegram.org/bots/api#inlinekeyboardmarkup
  * @param {string} imageId # of a sticker ('1', '20' etc)
  * @param {object} allPlays Object with info about plays
+ * @param {object} allPhrases Object with info about phrases
  */
 function tStickerWButtons(imageId, allPlays, allPhrases) {
   const { play } = allPhrases[imageId];
-  const { url, audio } = allPlays[play];
-
-  console.log('\nSTICKER URL');
-  console.log(`${process.env.imgBaseUrl}/stickers/${imageId}.png`);
-  console.log('\nOUR PLAY');
-  console.dir(play);
-  console.log('\nPLAY URL');
-  console.log(url);
-  console.log('\nAUDIO URL');
-  console.log(audio);
+  const { url } = allPlays[play];
 
   return {
     method: 'sendSticker',
@@ -162,7 +133,7 @@ function tStickerWButtons(imageId, allPlays, allPhrases) {
             },
             {
               text: i18n.__('listen'),
-              url: audio,
+              callback_data: `[### play ###]${play}`,
             },
           ],
         ],
@@ -177,6 +148,7 @@ function tStickerWButtons(imageId, allPlays, allPhrases) {
  * https://core.telegram.org/bots/api#inlinekeyboardmarkup
  * @param {array} foundPlays A list of plays' titles
  * @param {object} allPlays Object with info about plays
+ * @param {object} allPhrases Object with info about phrases
  */
 async function tStickersArray(foundPlays, allPlays, allPhrases) {
   if (foundPlays.length < 1) {
@@ -207,7 +179,7 @@ async function tStickersArray(foundPlays, allPlays, allPhrases) {
               },
               {
                 text: i18n.__('listen'),
-                url: allPlays[play].audio,
+                callback_data: `[### play ###]${play}`,
               },
             ],
           ],
@@ -223,12 +195,16 @@ async function tStickersArray(foundPlays, allPlays, allPhrases) {
  * @param {object} session Object to interact with BF platform
  * @param {string} imageId # of a sticker ('1', '20' etc)
  * @param {object} allPlays Object with info about plays
+ * @param {object} allPhrases Object with info about phrases
  */
 function getCard(session, imageId, allPlays = plays, allPhrases = phrases) {
   console.log('\ngetCard');
   // console.dir(allPlays);
   const fbMessage = fbCard(imageId, allPlays, allPhrases);
   const tMessage = tStickerWButtons(imageId, allPlays, allPhrases);
+
+  console.log(tMessage);
+  console.dir(tMessage);
 
   const msg = new builder.Message(session).sourceEvent({
     facebook: fbMessage,
@@ -242,6 +218,7 @@ function getCard(session, imageId, allPlays = plays, allPhrases = phrases) {
  * @param {object} session Object to interact with BF platform
  * @param {array} foundPlays A list of plays' titles
  * @param {object} allPlays Object with info about plays
+ * @param {object} allPhrases Object with info about phrases
  */
 async function getCarousel(session, foundPlays, allPlays = plays, allPhrases = phrases) {
   const fbCardsCarousel = await fbCarousel(foundPlays, allPlays, allPhrases);
@@ -254,4 +231,59 @@ async function getCarousel(session, foundPlays, allPlays = plays, allPhrases = p
   return msg;
 }
 
-module.exports = { getCard, getCarousel };
+/**
+ * Returns a message used to send an mp3 with the play needed to Telegram
+ * @param {object} session Object to interact with BF platform
+ * @param {string} play Name of the play
+ */
+async function tAudio(play, allPlays) {
+  const { audio } = allPlays[play];
+
+  return {
+    method: 'sendAudio',
+    parameters: {
+      audio: {
+        url: audio,
+      },
+      caption: play,
+    },
+  };
+}
+
+/**
+ * Returns a message used to send an mp3 with the play needed to Facebook
+ * @param {object} session Object to interact with BF platform
+ * @param {string} play Name of the play
+ */
+async function fbAudio(play, allPlays) {
+  const { audio } = allPlays[play];
+
+  return {
+    attachment: {
+      type: 'audio',
+      payload: {
+        url: audio,
+        is_reusable: true,
+      },
+    },
+  };
+}
+
+/**
+ * Returns a platform-specific message to send audio
+ * @param {object} session Object to interact with BF platform
+ * @param {string} play Name of the play
+ * @param {object} allPlays Object with info about plays
+ */
+async function getAudioMsg(session, play, allPlays = plays) {
+  const tAudioMessage = await tAudio(play, allPlays);
+  const fbAudioMessage = await fbAudio(play, allPlays);
+
+  const msg = new builder.Message(session).sourceEvent({
+    facebook: fbAudioMessage,
+    telegram: await tAudioMessage,
+  });
+  return msg;
+}
+
+module.exports = { getCard, getCarousel, getAudioMsg };

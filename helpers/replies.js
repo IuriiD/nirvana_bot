@@ -1,12 +1,10 @@
 /**
- *
  * Functions to reply with a single sticker with buttons or
  * with a carousel of such blocks + helpers
- *
  * */
 
 const i18n = require('i18n');
-const { getCard, getCarousel } = require('./templates');
+const { getCard, getCarousel, getAudioMsg } = require('./templates');
 
 function parseAnswer(botReply) {
   const output = { text: false, sticker: false };
@@ -61,4 +59,18 @@ async function presentPlays(session, esFoundPlays) {
   session.send(carousel);
 }
 
-module.exports = { sendAnswer, presentPlays };
+/**
+ * Sends an mp3 with the play needed to Telegram
+ * @param {object} session Object to interact with BF platform
+ * @param {string} play Name of the play
+ */
+async function sendAudio(session, play) {
+  console.log('\nsendAudio()');
+  console.log(`play - ${play}`);
+  const audioMsg = await getAudioMsg(session, play);
+  console.log('audioMsg');
+  console.dir(audioMsg.data);
+  session.send(audioMsg);
+}
+
+module.exports = { sendAnswer, presentPlays, sendAudio };
