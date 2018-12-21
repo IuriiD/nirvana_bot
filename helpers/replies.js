@@ -4,7 +4,7 @@
  * */
 
 const i18n = require('i18n');
-const { getCard, getCarousel, getAudioMsg } = require('./templates');
+const templates = require('./templates');
 
 function parseAnswer(botReply) {
   const output = { text: false, sticker: false };
@@ -33,12 +33,12 @@ function parseAnswer(botReply) {
  * @param {string} answer Reply from npl.js,
  * "[Optional text][{stickers}one|or|several|sticker|Ids]"
  */
-function sendAnswer(session, answer) {
+async function sendAnswer(session, answer) {
   const { text, sticker } = parseAnswer(answer);
   if (text) session.send(text);
   if (sticker) {
     console.log('\nPREPARE A STICKER');
-    const ourCard = getCard(session, sticker);
+    const ourCard = await templates.getCard(session, sticker);
     session.send(ourCard);
   }
 }
@@ -55,7 +55,7 @@ async function presentPlays(session, esFoundPlays) {
   } else {
     session.send(i18n.__('relevant_play'));
   }
-  const carousel = await getCarousel(session, esFoundPlays);
+  const carousel = await templates.getCarousel(session, esFoundPlays);
   session.send(carousel);
 }
 
@@ -67,7 +67,7 @@ async function presentPlays(session, esFoundPlays) {
 async function sendAudio(session, play) {
   console.log('\nsendAudio()');
   console.log(`play - ${play}`);
-  const audioMsg = await getAudioMsg(session, play);
+  const audioMsg = await templates.getAudioMsg(session, play);
   console.log('audioMsg');
   console.dir(audioMsg.data);
   session.send(audioMsg);

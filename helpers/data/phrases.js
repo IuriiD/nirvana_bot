@@ -857,7 +857,7 @@ module.exports = {
   },
   143: {
     phrase: 'Кожа як у бога',
-    play: 'Васіліса Єгоровна і мужичкі',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '36',
     telegramStickerId: 'CAADAgADYQAD09KeCi4eKz8OuqWFAg',
   },
@@ -894,7 +894,7 @@ module.exports = {
   },
   149: {
     phrase: 'Руб єсть?',
-    play: 'Васіліса Єгоровна і мужичкі',
+    play: 'Васiлiса Єгоровна i мужичкi',
     phraseN: '99',
     telegramStickerId: 'CAADAgADZQAD09KeCmfARqGiAyZ4Ag',
   },
@@ -917,7 +917,6 @@ module.exports = {
     telegramStickerId: 'CAADAgADbgAD09KeCmzHccGwfg9-Ag',
   },
   // Below are the stickers for the plays themselves
-  /*
   153: {
     phrase: '',
     play: 'Цiкaвi дослiди',
@@ -1073,5 +1072,5 @@ module.exports = {
     play: 'Іржик',
     phraseN: '',
     telegramStickerId: '178',
-  }, */
+  },
 };

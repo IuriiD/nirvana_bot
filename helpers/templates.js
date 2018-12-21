@@ -18,11 +18,17 @@ const plays = require('./data/plays');
  * @param {object} allPlays Object with info about plays
  * @param {object} allPhrases Object with info about phrases
  */
-function fbCard(imageId, allPlays, allPhrases) {
+function fbCard(imageId, allPlays = plays, allPhrases = phrases) {
+  console.log('fbCard()');
   const { play } = allPhrases[imageId];
+  console.log(`play - ${play}`);
+  console.log(`allPlays - ${allPlays}`);
+  console.log('allPlays[play]');
+  console.log(JSON.stringify(allPlays[play], null, 2));
   const { url } = allPlays[play];
+  console.log(`url - ${url}`);
 
-  return {
+  const message = {
     attachment: {
       type: 'template',
       payload: {
@@ -51,6 +57,9 @@ function fbCard(imageId, allPlays, allPhrases) {
       },
     },
   };
+  console.log('fbCard()');
+  console.log(JSON.stringify(message, null, 2));
+  return message;
 }
 
 /**
@@ -60,7 +69,7 @@ function fbCard(imageId, allPlays, allPhrases) {
  * @param {object} allPlays Object with info about plays
  * @param {object} allPhrases Object with info about phrases
  */
-async function fbCarousel(foundPlays, allPlays, allPhrases) {
+async function fbCarousel(foundPlays, allPlays = plays, allPhrases = phrases) {
   if (foundPlays.length < 1) {
     return false;
   }
@@ -113,11 +122,11 @@ async function fbCarousel(foundPlays, allPlays, allPhrases) {
  * @param {object} allPlays Object with info about plays
  * @param {object} allPhrases Object with info about phrases
  */
-function tStickerWButtons(imageId, allPlays, allPhrases) {
+async function tStickerWButtons(imageId, allPlays = plays, allPhrases = phrases) {
   const { play } = allPhrases[imageId];
   const { url } = allPlays[play];
 
-  return {
+  const message = {
     method: 'sendSticker',
     parameters: {
       sticker: {
@@ -140,6 +149,9 @@ function tStickerWButtons(imageId, allPlays, allPhrases) {
       },
     },
   };
+  console.log('tStickerWButtons()');
+  console.log(JSON.stringify(message, null, 2));
+  return message;
 }
 
 /**
@@ -150,7 +162,7 @@ function tStickerWButtons(imageId, allPlays, allPhrases) {
  * @param {object} allPlays Object with info about plays
  * @param {object} allPhrases Object with info about phrases
  */
-async function tStickersArray(foundPlays, allPlays, allPhrases) {
+async function tStickersArray(foundPlays, allPlays = plays, allPhrases = phrases) {
   if (foundPlays.length < 1) {
     return false;
   }
@@ -197,18 +209,19 @@ async function tStickersArray(foundPlays, allPlays, allPhrases) {
  * @param {object} allPlays Object with info about plays
  * @param {object} allPhrases Object with info about phrases
  */
-function getCard(session, imageId, allPlays = plays, allPhrases = phrases) {
-  console.log('\ngetCard');
-  // console.dir(allPlays);
-  const fbMessage = fbCard(imageId, allPlays, allPhrases);
-  const tMessage = tStickerWButtons(imageId, allPlays, allPhrases);
-
-  console.log(tMessage);
-  console.dir(tMessage);
-
+async function getCard(session, imageId, allPlays = plays, allPhrases = phrases) {
+  const { channelId } = session.message.address;
+  let tMessage = {};
+  let fbMessage = {};
+  if (channelId === 'telegram') {
+    tMessage = await tStickerWButtons(imageId, allPlays, allPhrases);
+  }
+  if (channelId === 'facebook') {
+    fbMessage = await fbCard(imageId, allPlays, allPhrases);
+  }
   const msg = new builder.Message(session).sourceEvent({
-    facebook: fbMessage,
     telegram: tMessage,
+    facebook: fbMessage,
   });
   return msg;
 }
@@ -221,9 +234,15 @@ function getCard(session, imageId, allPlays = plays, allPhrases = phrases) {
  * @param {object} allPhrases Object with info about phrases
  */
 async function getCarousel(session, foundPlays, allPlays = plays, allPhrases = phrases) {
-  const fbCardsCarousel = await fbCarousel(foundPlays, allPlays, allPhrases);
-  const tCardsCarousel = await tStickersArray(foundPlays, allPlays, allPhrases);
-
+  const { channelId } = session.message.address;
+  let fbCardsCarousel = {};
+  let tCardsCarousel = {};
+  if (channelId === 'telegram') {
+    tCardsCarousel = await fbCarousel(foundPlays, allPlays, allPhrases);
+  }
+  if (channelId === 'facebook') {
+    fbCardsCarousel = await fbCarousel(foundPlays, allPlays, allPhrases);
+  }
   const msg = new builder.Message(session).sourceEvent({
     facebook: fbCardsCarousel,
     telegram: tCardsCarousel,
@@ -243,9 +262,9 @@ async function tAudio(play, allPlays) {
     method: 'sendAudio',
     parameters: {
       audio: {
-        url: audio,
+        url: `${process.env.imgBaseUrl}/mp3/${audio}`,
       },
-      caption: play,
+      // caption: play,
     },
   };
 }
@@ -262,9 +281,9 @@ async function fbAudio(play, allPlays) {
     attachment: {
       type: 'audio',
       payload: {
-        url: audio,
-        is_reusable: true,
+        url: `${process.env.imgBaseUrl}/mp3/${audio}`,
       },
+      is_reusable: true,
     },
   };
 }
@@ -276,12 +295,18 @@ async function fbAudio(play, allPlays) {
  * @param {object} allPlays Object with info about plays
  */
 async function getAudioMsg(session, play, allPlays = plays) {
-  const tAudioMessage = await tAudio(play, allPlays);
-  const fbAudioMessage = await fbAudio(play, allPlays);
-
+  const { channelId } = session.message.address;
+  let tAudioMessage = {};
+  const fbAudioMessage = {};
+  if (channelId === 'telegram') {
+    tAudioMessage = await tAudio(play, allPlays);
+  }
+  if (channelId === 'facebook') {
+    tAudioMessage = await fbAudio(play, allPlays);
+  }
   const msg = new builder.Message(session).sourceEvent({
     facebook: fbAudioMessage,
-    telegram: await tAudioMessage,
+    telegram: tAudioMessage,
   });
   return msg;
 }

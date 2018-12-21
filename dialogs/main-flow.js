@@ -1,5 +1,5 @@
 const i18n = require('i18n');
-const { sendAnswer, presentPlays, sendAudio } = require('../helpers/replies');
+const replies = require('../helpers/replies');
 const { es } = require('../helpers/es');
 
 async function mainFlow(session, recognizer) {
@@ -12,7 +12,7 @@ async function mainFlow(session, recognizer) {
     if (text.includes('[### play ###]')) {
       console.log('\nSending AAUDIO');
       const play = text.split('[### play ###]')[1];
-      await sendAudio(session, play);
+      await replies.sendAudio(session, play);
     } else {
       recognizer.recognize(session, async (err, data) => {
         console.log('\n\n########### Recognizer.recognize - data:');
@@ -20,7 +20,7 @@ async function mainFlow(session, recognizer) {
 
         if (err) {
           console.log(`Error: ${err}`);
-          sendAnswer(session, i18n.__('error_happened'));
+          await replies.sendAnswer(session, i18n.__('error_happened'));
         }
 
         if (!data.answer) {
@@ -32,21 +32,21 @@ async function mainFlow(session, recognizer) {
           console.log(`\nesResult: ${esResult}`);
           if (esResult) {
             console.log('ES found something, sending...');
-            await presentPlays(session, esResult);
+            await replies.presentPlays(session, esResult);
           } else {
             // If nothing found - Default fallback answer
             console.log('ES failed to find anything, default fallback response');
-            sendAnswer(session, i18n.__('dont_understand'));
+            await replies.sendAnswer(session, i18n.__('dont_understand'));
           }
         } else {
           console.log('\ndata.answer:'); // temp
           console.dir(data.answer); // temp
-          sendAnswer(session, data.answer);
+          await replies.sendAnswer(session, data.answer);
         }
       });
     }
   } else if (session.message.attachments && session.message.attachments.length > 0) {
-    sendAnswer(session, i18n.__('dont_understand'));
+    await replies.sendAnswer(session, i18n.__('dont_understand'));
   }
 }
 

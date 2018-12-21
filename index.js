@@ -39,6 +39,7 @@ recognizer.load(`./nlp/${modelName}`);
 const bot = new builder.UniversalBot(connector, (session) => {
   mainFlow(session, recognizer);
 });
+
 bot.set('storage', new builder.MemoryBotStorage());
 
 // First run dialog
