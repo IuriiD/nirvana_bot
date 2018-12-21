@@ -1,13 +1,11 @@
-const { locale } = require('../config/config');
-
-const l10n = require(`../locales/${locale}`);
-const { sendAnswer } = require('../helpers/sendAnswer');
+const i18n = require('i18n');
+const { sendAnswer } = require('../helpers/replies');
 
 module.exports = (bot) => {
   bot
     .dialog('firstRun', (session) => {
       session.userData.firstRun = true;
-      sendAnswer(session, l10n.greetings);
+      sendAnswer(session, i18n.__('greetings', process.env.botName));
       session.endDialog();
     })
     .triggerAction({

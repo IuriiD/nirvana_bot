@@ -1,5 +1,6 @@
 // Built on the base of: https://github.com/axa-group/nlp.js/blob/master/examples/console-bot/train-nlp.js
 
+require('dotenv').config();
 const { NlpManager } = require('node-nlp');
 
 const manager = new NlpManager({ languages: ['ru'] });

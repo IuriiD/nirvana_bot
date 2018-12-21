@@ -917,6 +917,7 @@ module.exports = {
     telegramStickerId: 'CAADAgADbgAD09KeCmzHccGwfg9-Ag',
   },
   // Below are the stickers for the plays themselves
+  /*
   153: {
     phrase: '',
     play: 'Цiкaвi дослiди',
@@ -1039,7 +1040,7 @@ module.exports = {
   },
   173: {
     phrase: '',
-    play: 'Рух життя, або Динамо',
+    play: 'Рух життя, або Дінамо',
     phraseN: '',
     telegramStickerId: '173',
   },
@@ -1072,5 +1073,5 @@ module.exports = {
     play: 'Іржик',
     phraseN: '',
     telegramStickerId: '178',
-  },
+  }, */
 };

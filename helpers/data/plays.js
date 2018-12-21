@@ -1,10 +1,10 @@
 module.exports = {
-  'Цiкaвi дослiди': {
+  'Цікаві досліди': {
     url: 'http://doslidy.org.ua/?page_id=41',
     stickerId: '153',
     audio: 'https://s3.amazonaws.com/podervjanskybot/mp3/doslidy.mp3',
   },
-  'Васiлiса Єгоровна i мужичкi': {
+  'Васіліса Єгоровна і мужичкі': {
     url: 'http://doslidy.org.ua/?page_id=88',
     stickerId: '154',
     audio: 'https://s3.amazonaws.com/podervjanskybot/mp3/vasilisa.mp3',
@@ -99,7 +99,7 @@ module.exports = {
     stickerId: '172',
     audio: 'https://s3.amazonaws.com/podervjanskybot/mp3/joko_i_samuraji.mp3',
   },
-  'Рух життя, або Динамо': {
+  'Рух життя, або Дінамо': {
     url: 'http://doslidy.org.ua/?page_id=80',
     stickerId: '173',
     audio: 'https://s3.amazonaws.com/podervjanskybot/mp3/dynamo.mp3',

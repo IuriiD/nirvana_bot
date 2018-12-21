@@ -10,6 +10,9 @@ var client = new elasticsearch.Client({
 });
 */
 
+const indexName = 'plays';
+const typeName = 'play';
+
 // Query
 function search(index, type, query) {
   return eClient.search({
@@ -19,16 +22,13 @@ function search(index, type, query) {
       query: {
         multi_match: {
           query,
-          fuzziness: 1,
+          fuzziness: 1, // 1
           fields: ['title', 'text'],
         },
       },
     },
   });
 }
-
-const indexName = 'plays';
-const typeName = 'play';
 
 async function es(searchQuery) {
   const response = await search(indexName, typeName, searchQuery);
@@ -37,12 +37,12 @@ async function es(searchQuery) {
   console.log("L.Podervjansky's plays with the search query:");
   console.log(relevantPlays);
   if (relevantPlays.length === 0) return false;
-  console.log('HERE');
   return relevantPlays;
 }
 
 module.exports = { es };
 
+// Stuff for creating index
 /*
 const {
   doslidy,
