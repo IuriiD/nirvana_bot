@@ -124,21 +124,23 @@ async function fbCarousel(foundPlays, allPlays = plays, allPhrases = phrases) {
  */
 async function tStickerWButtons(imageId, allPlays = plays, allPhrases = phrases) {
   const { play } = allPhrases[imageId];
-  const { url } = allPlays[play];
+  const { url: playUrl } = allPlays[play];
+  const { telegramStickerId } = allPhrases[imageId];
 
   const message = {
     method: 'sendSticker',
     parameters: {
       sticker: {
-        url: `${process.env.imgBaseUrl}/stickers/${imageId}.png`,
-        mediaType: 'image/png',
+        // url: `${process.env.imgBaseUrl}/stickers/${imageId}.png`,
+        // mediaType: 'image/png',
+        file_id: telegramStickerId,
       },
       reply_markup: {
         inline_keyboard: [
           [
             {
               text: i18n.__('read'),
-              url,
+              url: playUrl,
             },
             {
               text: i18n.__('listen'),
@@ -175,12 +177,15 @@ async function tStickersArray(foundPlays, allPlays = plays, allPhrases = phrases
 
   const tCardsCarousel = [];
   foundPlays.forEach((play) => {
+    const { stickerId } = allPlays[play];
+    const { telegramStickerId } = allPhrases[stickerId];
     tCardsCarousel.push({
       method: 'sendSticker',
       parameters: {
         sticker: {
-          url: `${process.env.imgBaseUrl}/stickers/${allPlays[play].stickerId}.png`,
-          mediaType: 'image/png',
+          // url: `${process.env.imgBaseUrl}/stickers/${allPlays[play].stickerId}.png`,
+          // mediaType: 'image/png',
+          file_id: telegramStickerId,
         },
         reply_markup: {
           inline_keyboard: [
@@ -238,7 +243,7 @@ async function getCarousel(session, foundPlays, allPlays = plays, allPhrases = p
   let fbCardsCarousel = {};
   let tCardsCarousel = {};
   if (channelId === 'telegram') {
-    tCardsCarousel = await fbCarousel(foundPlays, allPlays, allPhrases);
+    tCardsCarousel = await tStickersArray(foundPlays, allPlays, allPhrases);
   }
   if (channelId === 'facebook') {
     fbCardsCarousel = await fbCarousel(foundPlays, allPlays, allPhrases);
