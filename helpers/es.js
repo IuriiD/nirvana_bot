@@ -71,7 +71,7 @@ const {
   diana,
   mnozhennyaVUmi,
   irzhyk,
-} = require('./texts');
+} = require('./data/texts');
 */
 
 /*

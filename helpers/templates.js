@@ -250,18 +250,23 @@ function tStickersArray(foundPlays, stickersObj) {
 async function getCard(session, imageId, stickersObj) {
   try {
     const { channelId } = session.message.address;
+
     let tMessage = {};
     let fbMessage = {};
+
     if (channelId === 'telegram') {
       tMessage = tStickerWButtons(imageId, stickersObj);
     }
+
     if (channelId === 'facebook') {
       fbMessage = fbCard(imageId, stickersObj);
     }
+
     const msg = new builder.Message(session).sourceEvent({
       telegram: tMessage,
       facebook: fbMessage,
     });
+
     return msg;
   } catch (error) {
     console.log(`\n⚠ getCard():\n${error}`);
@@ -278,18 +283,23 @@ async function getCard(session, imageId, stickersObj) {
 async function getCarousel(session, foundPlays, stickersObj) {
   try {
     const { channelId } = session.message.address;
+
     let fbCardsCarousel = {};
     let tCardsCarousel = {};
+
     if (channelId === 'telegram') {
       tCardsCarousel = tStickersArray(foundPlays, stickersObj);
     }
+
     if (channelId === 'facebook') {
       fbCardsCarousel = fbCarousel(foundPlays, stickersObj);
     }
+
     const msg = new builder.Message(session).sourceEvent({
       facebook: fbCardsCarousel,
       telegram: tCardsCarousel,
     });
+
     return msg;
   } catch (error) {
     console.log(`\n⚠ getCarousel():\n${error}`);
