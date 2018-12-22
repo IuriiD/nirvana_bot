@@ -33,12 +33,11 @@ function parseAnswer(botReply) {
  * @param {string} answer Reply from npl.js,
  * "[Optional text][{stickers}one|or|several|sticker|Ids]"
  */
-async function sendAnswer(session, answer) {
+function sendAnswer(session, answer) {
   const { text, sticker } = parseAnswer(answer);
   if (text) session.send(text);
   if (sticker) {
-    console.log('\nPREPARE A STICKER');
-    const ourCard = await templates.getCard(session, sticker);
+    const ourCard = templates.getCard(session, sticker);
     session.send(ourCard);
   }
 }
@@ -49,13 +48,13 @@ async function sendAnswer(session, answer) {
  * @param {object} session Object to interact with BF platform
  * @param {array} esFoundPlays A list of plays' titles
  */
-async function presentPlays(session, esFoundPlays) {
+function presentPlays(session, esFoundPlays) {
   if (esFoundPlays.length > 1) {
     session.send(i18n.__('relevant_plays', esFoundPlays.length));
   } else {
     session.send(i18n.__('relevant_play'));
   }
-  const carousel = await templates.getCarousel(session, esFoundPlays);
+  const carousel = templates.getCarousel(session, esFoundPlays);
   session.send(carousel);
 }
 
@@ -64,12 +63,8 @@ async function presentPlays(session, esFoundPlays) {
  * @param {object} session Object to interact with BF platform
  * @param {string} play Name of the play
  */
-async function sendAudio(session, play) {
-  console.log('\nsendAudio()');
-  console.log(`play - ${play}`);
-  const audioMsg = await templates.getAudioMsg(session, play);
-  console.log('audioMsg');
-  console.dir(audioMsg.data);
+function sendAudio(session, play) {
+  const audioMsg = templates.getAudioMsg(session, play);
   session.send(audioMsg);
 }
 
