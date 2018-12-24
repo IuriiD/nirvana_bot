@@ -332,7 +332,7 @@ function tAudio(play, stickersObj) {
       method: 'sendAudio',
       parameters: {
         audio: {
-          url: `${process.env.imgBaseUrl}/mp3/${audio}`,
+          url: `${process.env.imgBaseUrl}/mp3/${encodeURIComponent(audio)}`,
         },
       },
     };
@@ -350,15 +350,20 @@ function tAudio(play, stickersObj) {
 function fbAudio(play, stickersObj) {
   try {
     const stickerId = getStickerIdByPlay(play, stickersObj);
+    console.log('fbAudio()');
+    console.log(`stickerId - ${stickerId}`);
     if (!stickerId) return false;
 
     const audio = stickersObj[stickerId].play.audio.fileName;
+    console.log(`audio - ${audio}`);
+    console.log(`audioUrl - ${`${process.env.imgBaseUrl}/mp3/${encodeURIComponent(audio)}`}`);
 
     return {
       attachment: {
         type: 'audio',
         payload: {
-          url: `${process.env.imgBaseUrl}/mp3/${audio}`,
+          // url: `${process.env.imgBaseUrl}/mp3/${encodeURIComponent(audio)}`,
+          attachment_id: '397085417793369',
         },
         is_reusable: true,
       },
@@ -378,21 +383,26 @@ function fbAudio(play, stickersObj) {
 function getAudioMsg(session, play, stickersObj) {
   try {
     const { channelId } = session.message.address;
+
     let tAudioMessage = {};
-    const fbAudioMessage = {};
+    let fbAudioMessage = {};
 
     if (channelId === 'telegram') {
       tAudioMessage = tAudio(play, stickersObj);
     }
 
     if (channelId === 'facebook') {
-      tAudioMessage = fbAudio(play, stickersObj);
+      console.log('fbAudio()');
+      fbAudioMessage = fbAudio(play, stickersObj);
+      console.log(JSON.stringify(fbAudioMessage, null, 2));
     }
 
     const msg = new builder.Message(session).sourceEvent({
       facebook: fbAudioMessage,
       telegram: tAudioMessage,
     });
+    console.log('');
+    console.dir(msg.data);
     return msg;
   } catch (error) {
     console.log(`\n⚠ getAudioMsg():\n${error}`);

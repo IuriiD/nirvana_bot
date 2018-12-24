@@ -87,8 +87,11 @@ function presentPlays(session, esFoundPlays, stickersObj) {
  * @param {string} play Name of the play
  */
 function sendAudio(session, play, stickersObj) {
+  console.log('\nsendAudio()');
   try {
     const audioMsg = templates.getAudioMsg(session, play, stickersObj);
+    console.log('audioMsg');
+    console.dir(audioMsg.data);
     session.send(audioMsg);
     return true;
   } catch (error) {

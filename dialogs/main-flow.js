@@ -1,7 +1,9 @@
 const i18n = require('i18n');
 const replies = require('../helpers/replies');
-const { es } = require('../helpers/es');
+// const { es } = require('../helpers/es');
+const search = require('../helpers/search');
 const stickersObj = require('../helpers/data/stickers');
+const texts = require('../helpers/data/texts');
 
 async function mainFlow(session, recognizer) {
   try {
@@ -11,6 +13,8 @@ async function mainFlow(session, recognizer) {
       const { text } = session.message;
       if (text.includes('[### play ###]')) {
         const play = text.split('[### play ###]')[1];
+        console.log('\nLets play audio');
+        console.log(play);
         replies.sendAudio(session, play, stickersObj);
       } else {
         recognizer.recognize(session, async (err, data) => {
@@ -20,16 +24,15 @@ async function mainFlow(session, recognizer) {
           }
 
           if (!data.answer) {
-            // Try to search users's input in texts using ElasticSearch
-            const esResult = await es(data.utterance);
-            if (esResult) {
-              replies.presentPlays(session, esResult, stickersObj);
+            // Try to search users's input in texts
+            const relevantPlays = search(data.utterance, texts);
+            if (relevantPlays) {
+              replies.presentPlays(session, relevantPlays, stickersObj);
             } else {
               // If nothing found - Default fallback answer
               replies.sendAnswer(session, i18n.__('dont_understand'), stickersObj);
             }
           } else {
-            console.log('\nMAIN FLOW');
             replies.sendAnswer(session, data.answer, stickersObj);
           }
         });
@@ -37,6 +40,7 @@ async function mainFlow(session, recognizer) {
     } else if (session.message.attachments && session.message.attachments.length > 0) {
       replies.sendAnswer(session, i18n.__('dont_understand'), stickersObj);
     }
+    return;
   } catch (error) {
     console.log(`\n⚠ tStickerWButtons():\n${error}`);
     return false;

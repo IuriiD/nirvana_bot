@@ -10,6 +10,7 @@ module.exports = {
       audio: {
         fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
+        fbFileId: '267044980636073',
       },
     },
     phraseN: '101',
@@ -28,6 +29,7 @@ module.exports = {
       audio: {
         fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
+        fbFileId: '267044980636073',
       },
     },
     phraseN: '23',
@@ -46,6 +48,7 @@ module.exports = {
       audio: {
         fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
+        fbFileId: '267044980636073',
       },
     },
     phraseN: '53',
@@ -64,6 +67,7 @@ module.exports = {
       audio: {
         fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
+        fbFileId: '267044980636073',
       },
     },
     phraseN: '85',
@@ -82,6 +86,7 @@ module.exports = {
       audio: {
         fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
+        fbFileId: '267044980636073',
       },
     },
     phraseN: '106',
@@ -100,6 +105,7 @@ module.exports = {
       audio: {
         fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
+        fbFileId: '267044980636073',
       },
     },
     phraseN: '109',
@@ -118,6 +124,7 @@ module.exports = {
       audio: {
         fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
+        fbFileId: '267044980636073',
       },
     },
     phraseN: '124',
@@ -136,6 +143,7 @@ module.exports = {
       audio: {
         fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
+        fbFileId: '267044980636073',
       },
     },
     phraseN: '139',
@@ -154,6 +162,7 @@ module.exports = {
       audio: {
         fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
+        fbFileId: '267044980636073',
       },
     },
     phraseN: '168',
@@ -172,6 +181,7 @@ module.exports = {
       audio: {
         fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
+        fbFileId: '267044980636073',
       },
     },
     phraseN: '222',
@@ -190,6 +200,7 @@ module.exports = {
       audio: {
         fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
         telegramFileId: '',
+        fbFileId: '212707086299422',
       },
     },
     phraseN: '27',
@@ -208,6 +219,7 @@ module.exports = {
       audio: {
         fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
         telegramFileId: '',
+        fbFileId: '212707086299422',
       },
     },
     phraseN: '30',
@@ -226,6 +238,7 @@ module.exports = {
       audio: {
         fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
         telegramFileId: '',
+        fbFileId: '212707086299422',
       },
     },
     phraseN: '72',
@@ -244,6 +257,7 @@ module.exports = {
       audio: {
         fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
         telegramFileId: '',
+        fbFileId: '212707086299422',
       },
     },
     phraseN: '74',
@@ -262,6 +276,7 @@ module.exports = {
       audio: {
         fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
         telegramFileId: '',
+        fbFileId: '212707086299422',
       },
     },
     phraseN: '77',
@@ -280,6 +295,7 @@ module.exports = {
       audio: {
         fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
         telegramFileId: '',
+        fbFileId: '212707086299422',
       },
     },
     phraseN: '89',
@@ -298,6 +314,7 @@ module.exports = {
       audio: {
         fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
         telegramFileId: '',
+        fbFileId: '212707086299422',
       },
     },
     phraseN: '122',
@@ -316,6 +333,7 @@ module.exports = {
       audio: {
         fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
         telegramFileId: '',
+        fbFileId: '212707086299422',
       },
     },
     phraseN: '152',
@@ -334,6 +352,7 @@ module.exports = {
       audio: {
         fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
         telegramFileId: '',
+        fbFileId: '212707086299422',
       },
     },
     phraseN: '154',
@@ -352,6 +371,7 @@ module.exports = {
       audio: {
         fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
         telegramFileId: '',
+        fbFileId: '212707086299422',
       },
     },
     phraseN: '192',
@@ -460,6 +480,7 @@ module.exports = {
       audio: {
         fileName: 'Герой нашого часу. Повість перша.mp3',
         telegramFileId: '',
+        fbFileId: '608850812869052',
       },
     },
     phraseN: '30',
@@ -478,6 +499,7 @@ module.exports = {
       audio: {
         fileName: 'Герой нашого часу. Повість перша.mp3',
         telegramFileId: '',
+        fbFileId: '608850812869052',
       },
     },
     phraseN: '35',
@@ -496,6 +518,7 @@ module.exports = {
       audio: {
         fileName: 'Герой нашого часу. Повість перша.mp3',
         telegramFileId: '',
+        fbFileId: '608850812869052',
       },
     },
     phraseN: '41',
@@ -514,6 +537,7 @@ module.exports = {
       audio: {
         fileName: 'Герой нашого часу. Повість перша.mp3',
         telegramFileId: '',
+        fbFileId: '608850812869052',
       },
     },
     phraseN: '85',
@@ -532,6 +556,7 @@ module.exports = {
       audio: {
         fileName: 'Герой нашого часу. Повість перша.mp3',
         telegramFileId: '',
+        fbFileId: '608850812869052',
       },
     },
     phraseN: '102',
@@ -550,6 +575,7 @@ module.exports = {
       audio: {
         fileName: 'Герой нашого часу. Повість перша.mp3',
         telegramFileId: '',
+        fbFileId: '608850812869052',
       },
     },
     phraseN: '105',
@@ -568,6 +594,7 @@ module.exports = {
       audio: {
         fileName: 'Герой нашого часу. Повість перша.mp3',
         telegramFileId: '',
+        fbFileId: '608850812869052',
       },
     },
     phraseN: '108',
@@ -586,6 +613,7 @@ module.exports = {
       audio: {
         fileName: 'Герой нашого часу. Повість перша.mp3',
         telegramFileId: '',
+        fbFileId: '608850812869052',
       },
     },
     phraseN: '122',
@@ -604,6 +632,7 @@ module.exports = {
       audio: {
         fileName: 'Герой нашого часу. Повість перша.mp3',
         telegramFileId: '',
+        fbFileId: '608850812869052',
       },
     },
     phraseN: '153',
@@ -622,6 +651,7 @@ module.exports = {
       audio: {
         fileName: 'Герой нашого часу. Повість перша.mp3',
         telegramFileId: '',
+        fbFileId: '608850812869052',
       },
     },
     phraseN: '161',
@@ -640,6 +670,7 @@ module.exports = {
       audio: {
         fileName: 'Данко.mp3',
         telegramFileId: '',
+        fbFileId: '385215772249386',
       },
     },
     phraseN: '28',
@@ -658,6 +689,7 @@ module.exports = {
       audio: {
         fileName: 'До хуя масла.mp3',
         telegramFileId: '',
+        fbFileId: '469920323412540',
       },
     },
     phraseN: '7',
@@ -676,6 +708,7 @@ module.exports = {
       audio: {
         fileName: 'До хуя масла.mp3',
         telegramFileId: '',
+        fbFileId: '469920323412540',
       },
     },
     phraseN: '20',
@@ -694,6 +727,7 @@ module.exports = {
       audio: {
         fileName: 'До хуя масла.mp3',
         telegramFileId: '',
+        fbFileId: '469920323412540',
       },
     },
     phraseN: '60',
@@ -1054,6 +1088,7 @@ module.exports = {
       audio: {
         fileName: 'Піздєц.mp3',
         telegramFileId: '',
+        fbFileId: '1969769179759333',
       },
     },
     phraseN: '39',
@@ -1072,6 +1107,7 @@ module.exports = {
       audio: {
         fileName: 'Піздєц.mp3',
         telegramFileId: '',
+        fbFileId: '1969769179759333',
       },
     },
     phraseN: '75',
@@ -1090,6 +1126,7 @@ module.exports = {
       audio: {
         fileName: 'Піздєц.mp3',
         telegramFileId: '',
+        fbFileId: '1969769179759333',
       },
     },
     phraseN: '81',
@@ -1126,6 +1163,7 @@ module.exports = {
       audio: {
         fileName: 'Піздєц.mp3',
         telegramFileId: '',
+        fbFileId: '1969769179759333',
       },
     },
     phraseN: '164',
@@ -1144,6 +1182,7 @@ module.exports = {
       audio: {
         fileName: 'Піздєц.mp3',
         telegramFileId: '',
+        fbFileId: '1969769179759333',
       },
     },
     phraseN: '186',
@@ -1162,6 +1201,7 @@ module.exports = {
       audio: {
         fileName: 'Піздєц.mp3',
         telegramFileId: '',
+        fbFileId: '1969769179759333',
       },
     },
     phraseN: '231',
@@ -1180,6 +1220,7 @@ module.exports = {
       audio: {
         fileName: 'Піздєц.mp3',
         telegramFileId: '',
+        fbFileId: '1969769179759333',
       },
     },
     phraseN: '375',
@@ -1198,6 +1239,7 @@ module.exports = {
       audio: {
         fileName: 'Хвороба Івасика.mp3',
         telegramFileId: '',
+        fbFileId: '575498379577550',
       },
     },
     phraseN: '36',
@@ -1216,6 +1258,7 @@ module.exports = {
       audio: {
         fileName: 'Хвороба Івасика.mp3',
         telegramFileId: '',
+        fbFileId: '575498379577550',
       },
     },
     phraseN: '44',
@@ -1234,6 +1277,7 @@ module.exports = {
       audio: {
         fileName: 'Хвороба Івасика.mp3',
         telegramFileId: '',
+        fbFileId: '575498379577550',
       },
     },
     phraseN: '46',
@@ -1252,6 +1296,7 @@ module.exports = {
       audio: {
         fileName: 'Хвороба Івасика.mp3',
         telegramFileId: '',
+        fbFileId: '575498379577550',
       },
     },
     phraseN: '68',
@@ -1270,6 +1315,7 @@ module.exports = {
       audio: {
         fileName: 'Цікаві досліди.mp3',
         telegramFileId: '',
+        fbFileId: '589221521526834',
       },
     },
     phraseN: '32',
@@ -1288,6 +1334,7 @@ module.exports = {
       audio: {
         fileName: 'Цікаві досліди.mp3',
         telegramFileId: '',
+        fbFileId: '589221521526834',
       },
     },
     phraseN: '41',
@@ -1324,6 +1371,7 @@ module.exports = {
       audio: {
         fileName: 'Цікаві досліди.mp3',
         telegramFileId: '',
+        fbFileId: '589221521526834',
       },
     },
     phraseN: '58',
@@ -1342,6 +1390,7 @@ module.exports = {
       audio: {
         fileName: 'Цікаві досліди.mp3',
         telegramFileId: '',
+        fbFileId: '589221521526834',
       },
     },
     phraseN: '73',
@@ -1360,6 +1409,7 @@ module.exports = {
       audio: {
         fileName: 'Цікаві досліди.mp3',
         telegramFileId: '',
+        fbFileId: '589221521526834',
       },
     },
     phraseN: '92',
@@ -1378,6 +1428,7 @@ module.exports = {
       audio: {
         fileName: 'Цікаві досліди.mp3',
         telegramFileId: '',
+        fbFileId: '589221521526834',
       },
     },
     phraseN: '115',
@@ -1396,6 +1447,7 @@ module.exports = {
       audio: {
         fileName: 'Цікаві досліди.mp3',
         telegramFileId: '',
+        fbFileId: '589221521526834',
       },
     },
     phraseN: '117',
@@ -1432,6 +1484,7 @@ module.exports = {
       audio: {
         fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
         telegramFileId: '',
+        fbFileId: '212707086299422',
       },
     },
     phraseN: '115',
@@ -1542,6 +1595,7 @@ module.exports = {
       audio: {
         fileName: 'Сноби.mp3',
         telegramFileId: '',
+        fbFileId: '1785219468268115',
       },
     },
     phraseN: '57',
@@ -1560,6 +1614,7 @@ module.exports = {
       audio: {
         fileName: 'Сноби.mp3',
         telegramFileId: '',
+        fbFileId: '1785219468268115',
       },
     },
     phraseN: '185',
@@ -1596,6 +1651,7 @@ module.exports = {
       audio: {
         fileName: 'Йоко і самураї.mp3',
         telegramFileId: '',
+        fbFileId: '362303267837063',
       },
     },
     phraseN: '114',
@@ -1650,6 +1706,7 @@ module.exports = {
       audio: {
         fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
+        fbFileId: '267044980636073',
       },
     },
     phraseN: '36',
@@ -1705,6 +1762,7 @@ module.exports = {
       audio: {
         fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
         telegramFileId: '',
+        fbFileId: '212707086299422',
       },
     },
     phraseN: '80',
@@ -1723,6 +1781,7 @@ module.exports = {
       audio: {
         fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
+        fbFileId: '267044980636073',
       },
     },
     phraseN: '99',
@@ -1741,6 +1800,7 @@ module.exports = {
       audio: {
         fileName: 'Піздєц.mp3',
         telegramFileId: '',
+        fbFileId: '1969769179759333',
       },
     },
     phraseN: '250',
@@ -1796,6 +1856,7 @@ module.exports = {
       audio: {
         fileName: 'Цікaві досліди.mp3',
         telegramFileId: '',
+        fbFileId: '589221521526834',
       },
     },
     phraseN: 'null',
@@ -1814,6 +1875,7 @@ module.exports = {
       audio: {
         fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
+        fbFileId: '267044980636073',
       },
     },
     phraseN: 'null',
@@ -1832,6 +1894,7 @@ module.exports = {
       audio: {
         fileName: 'Піздєц.mp3',
         telegramFileId: '',
+        fbFileId: '1969769179759333',
       },
     },
     phraseN: 'null',
@@ -1868,6 +1931,7 @@ module.exports = {
       audio: {
         fileName: 'Герой нашого часу. Повість перша.mp3',
         telegramFileId: '',
+        fbFileId: '608850812869052',
       },
     },
     phraseN: 'null',
@@ -1940,6 +2004,7 @@ module.exports = {
       audio: {
         fileName: 'Хвороба Івасика.mp3',
         telegramFileId: '',
+        fbFileId: '575498379577550',
       },
     },
     phraseN: 'null',
@@ -1958,6 +2023,7 @@ module.exports = {
       audio: {
         fileName: 'Данко.mp3',
         telegramFileId: '',
+        fbFileId: '385215772249386',
       },
     },
     phraseN: 'null',
@@ -1994,6 +2060,7 @@ module.exports = {
       audio: {
         fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
         telegramFileId: '',
+        fbFileId: '212707086299422',
       },
     },
     phraseN: 'null',
@@ -2030,6 +2097,7 @@ module.exports = {
       audio: {
         fileName: 'Сноби.mp3',
         telegramFileId: '',
+        fbFileId: '1785219468268115',
       },
     },
     phraseN: 'null',
@@ -2084,6 +2152,7 @@ module.exports = {
       audio: {
         fileName: 'Йоги.mp3',
         telegramFileId: '',
+        fbFileId: '2047629812200936',
       },
     },
     phraseN: 'null',
@@ -2120,6 +2189,7 @@ module.exports = {
       audio: {
         fileName: 'До хуя масла.mp3',
         telegramFileId: '',
+        fbFileId: '469920323412540',
       },
     },
     phraseN: 'null',
@@ -2138,6 +2208,7 @@ module.exports = {
       audio: {
         fileName: 'Йоко і самураї.mp3',
         telegramFileId: '',
+        fbFileId: '362303267837063',
       },
     },
     phraseN: 'null',
@@ -2156,6 +2227,7 @@ module.exports = {
       audio: {
         fileName: 'Рух життя, або Дінамо.mp3',
         telegramFileId: '',
+        fbFileId: '265679960766709',
       },
     },
     phraseN: 'null',
@@ -2174,6 +2246,7 @@ module.exports = {
       audio: {
         fileName: 'Жан Маре та інші.mp3',
         telegramFileId: '',
+        fbFileId: '529317977566215',
       },
     },
     phraseN: 'null',
@@ -2192,6 +2265,7 @@ module.exports = {
       audio: {
         fileName: 'Утопія.mp3',
         telegramFileId: '',
+        fbFileId: '345302409623113',
       },
     },
     phraseN: 'null',
@@ -2228,6 +2302,7 @@ module.exports = {
       audio: {
         fileName: 'Множення в умі, або Плинність часу.mp3',
         telegramFileId: '',
+        fbFileId: '1235625709921330',
       },
     },
     phraseN: 'null',
@@ -2246,6 +2321,7 @@ module.exports = {
       audio: {
         fileName: 'Іржик.mp3',
         telegramFileId: '',
+        fbFileId: '322518718364098',
       },
     },
     phraseN: 'null',
@@ -2254,3 +2330,117 @@ module.exports = {
     },
   },
 };
+
+/*
+console.log('1');
+console.log(encodeURIComponent('Цікaві досліди'));
+// 589221521526834
+
+console.log('2');
+console.log(encodeURIComponent('Васіліса Єгоровна і мужичкі'));
+// 267044980636073
+
+console.log('3');
+console.log(encodeURIComponent('Піздєц'));
+// failed to upload
+
+console.log('4');
+console.log(encodeURIComponent('Пацавата історія'));
+// failed to upload
+
+console.log('5');
+console.log(encodeURIComponent('Герой нашого часу. Повість перша'));
+// 608850812869052
+
+console.log('6');
+console.log(encodeURIComponent('Герой нашого часу. Повість друга'));
+// Failed to upload
+
+console.log('7');
+console.log(encodeURIComponent('Кaцaпи'));
+// failed to upload
+
+console.log('8');
+console.log(encodeURIComponent('Місце встрєчі ізмєніть ніззя, блядь!'));
+// failed to upload
+
+console.log('9');
+console.log(encodeURIComponent('Хвороба Івасика'));
+// 575498379577550
+
+console.log('10');
+console.log(encodeURIComponent('Данко'));
+// 385215772249386
+
+console.log('11');
+console.log(encodeURIComponent('Павлік Морозов'));
+// failed to upload
+
+console.log('12');
+console.log(encodeURIComponent('Гамлєт, або Феномен датського кацапізма'));
+// 212707086299422
+
+console.log('13');
+console.log(encodeURIComponent('Остановісь, мгновєньє – ти прєкрасно!'));
+// failed to upload
+
+console.log('14');
+console.log(encodeURIComponent('Сноби'));
+// 1785219468268115
+
+console.log('15');
+console.log(encodeURIComponent('Король Літр'));
+// failed to upload
+
+console.log('16');
+console.log(encodeURIComponent('Нірвана'));
+// failed to upload
+
+console.log('17');
+console.log(encodeURIComponent('Йоги'));
+// 2047629812200936
+
+console.log('18');
+console.log(encodeURIComponent('Казка про рєпку, або Хулі не ясно?'));
+// failed to upload
+
+console.log('19');
+console.log(encodeURIComponent('До хуя масла'));
+// 469920323412540
+
+console.log('20');
+console.log(encodeURIComponent('Йоко і самураї'));
+// 362303267837063
+
+console.log('21');
+console.log(encodeURIComponent('Рух життя, або Дінамо'));
+// 265679960766709
+
+console.log('22');
+console.log(encodeURIComponent('Жан Маре та інші'));
+// 529317977566215
+
+console.log('23');
+console.log(encodeURIComponent('Утопія'));
+// 345302409623113
+
+console.log('24');
+console.log(encodeURIComponent('Діана'));
+// Failed to upload
+
+console.log('25');
+console.log(encodeURIComponent('Множення в умі, або Плинність часу'));
+// 1235625709921330
+
+console.log('26');
+console.log(encodeURIComponent('Іржик'));
+// 322518718364098
+
+// Восток
+// 229936887899717
+
+// Свобода
+// 2194963440824832
+
+// Failed to upload 11/28
+*/

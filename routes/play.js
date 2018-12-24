@@ -4,9 +4,8 @@ const { getStickerIdByPlay } = require('../helpers/templates');
 
 function getPlay(req) {
   try {
-    const playTitle = req.params.playName;
-    const playKey = texts.key[playTitle];
-    const { url, text } = texts[playKey];
+    const playTitle = decodeURIComponent(req.params.playName);
+    const { url, text } = texts[playTitle];
     const stickerId = getStickerIdByPlay(playTitle, stickers);
     const imgSrc = `${process.env.imgBaseUrl}/stickers/${stickerId}.png`;
     return {
