@@ -38,12 +38,15 @@ function parseAnswer(botReply) {
  * @param {string} answer Reply from npl.js,
  * "[Optional text][{stickers}one|or|several|sticker|Ids]"
  */
-function sendAnswer(session, answer) {
+function sendAnswer(session, answer, stickersObj) {
   try {
     const { text, sticker } = parseAnswer(answer);
     if (text) session.send(text);
     if (sticker) {
-      const ourCard = templates.getCard(session, sticker);
+      const ourCard = templates.getCard(session, sticker, stickersObj);
+      console.log('\n !!! sendAnswer !!!');
+      console.log('carousel');
+      console.dir(ourCard.data);
       session.send(ourCard);
     }
     return true;
@@ -59,14 +62,17 @@ function sendAnswer(session, answer) {
  * @param {object} session Object to interact with BF platform
  * @param {array} esFoundPlays A list of plays' titles
  */
-function presentPlays(session, esFoundPlays) {
+function presentPlays(session, esFoundPlays, stickersObj) {
   try {
     if (esFoundPlays.length > 1) {
       session.send(i18n.__('relevant_plays', esFoundPlays.length));
     } else {
       session.send(i18n.__('relevant_play'));
     }
-    const carousel = templates.getCarousel(session, esFoundPlays);
+    const carousel = templates.getCarousel(session, esFoundPlays, stickersObj);
+    console.log('\n !!! presentPlays !!!');
+    console.log('carousel');
+    console.dir(carousel.data);
     session.send(carousel);
     return true;
   } catch (error) {
@@ -80,9 +86,9 @@ function presentPlays(session, esFoundPlays) {
  * @param {object} session Object to interact with BF platform
  * @param {string} play Name of the play
  */
-function sendAudio(session, play) {
+function sendAudio(session, play, stickersObj) {
   try {
-    const audioMsg = templates.getAudioMsg(session, play);
+    const audioMsg = templates.getAudioMsg(session, play, stickersObj);
     session.send(audioMsg);
     return true;
   } catch (error) {

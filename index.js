@@ -9,11 +9,13 @@ const { Recognizer } = require('node-nlp');
 
 const modelName = './model.nlp';
 const mainFlow = require('./dialogs/main-flow');
+const getPlay = require('./routes/play');
 
 const app = express();
 const port = process.env.PORT || 4000;
 app.listen(port);
 console.log(`Chatbot listening on port ${port}`);
+app.set('view engine', 'ejs');
 
 const connector = new builder.ChatConnector({
   appId: process.env.botAppId,
@@ -32,6 +34,20 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/api/messages', connector.listen());
+app.get('/', (req, res) => {
+  res.send('Welcome!<br>Check Podervianskogo bot for Telegram and Facebook');
+});
+app.get('/play/:playName', (req, res) => {
+  const {
+    playTitle, playUrl, playText, imgSrc,
+  } = getPlay(req);
+  res.render('play', {
+    playTitle,
+    playUrl,
+    playText,
+    imgSrc,
+  });
+});
 
 const recognizer = new Recognizer();
 recognizer.load(`./nlp/${modelName}`);

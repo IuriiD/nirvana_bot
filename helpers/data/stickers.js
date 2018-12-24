@@ -3,12 +3,12 @@ module.exports = {
     phrase: 'І аб чом же у нас будєт разгавор?',
     isAPlay: false,
     play: {
-      name: 'Васiлiса Єгоровна i мужичкi',
+      name: 'Васіліса Єгоровна і мужичкі',
       text: {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васiлiса Єгоровна i мужичкi.mp3',
+        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
       },
     },
@@ -21,12 +21,12 @@ module.exports = {
     phrase: 'Я етого нє люблю',
     isAPlay: false,
     play: {
-      name: 'Васiлiса Єгоровна i мужичкi',
+      name: 'Васіліса Єгоровна і мужичкі',
       text: {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васiлiса Єгоровна i мужичкi.mp3',
+        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
       },
     },
@@ -39,12 +39,12 @@ module.exports = {
     phrase: 'Ну нє абіжайся',
     isAPlay: false,
     play: {
-      name: 'Васiлiса Єгоровна i мужичкi',
+      name: 'Васіліса Єгоровна і мужичкі',
       text: {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васiлiса Єгоровна i мужичкi.mp3',
+        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
       },
     },
@@ -57,12 +57,12 @@ module.exports = {
     phrase: 'Єсть',
     isAPlay: false,
     play: {
-      name: 'Васiлiса Єгоровна i мужичкi',
+      name: 'Васіліса Єгоровна і мужичкі',
       text: {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васiлiса Єгоровна i мужичкi.mp3',
+        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
       },
     },
@@ -75,12 +75,12 @@ module.exports = {
     phrase: 'Мінє оні уже давно нє інтєрєсниє еті вєщі',
     isAPlay: false,
     play: {
-      name: 'Васiлiса Єгоровна i мужичкi',
+      name: 'Васіліса Єгоровна і мужичкі',
       text: {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васiлiса Єгоровна i мужичкi.mp3',
+        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
       },
     },
@@ -93,12 +93,12 @@ module.exports = {
     phrase: 'Ето, Вася, шо, нада понімать как визов?',
     isAPlay: false,
     play: {
-      name: 'Васiлiса Єгоровна i мужичкi',
+      name: 'Васіліса Єгоровна і мужичкі',
       text: {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васiлiса Єгоровна i мужичкi.mp3',
+        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
       },
     },
@@ -111,12 +111,12 @@ module.exports = {
     phrase: 'Ні, то нє, то я так',
     isAPlay: false,
     play: {
-      name: 'Васiлiса Єгоровна i мужичкi',
+      name: 'Васіліса Єгоровна і мужичкі',
       text: {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васiлiса Єгоровна i мужичкi.mp3',
+        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
       },
     },
@@ -129,12 +129,12 @@ module.exports = {
     phrase: 'А ти хуй в бєлки видів?',
     isAPlay: false,
     play: {
-      name: 'Васiлiса Єгоровна i мужичкi',
+      name: 'Васіліса Єгоровна і мужичкі',
       text: {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васiлiса Єгоровна i мужичкi.mp3',
+        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
       },
     },
@@ -147,12 +147,12 @@ module.exports = {
     phrase: 'Та, то найобки єщо хуйня',
     isAPlay: false,
     play: {
-      name: 'Васiлiса Єгоровна i мужичкi',
+      name: 'Васіліса Єгоровна і мужичкі',
       text: {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васiлiса Єгоровна i мужичкi.mp3',
+        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
       },
     },
@@ -165,12 +165,12 @@ module.exports = {
     phrase: 'А мої прєдки були дворянє',
     isAPlay: false,
     play: {
-      name: 'Васiлiса Єгоровна i мужичкi',
+      name: 'Васіліса Єгоровна і мужичкі',
       text: {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васiлiса Єгоровна i мужичкi.mp3',
+        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
       },
     },
@@ -1643,12 +1643,12 @@ module.exports = {
     phrase: 'Кожа як у бога',
     isAPlay: false,
     play: {
-      name: 'Васiлiса Єгоровна i мужичкi',
+      name: 'Васіліса Єгоровна і мужичкі',
       text: {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васiлiса Єгоровна i мужичкi.mp3',
+        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
       },
     },
@@ -1716,12 +1716,12 @@ module.exports = {
     phrase: 'Руб єсть?',
     isAPlay: false,
     play: {
-      name: 'Васiлiса Єгоровна i мужичкi',
+      name: 'Васіліса Єгоровна і мужичкі',
       text: {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васiлiса Єгоровна i мужичкi.mp3',
+        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
       },
     },
@@ -1794,7 +1794,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=41',
       },
       audio: {
-        fileName: 'Цiкaвi дослiди.mp3',
+        fileName: 'Цікaві досліди.mp3',
         telegramFileId: '',
       },
     },
@@ -1807,12 +1807,12 @@ module.exports = {
     phrase: 'null',
     isAPlay: true,
     play: {
-      name: 'Васiлiса Єгоровна i мужичкi',
+      name: 'Васіліса Єгоровна і мужичкі',
       text: {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васiлiса Єгоровна i мужичкi.mp3',
+        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
         telegramFileId: '',
       },
     },

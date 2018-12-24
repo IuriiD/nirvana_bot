@@ -8,7 +8,6 @@
 
 const builder = require('botbuilder');
 const i18n = require('i18n');
-const stickers = require('./data/stickers');
 
 /**
  * Returns sticker's ID for a play by play's title
@@ -18,7 +17,7 @@ const stickers = require('./data/stickers');
 function getStickerIdByPlay(playName, stickersObj) {
   try {
     const results = Object.keys(stickersObj).filter(
-      stickerId => stickersObj[stickerId].play.name === playName && stickersObj[stickerId].isAPlay,
+      stickerId => stickersObj[stickerId].isAPlay && stickersObj[stickerId].play.name === playName,
     );
     if (results) return results[0];
     return false;
@@ -54,7 +53,7 @@ function fbCard(imageId, stickersObj) {
               buttons: [
                 {
                   type: 'web_url',
-                  url: playUrl,
+                  url: `${process.env.domain}/play/${encodeURIComponent(playName)}`, // playUrl,
                   title: i18n.__('read'),
                 },
                 {
@@ -110,7 +109,7 @@ function fbCarousel(foundPlays, stickersObj) {
         buttons: [
           {
             type: 'web_url',
-            url: playUrl,
+            url: `${process.env.domain}/play/${encodeURIComponent(play)}`, // playUrl,
             title: i18n.__('read'),
           },
           {
@@ -148,11 +147,9 @@ function fbCarousel(foundPlays, stickersObj) {
  */
 function tStickerWButtons(imageId, stickersObj) {
   try {
-    if (!Object.keys(stickersObj).includes(imageId)) return false;
-
-    // Debugging
-    console.log('imageId - ${imageId}');
-    // Debugging - END
+    if (!Object.keys(stickersObj).includes(imageId)) {
+      return false;
+    }
 
     const playName = stickersObj[imageId].play.name;
     const playUrl = stickersObj[imageId].play.text.url;
@@ -169,7 +166,7 @@ function tStickerWButtons(imageId, stickersObj) {
             [
               {
                 text: i18n.__('read'),
-                url: playUrl,
+                url: `${process.env.domain}/play/${encodeURIComponent(playName)}`, // playUrl,
               },
               {
                 text: i18n.__('listen'),
@@ -195,19 +192,24 @@ function tStickerWButtons(imageId, stickersObj) {
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
 function tStickersArray(foundPlays, stickersObj) {
+  console.log('tStickersArray()');
   try {
     if (foundPlays.length < 1) return false;
 
     if (foundPlays.length === 1) {
       const playNeeded = foundPlays[0];
+      console.log('\ntStickersArray()');
+      console.log(`playNeeded - ${playNeeded}`);
       const stickerId = getStickerIdByPlay(playNeeded, stickersObj);
+      console.log(`stickerId - ${stickerId}`);
       if (stickerId) {
         const singleTelegramCard = tStickerWButtons(stickerId, stickersObj);
+        console.log('singleTelegramCard');
+        console.log(JSON.stringify(singleTelegramCard, null, 2));
         return singleTelegramCard;
       }
       return false;
     }
-
     const tCardsCarousel = [];
     foundPlays.forEach((play) => {
       const stickerId = getStickerIdByPlay(play, stickersObj);
@@ -226,7 +228,7 @@ function tStickersArray(foundPlays, stickersObj) {
               [
                 {
                   text: i18n.__('read'),
-                  url: playUrl,
+                  url: `${process.env.domain}/play/${encodeURIComponent(play)}`, // playUrl,
                 },
                 {
                   text: i18n.__('listen'),
@@ -238,6 +240,8 @@ function tStickersArray(foundPlays, stickersObj) {
         },
       });
     });
+    console.log('tCardsCarousel');
+    console.log(JSON.stringify(tCardsCarousel, null, 2));
     return tCardsCarousel;
   } catch (error) {
     console.log(`\n⚠ tStickersArray():\n${error}`);
@@ -251,7 +255,7 @@ function tStickersArray(foundPlays, stickersObj) {
  * @param {string} imageId # of a sticker ('1', '20' etc)
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
-async function getCard(session, imageId, stickersObj) {
+function getCard(session, imageId, stickersObj) {
   try {
     const { channelId } = session.message.address;
 
@@ -270,7 +274,6 @@ async function getCard(session, imageId, stickersObj) {
       telegram: tMessage,
       facebook: fbMessage,
     });
-
     return msg;
   } catch (error) {
     console.log(`\n⚠ getCard():\n${error}`);
@@ -284,7 +287,7 @@ async function getCard(session, imageId, stickersObj) {
  * @param {array} foundPlays A list of plays' titles
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
-async function getCarousel(session, foundPlays, stickersObj) {
+function getCarousel(session, foundPlays, stickersObj) {
   try {
     const { channelId } = session.message.address;
 
@@ -293,6 +296,9 @@ async function getCarousel(session, foundPlays, stickersObj) {
 
     if (channelId === 'telegram') {
       tCardsCarousel = tStickersArray(foundPlays, stickersObj);
+      if (tCardsCarousel.length > 3) tCardsCarousel = tCardsCarousel.slice(0, 3);
+      console.log('\ngetCarousel():');
+      console.log(JSON.stringify(tCardsCarousel, null, 2));
     }
 
     if (channelId === 'facebook') {
@@ -303,7 +309,6 @@ async function getCarousel(session, foundPlays, stickersObj) {
       facebook: fbCardsCarousel,
       telegram: tCardsCarousel,
     });
-
     return msg;
   } catch (error) {
     console.log(`\n⚠ getCarousel():\n${error}`);
@@ -395,4 +400,9 @@ function getAudioMsg(session, play, stickersObj) {
   }
 }
 
-module.exports = { getCard, getCarousel, getAudioMsg };
+module.exports = {
+  getCard,
+  getCarousel,
+  getAudioMsg,
+  getStickerIdByPlay,
+};

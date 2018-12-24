@@ -43,7 +43,6 @@ async function es(searchQuery) {
 module.exports = { es };
 
 // Stuff for creating index
-/*
 const {
   doslidy,
   vasilisa,
@@ -72,7 +71,6 @@ const {
   mnozhennyaVUmi,
   irzhyk,
 } = require('./data/texts');
-*/
 
 /*
 // Create index
@@ -209,29 +207,35 @@ const allPlays = [
   },
   { index: { _index: 'plays', _type: 'play', _id: '21' } },
   {
+    title: dynamo.title,
+    url: dynamo.url,
+    text: dynamo.text,
+  },
+  { index: { _index: 'plays', _type: 'play', _id: '22' } },
+  {
     title: janMare.title,
     url: janMare.url,
     text: janMare.text,
   },
-  { index: { _index: 'plays', _type: 'play', _id: '22' } },
+  { index: { _index: 'plays', _type: 'play', _id: '23' } },
   {
     title: utopia.title,
     url: utopia.url,
     text: utopia.text,
   },
-  { index: { _index: 'plays', _type: 'play', _id: '23' } },
+  { index: { _index: 'plays', _type: 'play', _id: '24' } },
   {
     title: diana.title,
     url: diana.url,
     text: diana.text,
   },
-  { index: { _index: 'plays', _type: 'play', _id: '24' } },
+  { index: { _index: 'plays', _type: 'play', _id: '25' } },
   {
     title: mnozhennyaVUmi.title,
     url: mnozhennyaVUmi.url,
     text: mnozhennyaVUmi.text,
   },
-  { index: { _index: 'plays', _type: 'play', _id: '25' } },
+  { index: { _index: 'plays', _type: 'play', _id: '26' } },
   {
     title: irzhyk.title,
     url: irzhyk.url,
