@@ -150,6 +150,10 @@ function tStickerWButtons(imageId, stickersObj) {
   try {
     if (!Object.keys(stickersObj).includes(imageId)) return false;
 
+    // Debugging
+    console.log('imageId - ${imageId}');
+    // Debugging - END
+
     const playName = stickersObj[imageId].play.name;
     const playUrl = stickersObj[imageId].play.text.url;
 
