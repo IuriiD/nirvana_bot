@@ -479,9 +479,156 @@ function getAudioMsg(session, playId, stickersObj) {
   }
 }
 
+/**
+ * Returns payload with contacts for Telegram platform
+ */
+function getFeedbackInfo4T() {
+  try {
+    const message = {
+      method: 'sendMessage',
+      parameters: {
+        text: i18n.__('lp_fb_descr'),
+        disable_web_page_preview: true,
+        reply_markup: {
+          inline_keyboard: [
+            [
+              {
+                text: i18n.__('fbm'),
+                url: 'https://www.messenger.com/t/344980636080979',
+              },
+            ],
+          ],
+        },
+      },
+    };
+
+    return message;
+  } catch (error) {
+    console.log(`\n⚠ getFeedbackInfo4T():\n${error}`);
+    return false;
+  }
+}
+
+function getFeedbackInfo4Fb() {
+  try {
+    const message = {
+      attachment: {
+        type: 'template',
+        payload: {
+          template_type: 'button',
+          text: i18n.__('lp_fb_descr'),
+          buttons: [
+            {
+              type: 'web_url',
+              url: 'http://t.me/PodervianskogoBot',
+              title: i18n.__('telegram'),
+            },
+          ],
+        },
+      },
+    };
+
+    return message;
+  } catch (error) {
+    console.log(`\n⚠ getFeedbackInfo4Fb():\n${error}`);
+    return false;
+  }
+}
+
+/**
+ * Returns a message with contacts of L.Poderviansky and me
+ * @param {object} session Object to interact with BF platform
+ */
+function getFeedbackInfo(session) {
+  try {
+    const { channelId } = session.message.address;
+
+    let tMessage = {};
+    let fbMessage = {};
+
+    if (channelId === 'telegram') {
+      tMessage = getFeedbackInfo4T();
+    }
+
+    if (channelId === 'facebook') {
+      fbMessage = getFeedbackInfo4Fb();
+    }
+
+    const msg = new builder.Message(session).sourceEvent({
+      telegram: tMessage,
+      facebook: fbMessage,
+    });
+    return msg;
+  } catch (error) {
+    console.log(`\n⚠ getFeedbackInfo():\n${error}`);
+    return false;
+  }
+}
+
+/**
+ * Returns payload with contacts for Telegram platform
+ */
+function getFaq4T() {
+  try {
+    const message = {
+      method: 'sendMessage',
+      parameters: {
+        text: i18n.__('general_info'),
+        reply_markup: {
+          inline_keyboard: [
+            [
+              {
+                text: i18n.__('random_phrase'),
+                callback_data: i18n.__('random_phrase_payload'),
+              },
+              {
+                text: i18n.__('get_feedback'),
+                callback_data: i18n.__('get_feedback_payload'),
+              },
+            ],
+          ],
+        },
+      },
+    };
+
+    return message;
+  } catch (error) {
+    console.log(`\n⚠ getFaq4T():\n${error}`);
+    return false;
+  }
+}
+
+function faq(session) {
+  try {
+    const { channelId } = session.message.address;
+
+    let tMessage = {};
+    let fbMessage = {};
+
+    if (channelId === 'telegram') {
+      tMessage = getFaq4T();
+    }
+
+    if (channelId === 'facebook') {
+      fbMessage = {}; // getFaq4Fb();
+    }
+
+    const msg = new builder.Message(session).sourceEvent({
+      telegram: tMessage,
+      facebook: fbMessage,
+    });
+    return msg;
+  } catch (error) {
+    console.log(`\n⚠ getFeedbackInfo():\n${error}`);
+    return false;
+  }
+}
+
 module.exports = {
   getCard,
   getCarousel,
   getAudioMsg,
   getStickerIdByPlay,
+  getFeedbackInfo,
+  faq,
 };

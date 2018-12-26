@@ -36,7 +36,7 @@ function parseAnswer(botReply) {
  * sticker and sends a platform-specific payload
  * @param {object} session Object to interact with BF platform
  * @param {string} answer Reply from npl.js,
- * "[Optional text][{stickers}one|or|several|sticker|Ids]"
+ * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
 function sendAnswer(session, answer, stickersObj) {
   try {
@@ -58,6 +58,7 @@ function sendAnswer(session, answer, stickersObj) {
  * for a given phrase
  * @param {object} session Object to interact with BF platform
  * @param {array} esFoundPlays A list of plays' titles
+ * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
 function presentPlays(session, esFoundPlays, stickersObj, showingNext = false) {
   try {
@@ -88,6 +89,7 @@ function presentPlays(session, esFoundPlays, stickersObj, showingNext = false) {
  * Sends an mp3 with the play needed to Telegram
  * @param {object} session Object to interact with BF platform
  * @param {string} play Name of the play
+ * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
 function sendAudio(session, playId, stickersObj) {
   try {
@@ -100,4 +102,59 @@ function sendAudio(session, playId, stickersObj) {
   }
 }
 
-module.exports = { sendAnswer, presentPlays, sendAudio };
+/**
+ * Returns a card with random phrase
+ * @param {object} session Object to interact with BF platform
+ * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
+ */
+function randomPhrase(session, stickersObj) {
+  try {
+    const phrasesIds = Object.keys(stickersObj).filter(id => !stickersObj[id].isAPlay);
+    const randomIdPos = Math.floor(Math.random() * phrasesIds.length);
+    const ourCard = templates.getCard(session, phrasesIds[randomIdPos], stickersObj);
+    session.send(ourCard);
+    return true;
+  } catch (error) {
+    console.log(`\n⚠ randomPhrase():\n${error}`);
+    return false;
+  }
+}
+
+/**
+ * Info and links about Les' Poderviansky and me
+ * @param {object} session Object to interact with BF platform
+ */
+function feedback(session) {
+  try {
+    const feedbackMsg = templates.getFeedbackInfo(session);
+    session.send(feedbackMsg);
+    return true;
+  } catch (error) {
+    console.log(`\n⚠ feedback():\n${error}`);
+    return false;
+  }
+}
+
+/**
+ * General info about the chatbot
+ * @param {object} session Object to interact with BF platform
+ */
+function getFaq(session) {
+  try {
+    const info = templates.faq(session);
+    session.send(info);
+    return true;
+  } catch (error) {
+    console.log(`\n⚠ getFaq():\n${error}`);
+    return false;
+  }
+}
+
+module.exports = {
+  sendAnswer,
+  presentPlays,
+  sendAudio,
+  randomPhrase,
+  feedback,
+  getFaq,
+};

@@ -26,15 +26,17 @@ async function mainFlow(session, recognizer) {
         // 2. Process callbacks/payloads from Commands Menu (Telegram) etc
         // 2.1 Telegram - /random (Telegram) or [### payload ###]random_phrase (Facebook)
       } else if (text === '/random' || text === '[### payload ###]random_phrase') {
-        replies.sendAnswer(session, 'То ти хочеш рандомну фразу...');
+        replies.randomPhrase(session, stickersObj);
 
         // 2.2 Telegram - /faq (Telegram) or [### payload ###]faq (Facebook)
       } else if (text === '/faq' || text === '[### payload ###]faq') {
         replies.sendAnswer(session, 'Тут іде наш ФАК, шарінг і т.д.');
+        replies.getFaq(session);
 
         // 2.3 Telegram - /contacts (Telegram) or [### payload ###]feedback (Facebook)
       } else if (text === '/contacts' || text === '[### payload ###]feedback') {
-        replies.sendAnswer(session, 'Контакти');
+        replies.feedback(session);
+
         // 3. Process text inputs
       } else {
         recognizer.recognize(session, async (err, data) => {
