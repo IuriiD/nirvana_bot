@@ -5,9 +5,8 @@ function getPlay(req) {
   try {
     const playid = decodeURIComponent(req.params.playid);
     const playTitle = stickers[playid].play.name;
-    const { url, text } = texts[playTitle];
-    const stickerId = playid;
-    const imgSrc = `${process.env.imgBaseUrl}/stickers/${stickerId}.png`;
+    const { url, text } = texts[playid];
+    const imgSrc = `${process.env.imgBaseUrl}/stickers/${playid}.png`;
     return {
       playTitle,
       playUrl: url,

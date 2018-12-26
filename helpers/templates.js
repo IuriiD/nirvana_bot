@@ -53,12 +53,14 @@ function getPlayIbByStickerId(stickerId, stickersObj) {
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
 function fbCard(imageId, stickersObj) {
+  console.log('\nfbCard()');
   try {
     if (!Object.keys(stickersObj).includes(imageId)) {
       return false;
     }
 
     const playId = getPlayIbByStickerId(imageId, stickersObj);
+    console.log(`playId - ${playId}`);
 
     const message = {
       attachment: {
@@ -89,6 +91,8 @@ function fbCard(imageId, stickersObj) {
         },
       },
     };
+
+    console.log(JSON.stringify(message, null, 2));
     return message;
   } catch (error) {
     console.log(`\n⚠ fbCard():\n${error}`);
@@ -278,6 +282,7 @@ function getCard(session, imageId, stickersObj) {
     }
 
     if (channelId === 'facebook') {
+      console.log('\nCard for FB');
       fbMessage = fbCard(imageId, stickersObj);
     }
 

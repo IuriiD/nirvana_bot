@@ -14,6 +14,8 @@ async function mainFlow(session, recognizer) {
       if (text.includes('[### play ###]')) {
         const playId = text.split('[### play ###]')[1];
         replies.sendAudio(session, playId, stickersObj);
+
+        // Process text inputs
       } else {
         recognizer.recognize(session, async (err, data) => {
           if (err) {

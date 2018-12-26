@@ -41,6 +41,12 @@ app.get('/play/:playid', (req, res) => {
   const {
     playTitle, playUrl, playText, imgSrc,
   } = getPlay(req);
+
+  console.log(playTitle);
+  console.log(playUrl);
+  console.log(imgSrc);
+  console.log(playText);
+
   res.render('play', {
     playTitle,
     playUrl,
