@@ -1,9 +1,9 @@
 function relevantPlays(query, texts) {
   try {
     const plays = [];
-    Object.keys(texts).forEach((playTitle) => {
-      const { text } = texts[playTitle];
-      if (text.toLowerCase().includes(query.toLowerCase())) plays.push(playTitle);
+    Object.keys(texts).forEach((playId) => {
+      const { text } = texts[playId];
+      if (text.toLowerCase().includes(query.toLowerCase())) plays.push(playId);
     });
     if (plays.length > 0) return plays;
     return false;

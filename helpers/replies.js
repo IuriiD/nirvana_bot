@@ -45,7 +45,6 @@ function sendAnswer(session, answer, stickersObj) {
     if (sticker) {
       const ourCard = templates.getCard(session, sticker, stickersObj);
       console.log('\n !!! sendAnswer !!!');
-      console.log('carousel');
       console.dir(ourCard.data);
       session.send(ourCard);
     }
@@ -86,12 +85,9 @@ function presentPlays(session, esFoundPlays, stickersObj) {
  * @param {object} session Object to interact with BF platform
  * @param {string} play Name of the play
  */
-function sendAudio(session, play, stickersObj) {
-  console.log('\nsendAudio()');
+function sendAudio(session, playId, stickersObj) {
   try {
-    const audioMsg = templates.getAudioMsg(session, play, stickersObj);
-    console.log('audioMsg');
-    console.dir(audioMsg.data);
+    const audioMsg = templates.getAudioMsg(session, playId, stickersObj);
     session.send(audioMsg);
     return true;
   } catch (error) {

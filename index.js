@@ -37,7 +37,7 @@ app.post('/api/messages', connector.listen());
 app.get('/', (req, res) => {
   res.send('Welcome!<br>Check Podervianskogo bot for Telegram and Facebook');
 });
-app.get('/play/:playName', (req, res) => {
+app.get('/play/:playid', (req, res) => {
   const {
     playTitle, playUrl, playText, imgSrc,
   } = getPlay(req);

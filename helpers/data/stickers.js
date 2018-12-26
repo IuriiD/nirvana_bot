@@ -8,7 +8,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
+        fileName: 'Vasilisa_Egorovna_i_muzhichki.mp3',
         telegramFileId: '',
         fbFileId: '267044980636073',
       },
@@ -27,7 +27,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
+        fileName: 'Vasilisa_Egorovna_i_muzhichki.mp3',
         telegramFileId: '',
         fbFileId: '267044980636073',
       },
@@ -46,7 +46,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
+        fileName: 'Vasilisa_Egorovna_i_muzhichki.mp3',
         telegramFileId: '',
         fbFileId: '267044980636073',
       },
@@ -65,7 +65,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
+        fileName: 'Vasilisa_Egorovna_i_muzhichki.mp3',
         telegramFileId: '',
         fbFileId: '267044980636073',
       },
@@ -84,7 +84,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
+        fileName: 'Vasilisa_Egorovna_i_muzhichki.mp3',
         telegramFileId: '',
         fbFileId: '267044980636073',
       },
@@ -103,7 +103,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
+        fileName: 'Vasilisa_Egorovna_i_muzhichki.mp3',
         telegramFileId: '',
         fbFileId: '267044980636073',
       },
@@ -122,7 +122,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
+        fileName: 'Vasilisa_Egorovna_i_muzhichki.mp3',
         telegramFileId: '',
         fbFileId: '267044980636073',
       },
@@ -141,7 +141,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
+        fileName: 'Vasilisa_Egorovna_i_muzhichki.mp3',
         telegramFileId: '',
         fbFileId: '267044980636073',
       },
@@ -160,7 +160,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
+        fileName: 'Vasilisa_Egorovna_i_muzhichki.mp3',
         telegramFileId: '',
         fbFileId: '267044980636073',
       },
@@ -179,7 +179,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
+        fileName: 'Vasilisa_Egorovna_i_muzhichki.mp3',
         telegramFileId: '',
         fbFileId: '267044980636073',
       },
@@ -198,7 +198,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=47',
       },
       audio: {
-        fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
+        fileName: 'Gamlet_abo_fenomen_datskogo_katzapizma.mp3',
         telegramFileId: '',
         fbFileId: '212707086299422',
       },
@@ -217,7 +217,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=47',
       },
       audio: {
-        fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
+        fileName: 'Gamlet_abo_fenomen_datskogo_katzapizma.mp3',
         telegramFileId: '',
         fbFileId: '212707086299422',
       },
@@ -236,7 +236,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=47',
       },
       audio: {
-        fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
+        fileName: 'Gamlet_abo_fenomen_datskogo_katzapizma.mp3',
         telegramFileId: '',
         fbFileId: '212707086299422',
       },
@@ -255,7 +255,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=47',
       },
       audio: {
-        fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
+        fileName: 'Gamlet_abo_fenomen_datskogo_katzapizma.mp3',
         telegramFileId: '',
         fbFileId: '212707086299422',
       },
@@ -274,7 +274,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=47',
       },
       audio: {
-        fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
+        fileName: 'Gamlet_abo_fenomen_datskogo_katzapizma.mp3',
         telegramFileId: '',
         fbFileId: '212707086299422',
       },
@@ -293,7 +293,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=47',
       },
       audio: {
-        fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
+        fileName: 'Gamlet_abo_fenomen_datskogo_katzapizma.mp3',
         telegramFileId: '',
         fbFileId: '212707086299422',
       },
@@ -312,7 +312,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=47',
       },
       audio: {
-        fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
+        fileName: 'Gamlet_abo_fenomen_datskogo_katzapizma.mp3',
         telegramFileId: '',
         fbFileId: '212707086299422',
       },
@@ -331,7 +331,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=47',
       },
       audio: {
-        fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
+        fileName: 'Gamlet_abo_fenomen_datskogo_katzapizma.mp3',
         telegramFileId: '',
         fbFileId: '212707086299422',
       },
@@ -350,7 +350,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=47',
       },
       audio: {
-        fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
+        fileName: 'Gamlet_abo_fenomen_datskogo_katzapizma.mp3',
         telegramFileId: '',
         fbFileId: '212707086299422',
       },
@@ -369,7 +369,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=47',
       },
       audio: {
-        fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
+        fileName: 'Gamlet_abo_fenomen_datskogo_katzapizma.mp3',
         telegramFileId: '',
         fbFileId: '212707086299422',
       },
@@ -388,7 +388,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=45',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість друга.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_druga.mp3',
         telegramFileId: '',
       },
     },
@@ -406,7 +406,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=45',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість друга.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_druga.mp3',
         telegramFileId: '',
       },
     },
@@ -424,7 +424,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=45',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість друга.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_druga.mp3',
         telegramFileId: '',
       },
     },
@@ -442,7 +442,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=45',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість друга.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_druga.mp3',
         telegramFileId: '',
       },
     },
@@ -460,7 +460,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=45',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість друга.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_druga.mp3',
         telegramFileId: '',
       },
     },
@@ -478,7 +478,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=43',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість перша.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_persha.mp3',
         telegramFileId: '',
         fbFileId: '608850812869052',
       },
@@ -497,7 +497,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=43',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість перша.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_persha.mp3',
         telegramFileId: '',
         fbFileId: '608850812869052',
       },
@@ -516,7 +516,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=43',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість перша.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_persha.mp3',
         telegramFileId: '',
         fbFileId: '608850812869052',
       },
@@ -535,7 +535,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=43',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість перша.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_persha.mp3',
         telegramFileId: '',
         fbFileId: '608850812869052',
       },
@@ -554,7 +554,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=43',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість перша.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_persha.mp3',
         telegramFileId: '',
         fbFileId: '608850812869052',
       },
@@ -573,7 +573,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=43',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість перша.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_persha.mp3',
         telegramFileId: '',
         fbFileId: '608850812869052',
       },
@@ -592,7 +592,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=43',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість перша.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_persha.mp3',
         telegramFileId: '',
         fbFileId: '608850812869052',
       },
@@ -611,7 +611,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=43',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість перша.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_persha.mp3',
         telegramFileId: '',
         fbFileId: '608850812869052',
       },
@@ -630,7 +630,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=43',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість перша.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_persha.mp3',
         telegramFileId: '',
         fbFileId: '608850812869052',
       },
@@ -649,7 +649,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=43',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість перша.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_persha.mp3',
         telegramFileId: '',
         fbFileId: '608850812869052',
       },
@@ -668,7 +668,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=38',
       },
       audio: {
-        fileName: 'Данко.mp3',
+        fileName: 'Danko.mp3',
         telegramFileId: '',
         fbFileId: '385215772249386',
       },
@@ -687,7 +687,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=63',
       },
       audio: {
-        fileName: 'До хуя масла.mp3',
+        fileName: 'Do_huja_masla.mp3',
         telegramFileId: '',
         fbFileId: '469920323412540',
       },
@@ -706,7 +706,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=63',
       },
       audio: {
-        fileName: 'До хуя масла.mp3',
+        fileName: 'Do_huja_masla.mp3',
         telegramFileId: '',
         fbFileId: '469920323412540',
       },
@@ -725,7 +725,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=63',
       },
       audio: {
-        fileName: 'До хуя масла.mp3',
+        fileName: 'Do_huja_masla.mp3',
         telegramFileId: '',
         fbFileId: '469920323412540',
       },
@@ -942,7 +942,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=49',
       },
       audio: {
-        fileName: 'Пацавата історія.mp3',
+        fileName: 'Patzavata_istoria.mp3',
         telegramFileId: '',
       },
     },
@@ -960,7 +960,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=49',
       },
       audio: {
-        fileName: 'Пацавата історія.mp3',
+        fileName: 'Patzavata_istoria.mp3',
         telegramFileId: '',
       },
     },
@@ -978,7 +978,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=49',
       },
       audio: {
-        fileName: 'Пацавата історія.mp3',
+        fileName: 'Patzavata_istoria.mp3',
         telegramFileId: '',
       },
     },
@@ -996,7 +996,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=49',
       },
       audio: {
-        fileName: 'Пацавата історія.mp3',
+        fileName: 'Patzavata_istoria.mp3',
         telegramFileId: '',
       },
     },
@@ -1014,7 +1014,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=49',
       },
       audio: {
-        fileName: 'Пацавата історія.mp3',
+        fileName: 'Patzavata_istoria.mp3',
         telegramFileId: '',
       },
     },
@@ -1032,7 +1032,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=49',
       },
       audio: {
-        fileName: 'Пацавата історія.mp3',
+        fileName: 'Patzavata_istoria.mp3',
         telegramFileId: '',
       },
     },
@@ -1050,7 +1050,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=49',
       },
       audio: {
-        fileName: 'Пацавата історія.mp3',
+        fileName: 'Patzavata_istoria.mp3',
         telegramFileId: '',
       },
     },
@@ -1068,7 +1068,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=49',
       },
       audio: {
-        fileName: 'Пацавата історія.mp3',
+        fileName: 'Patzavata_istoria.mp3',
         telegramFileId: '',
       },
     },
@@ -1086,7 +1086,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=75',
       },
       audio: {
-        fileName: 'Піздєц.mp3',
+        fileName: 'Pizdets.mp3',
         telegramFileId: '',
         fbFileId: '1969769179759333',
       },
@@ -1105,7 +1105,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=75',
       },
       audio: {
-        fileName: 'Піздєц.mp3',
+        fileName: 'Pizdets.mp3',
         telegramFileId: '',
         fbFileId: '1969769179759333',
       },
@@ -1124,7 +1124,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=75',
       },
       audio: {
-        fileName: 'Піздєц.mp3',
+        fileName: 'Pizdets.mp3',
         telegramFileId: '',
         fbFileId: '1969769179759333',
       },
@@ -1143,7 +1143,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=75',
       },
       audio: {
-        fileName: 'Піздєц.mp3',
+        fileName: 'Pizdets.mp3',
         telegramFileId: '',
       },
     },
@@ -1161,7 +1161,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=75',
       },
       audio: {
-        fileName: 'Піздєц.mp3',
+        fileName: 'Pizdets.mp3',
         telegramFileId: '',
         fbFileId: '1969769179759333',
       },
@@ -1180,7 +1180,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=75',
       },
       audio: {
-        fileName: 'Піздєц.mp3',
+        fileName: 'Pizdets.mp3',
         telegramFileId: '',
         fbFileId: '1969769179759333',
       },
@@ -1199,7 +1199,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=75',
       },
       audio: {
-        fileName: 'Піздєц.mp3',
+        fileName: 'Pizdets.mp3',
         telegramFileId: '',
         fbFileId: '1969769179759333',
       },
@@ -1218,7 +1218,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=75',
       },
       audio: {
-        fileName: 'Піздєц.mp3',
+        fileName: 'Pizdets.mp3',
         telegramFileId: '',
         fbFileId: '1969769179759333',
       },
@@ -1237,7 +1237,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=51',
       },
       audio: {
-        fileName: 'Хвороба Івасика.mp3',
+        fileName: 'Hvoroba_Ivasyka.mp3',
         telegramFileId: '',
         fbFileId: '575498379577550',
       },
@@ -1256,7 +1256,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=51',
       },
       audio: {
-        fileName: 'Хвороба Івасика.mp3',
+        fileName: 'Hvoroba_Ivasyka.mp3',
         telegramFileId: '',
         fbFileId: '575498379577550',
       },
@@ -1275,7 +1275,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=51',
       },
       audio: {
-        fileName: 'Хвороба Івасика.mp3',
+        fileName: 'Hvoroba_Ivasyka.mp3',
         telegramFileId: '',
         fbFileId: '575498379577550',
       },
@@ -1294,7 +1294,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=51',
       },
       audio: {
-        fileName: 'Хвороба Івасика.mp3',
+        fileName: 'Hvoroba_Ivasyka.mp3',
         telegramFileId: '',
         fbFileId: '575498379577550',
       },
@@ -1313,7 +1313,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=41',
       },
       audio: {
-        fileName: 'Цікаві досліди.mp3',
+        fileName: 'Tzikavi_doslidy.mp3',
         telegramFileId: '',
         fbFileId: '589221521526834',
       },
@@ -1332,7 +1332,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=41',
       },
       audio: {
-        fileName: 'Цікаві досліди.mp3',
+        fileName: 'Tzikavi_doslidy.mp3',
         telegramFileId: '',
         fbFileId: '589221521526834',
       },
@@ -1351,7 +1351,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=41',
       },
       audio: {
-        fileName: 'Цікаві досліди.mp3',
+        fileName: 'Tzikavi_doslidy.mp3',
         telegramFileId: '',
       },
     },
@@ -1369,7 +1369,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=41',
       },
       audio: {
-        fileName: 'Цікаві досліди.mp3',
+        fileName: 'Tzikavi_doslidy.mp3',
         telegramFileId: '',
         fbFileId: '589221521526834',
       },
@@ -1388,7 +1388,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=41',
       },
       audio: {
-        fileName: 'Цікаві досліди.mp3',
+        fileName: 'Tzikavi_doslidy.mp3',
         telegramFileId: '',
         fbFileId: '589221521526834',
       },
@@ -1407,7 +1407,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=41',
       },
       audio: {
-        fileName: 'Цікаві досліди.mp3',
+        fileName: 'Tzikavi_doslidy.mp3',
         telegramFileId: '',
         fbFileId: '589221521526834',
       },
@@ -1426,7 +1426,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=41',
       },
       audio: {
-        fileName: 'Цікаві досліди.mp3',
+        fileName: 'Tzikavi_doslidy.mp3',
         telegramFileId: '',
         fbFileId: '589221521526834',
       },
@@ -1445,7 +1445,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=41',
       },
       audio: {
-        fileName: 'Цікаві досліди.mp3',
+        fileName: 'Tzikavi_doslidy.mp3',
         telegramFileId: '',
         fbFileId: '589221521526834',
       },
@@ -1464,7 +1464,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=40',
       },
       audio: {
-        fileName: 'Діана.mp3',
+        fileName: 'Diana.mp3',
         telegramFileId: '',
       },
     },
@@ -1482,7 +1482,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=47',
       },
       audio: {
-        fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
+        fileName: 'Gamlet_abo_fenomen_datskogo_katzapizma.mp3',
         telegramFileId: '',
         fbFileId: '212707086299422',
       },
@@ -1501,7 +1501,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=73',
       },
       audio: {
-        fileName: 'Павлік Морозов.mp3',
+        fileName: 'Pavlik_Morozov.mp3',
         telegramFileId: '',
       },
     },
@@ -1520,7 +1520,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=73',
       },
       audio: {
-        fileName: 'Павлік Морозов.mp3',
+        fileName: 'Pavlik_Morozov.mp3',
         telegramFileId: '',
       },
     },
@@ -1538,7 +1538,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=73',
       },
       audio: {
-        fileName: 'Павлік Морозов.mp3',
+        fileName: 'Pavlik_Morozov.mp3',
         telegramFileId: '',
       },
     },
@@ -1557,7 +1557,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=73',
       },
       audio: {
-        fileName: 'Павлік Морозов.mp3',
+        fileName: 'Pavlik_Morozov.mp3',
         telegramFileId: '',
       },
     },
@@ -1575,7 +1575,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=66',
       },
       audio: {
-        fileName: 'Остановісь, мгновєньє – ти прєкрасно!.mp3',
+        fileName: 'Ostanovis_mgnovenie_-_ty_prekrasno.mp3',
         telegramFileId: '',
       },
     },
@@ -1593,7 +1593,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=82',
       },
       audio: {
-        fileName: 'Сноби.mp3',
+        fileName: 'Snoby.mp3',
         telegramFileId: '',
         fbFileId: '1785219468268115',
       },
@@ -1612,7 +1612,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=82',
       },
       audio: {
-        fileName: 'Сноби.mp3',
+        fileName: 'Snoby.mp3',
         telegramFileId: '',
         fbFileId: '1785219468268115',
       },
@@ -1631,7 +1631,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=72',
       },
       audio: {
-        fileName: 'Нірвана.mp3',
+        fileName: 'Nirvana.mp3',
         telegramFileId: '',
       },
     },
@@ -1649,7 +1649,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=96',
       },
       audio: {
-        fileName: 'Йоко і самураї.mp3',
+        fileName: 'Joko_i_samuraji.mp3',
         telegramFileId: '',
         fbFileId: '362303267837063',
       },
@@ -1668,7 +1668,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=72',
       },
       audio: {
-        fileName: 'Нірвана.mp3',
+        fileName: 'Nirvana.mp3',
         telegramFileId: '',
       },
     },
@@ -1686,7 +1686,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=68',
       },
       audio: {
-        fileName: 'Місце встрєчі ізмєніть ніззя, блядь!.mp3',
+        fileName: 'Mistze_vstrechi_izmenit_nilzya,_blyat.mp3',
         telegramFileId: '',
       },
     },
@@ -1704,7 +1704,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
+        fileName: 'Vasilisa_Egorovna_i_muzhichki.mp3',
         telegramFileId: '',
         fbFileId: '267044980636073',
       },
@@ -1723,7 +1723,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=61',
       },
       audio: {
-        fileName: 'Король Літр.mp3',
+        fileName: 'Korol_Litr.mp3',
         telegramFileId: '',
       },
     },
@@ -1741,7 +1741,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=61',
       },
       audio: {
-        fileName: 'Король Літр.mp3',
+        fileName: 'Korol_Litr.mp3',
         telegramFileId: '',
       },
     },
@@ -1760,7 +1760,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=47',
       },
       audio: {
-        fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
+        fileName: 'Gamlet_abo_fenomen_datskogo_katzapizma.mp3',
         telegramFileId: '',
         fbFileId: '212707086299422',
       },
@@ -1779,7 +1779,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
+        fileName: 'Vasilisa_Egorovna_i_muzhichki.mp3',
         telegramFileId: '',
         fbFileId: '267044980636073',
       },
@@ -1798,7 +1798,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=75',
       },
       audio: {
-        fileName: 'Піздєц.mp3',
+        fileName: 'Pizdets.mp3',
         telegramFileId: '',
         fbFileId: '1969769179759333',
       },
@@ -1817,7 +1817,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=45',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість друга.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_druga.mp3',
         telegramFileId: '',
       },
     },
@@ -1835,7 +1835,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=72',
       },
       audio: {
-        fileName: 'Нірвана.mp3',
+        fileName: 'Nirvana.mp3',
         telegramFileId: '',
       },
     },
@@ -1854,7 +1854,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=41',
       },
       audio: {
-        fileName: 'Цікaві досліди.mp3',
+        fileName: 'Tzikavi_doslidy.mp3',
         telegramFileId: '',
         fbFileId: '589221521526834',
       },
@@ -1873,7 +1873,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=88',
       },
       audio: {
-        fileName: 'Васіліса Єгоровна і мужичкі.mp3',
+        fileName: 'Vasilisa_Egorovna_i_muzhichki.mp3',
         telegramFileId: '',
         fbFileId: '267044980636073',
       },
@@ -1892,7 +1892,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=75',
       },
       audio: {
-        fileName: 'Піздєц.mp3',
+        fileName: 'Pizdets.mp3',
         telegramFileId: '',
         fbFileId: '1969769179759333',
       },
@@ -1911,7 +1911,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=49',
       },
       audio: {
-        fileName: 'Пацавата історія.mp3',
+        fileName: 'Patzavata_istoria.mp3',
         telegramFileId: '',
       },
     },
@@ -1929,7 +1929,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=43',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість перша.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_persha.mp3',
         telegramFileId: '',
         fbFileId: '608850812869052',
       },
@@ -1948,7 +1948,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=45',
       },
       audio: {
-        fileName: 'Герой нашого часу. Повість друга.mp3',
+        fileName: 'Heroi_nashogo_chasu._Povist_druga.mp3',
         telegramFileId: '',
       },
     },
@@ -1966,7 +1966,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=59',
       },
       audio: {
-        fileName: 'Кaцaпи.mp3',
+        fileName: 'Katzapy.mp3',
         telegramFileId: '',
       },
     },
@@ -1984,7 +1984,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=68',
       },
       audio: {
-        fileName: 'Місце встрєчі ізмєніть ніззя, блядь!.mp3',
+        fileName: 'Mistze_vstrechi_izmenit_nilzya,_blyat.mp3',
         telegramFileId: '',
       },
     },
@@ -2002,7 +2002,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=51',
       },
       audio: {
-        fileName: 'Хвороба Івасика.mp3',
+        fileName: 'Hvoroba_Ivasyka.mp3',
         telegramFileId: '',
         fbFileId: '575498379577550',
       },
@@ -2021,7 +2021,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=38',
       },
       audio: {
-        fileName: 'Данко.mp3',
+        fileName: 'Danko.mp3',
         telegramFileId: '',
         fbFileId: '385215772249386',
       },
@@ -2040,7 +2040,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=73',
       },
       audio: {
-        fileName: 'Павлік Морозов.mp3',
+        fileName: 'Pavlik_Morozov.mp3',
         telegramFileId: '',
       },
     },
@@ -2058,7 +2058,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=47',
       },
       audio: {
-        fileName: 'Гамлєт, або Феномен датського кацапізма.mp3',
+        fileName: 'Gamlet_abo_fenomen_datskogo_katzapizma.mp3',
         telegramFileId: '',
         fbFileId: '212707086299422',
       },
@@ -2077,7 +2077,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=66',
       },
       audio: {
-        fileName: 'Остановісь, мгновєньє – ти прєкрасно!.mp3',
+        fileName: 'Ostanovis_mgnovenie_-_ty_prekrasno.mp3',
         telegramFileId: '',
       },
     },
@@ -2095,7 +2095,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=82',
       },
       audio: {
-        fileName: 'Сноби.mp3',
+        fileName: 'Snoby.mp3',
         telegramFileId: '',
         fbFileId: '1785219468268115',
       },
@@ -2114,7 +2114,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=61',
       },
       audio: {
-        fileName: 'Король Літр.mp3',
+        fileName: 'Korol_Litr.mp3',
         telegramFileId: '',
       },
     },
@@ -2132,7 +2132,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=72',
       },
       audio: {
-        fileName: 'Нірвана.mp3',
+        fileName: 'Nirvana.mp3',
         telegramFileId: '',
       },
     },
@@ -2150,7 +2150,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=55',
       },
       audio: {
-        fileName: 'Йоги.mp3',
+        fileName: 'Jogy.mp3',
         telegramFileId: '',
         fbFileId: '2047629812200936',
       },
@@ -2169,7 +2169,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=77',
       },
       audio: {
-        fileName: 'Казка про рєпку, або Хулі не ясно.mp3',
+        fileName: 'Kazka_pro_repku_abo_huli_ne_yasno.mp3',
         telegramFileId: '',
       },
     },
@@ -2187,7 +2187,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=63',
       },
       audio: {
-        fileName: 'До хуя масла.mp3',
+        fileName: 'Do_huja_masla.mp3',
         telegramFileId: '',
         fbFileId: '469920323412540',
       },
@@ -2206,7 +2206,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=96',
       },
       audio: {
-        fileName: 'Йоко і самураї.mp3',
+        fileName: 'Joko_i_samuraji.mp3',
         telegramFileId: '',
         fbFileId: '362303267837063',
       },
@@ -2225,7 +2225,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=80',
       },
       audio: {
-        fileName: 'Рух життя, або Дінамо.mp3',
+        fileName: 'Ruh_zhyttya_abo_Dinamo.mp3',
         telegramFileId: '',
         fbFileId: '265679960766709',
       },
@@ -2244,7 +2244,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=53',
       },
       audio: {
-        fileName: 'Жан Маре та інші.mp3',
+        fileName: 'Zhan_Mare_ta_inshi.mp3',
         telegramFileId: '',
         fbFileId: '529317977566215',
       },
@@ -2263,7 +2263,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=86',
       },
       audio: {
-        fileName: 'Утопія.mp3',
+        fileName: 'Utopia.mp3',
         telegramFileId: '',
         fbFileId: '345302409623113',
       },
@@ -2282,7 +2282,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=40',
       },
       audio: {
-        fileName: 'Діана.mp3',
+        fileName: 'Diana.mp3',
         telegramFileId: '',
       },
     },
@@ -2300,7 +2300,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=70',
       },
       audio: {
-        fileName: 'Множення в умі, або Плинність часу.mp3',
+        fileName: 'Mnozhennya_v_umi_abo_plynnist_chasu.mp3',
         telegramFileId: '',
         fbFileId: '1235625709921330',
       },
@@ -2319,7 +2319,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=93',
       },
       audio: {
-        fileName: 'Іржик.mp3',
+        fileName: 'Irzhyk.mp3',
         telegramFileId: '',
         fbFileId: '322518718364098',
       },

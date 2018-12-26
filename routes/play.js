@@ -1,12 +1,12 @@
 const texts = require('../helpers/data/texts');
 const stickers = require('../helpers/data/stickers');
-const { getStickerIdByPlay } = require('../helpers/templates');
 
 function getPlay(req) {
   try {
-    const playTitle = decodeURIComponent(req.params.playName);
+    const playid = decodeURIComponent(req.params.playid);
+    const playTitle = stickers[playid].play.name;
     const { url, text } = texts[playTitle];
-    const stickerId = getStickerIdByPlay(playTitle, stickers);
+    const stickerId = playid;
     const imgSrc = `${process.env.imgBaseUrl}/stickers/${stickerId}.png`;
     return {
       playTitle,

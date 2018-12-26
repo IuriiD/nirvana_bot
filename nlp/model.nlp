@@ -76163,10 +76163,10 @@
     "ru": {
       "smalltalk.agent.acquaintance": [
         {
-          "response": "Я чатбот, що звусь PodervjanskyBot! В мені - вся мудрість творів пана Леся{stickers}1|48|32"
+          "response": "Я чатбот, що звусь PodervjanskogoBot! В мені - вся мудрість творів пана Леся{stickers}1|48|32"
         },
         {
-          "response": "Мене звуть PodervjanskyBot. Я чатбот, що говорить фразами із творів Леся Подерв'янського{stickers}1|48|32"
+          "response": "Мене звуть PodervjanskogoBot. Я чатбот, що говорить фразами із творів Леся Подерв'янського{stickers}1|48|32"
         }
       ],
       "smalltalk.agent.age": [

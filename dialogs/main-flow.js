@@ -12,10 +12,8 @@ async function mainFlow(session, recognizer) {
       // Process callbacks/payloads from button clicks from different platforms
       const { text } = session.message;
       if (text.includes('[### play ###]')) {
-        const play = text.split('[### play ###]')[1];
-        console.log('\nLets play audio');
-        console.log(play);
-        replies.sendAudio(session, play, stickersObj);
+        const playId = text.split('[### play ###]')[1];
+        replies.sendAudio(session, playId, stickersObj);
       } else {
         recognizer.recognize(session, async (err, data) => {
           if (err) {
@@ -33,6 +31,7 @@ async function mainFlow(session, recognizer) {
               replies.sendAnswer(session, i18n.__('dont_understand'), stickersObj);
             }
           } else {
+            console.log('\n#HERE');
             replies.sendAnswer(session, data.answer, stickersObj);
           }
         });

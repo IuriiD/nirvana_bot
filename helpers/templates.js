@@ -28,17 +28,37 @@ function getStickerIdByPlay(playName, stickersObj) {
 }
 
 /**
- * Returns a generic template for FB Messenger
+ * Returns ID of the play (#153-178) for a given sticker ID (#1-177)
+ * @param {string} stickerId # of a sticker ('1', '20' etc)
+ * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
+ */
+function getPlayIbByStickerId(stickerId, stickersObj) {
+  try {
+    const playName = stickersObj[stickerId].play.name;
+    const results = Object.keys(stickersObj).filter(
+      playId => stickersObj[playId].isAPlay && stickersObj[playId].play.name === playName,
+    );
+    if (results) return results[0];
+    return false;
+  } catch (error) {
+    console.log(`\n⚠ getPlayIbByStickerId(): \n${error}`);
+    return false;
+  }
+}
+
+/**
+ * Returns a generic template for FB Messenger for a given phrase
  * https://developers.facebook.com/docs/messenger-platform/send-messages/template/generic
  * @param {string} imageId # of a sticker ('1', '20' etc)
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
 function fbCard(imageId, stickersObj) {
   try {
-    if (!Object.keys(stickersObj).includes(imageId)) return false;
+    if (!Object.keys(stickersObj).includes(imageId)) {
+      return false;
+    }
 
-    const playName = stickersObj[imageId].play.name;
-    const playUrl = stickersObj[imageId].play.text.url;
+    const playId = getPlayIbByStickerId(imageId, stickersObj);
 
     const message = {
       attachment: {
@@ -53,12 +73,12 @@ function fbCard(imageId, stickersObj) {
               buttons: [
                 {
                   type: 'web_url',
-                  url: `${process.env.domain}/play/${encodeURIComponent(playName)}`, // playUrl,
+                  url: `${process.env.domain}/play/${playId}`,
                   title: i18n.__('read'),
                 },
                 {
                   type: 'postback',
-                  payload: `[### play ###]${playName}`,
+                  payload: `[### play ###]${playId}`,
                   title: i18n.__('listen'),
                 },
               ],
@@ -77,44 +97,38 @@ function fbCard(imageId, stickersObj) {
 }
 
 /**
- * Returns a carousel of generic templates for FB Messenger
+ * Returns a carousel of generic templates for FB Messenger for relevant plays
  * https://developers.facebook.com/docs/messenger-platform/send-messages/template/generic#carousel
  * @param {array} foundPlays A list of plays' titles
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
-function fbCarousel(foundPlays, stickersObj) {
+function fbCarousel(foundPlaysIds, stickersObj) {
   try {
-    if (foundPlays.length < 1) return false;
+    if (foundPlaysIds.length < 1) return false;
 
-    if (foundPlays.length === 1) {
-      const playNeeded = foundPlays[0];
-      const stickerId = getStickerIdByPlay(playNeeded, stickersObj);
-      if (stickerId) {
-        const singleFbCard = fbCard(stickerId, stickersObj);
-        return singleFbCard;
-      }
-      return false;
+    if (foundPlaysIds.length === 1) {
+      const playNeededId = foundPlaysIds[0];
+      if (!Object.keys(stickersObj).includes(playNeededId)) return false;
+      const singleFbCard = fbCard(playNeededId, stickersObj);
+      return singleFbCard;
     }
 
     const fbCardsCarousel = [];
-    foundPlays.forEach((play) => {
-      const stickerId = getStickerIdByPlay(play, stickersObj);
-      if (!stickerId) return;
-      const playUrl = stickersObj[stickerId].play.text.url;
-
+    foundPlaysIds.forEach((playId) => {
+      if (!Object.keys(stickersObj).includes(playId)) return false;
       fbCardsCarousel.push({
         title: i18n.__('what_to_do'),
-        image_url: `${process.env.imgBaseUrl}/stickers/${stickerId}.png`,
+        image_url: `${process.env.imgBaseUrl}/stickers/${playId}.png`,
         subtitle: '',
         buttons: [
           {
             type: 'web_url',
-            url: `${process.env.domain}/play/${encodeURIComponent(play)}`, // playUrl,
+            url: `${process.env.domain}/play/${playId}`,
             title: i18n.__('read'),
           },
           {
             type: 'postback',
-            payload: `[### play ###]${play}`,
+            payload: `[### play ###]${playId}`,
             title: i18n.__('listen'),
           },
         ],
@@ -139,7 +153,7 @@ function fbCarousel(foundPlays, stickersObj) {
 }
 
 /**
- * Returns message for Telegram: a sticker + 2 buttons
+ * Returns message for Telegram: a sticker + 2 buttons (for a given phrase)
  * https://core.telegram.org/bots/api#sendsticker
  * https://core.telegram.org/bots/api#inlinekeyboardmarkup
  * @param {string} imageId # of a sticker ('1', '20' etc)
@@ -151,8 +165,22 @@ function tStickerWButtons(imageId, stickersObj) {
       return false;
     }
 
-    const playName = stickersObj[imageId].play.name;
-    const playUrl = stickersObj[imageId].play.text.url;
+    const playId = getPlayIbByStickerId(imageId, stickersObj);
+
+    const keyBoard = {
+      inline_keyboard: [
+        [
+          {
+            text: i18n.__('read'),
+            url: `${process.env.domain}/play/${playId}`,
+          },
+          {
+            text: i18n.__('listen'),
+            callback_data: `[### play ###]${playId}`,
+          },
+        ],
+      ],
+    };
 
     const message = {
       method: 'sendSticker',
@@ -161,20 +189,7 @@ function tStickerWButtons(imageId, stickersObj) {
           url: `${process.env.imgBaseUrl}/stickers/${imageId}.png`,
           mediaType: 'image/png',
         },
-        reply_markup: {
-          inline_keyboard: [
-            [
-              {
-                text: i18n.__('read'),
-                url: `${process.env.domain}/play/${encodeURIComponent(playName)}`, // playUrl,
-              },
-              {
-                text: i18n.__('listen'),
-                callback_data: `[### play ###]${playName}`,
-              },
-            ],
-          ],
-        },
+        reply_markup: keyBoard,
       },
     };
     return message;
@@ -185,63 +200,59 @@ function tStickerWButtons(imageId, stickersObj) {
 }
 
 /**
- * Returns message for Telegram: an array of blocks [sticker + 2 buttons]
+ * Returns message for Telegram: an array of blocks [sticker + 2 buttons] (for relevant plays)
  * https://core.telegram.org/bots/api#sendsticker
  * https://core.telegram.org/bots/api#inlinekeyboardmarkup
  * @param {array} foundPlays A list of plays' titles
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
-function tStickersArray(foundPlays, stickersObj) {
-  console.log('tStickersArray()');
+function tStickersArray(foundPlaysIds, stickersObj) {
   try {
-    if (foundPlays.length < 1) return false;
+    if (foundPlaysIds.length < 1) return false;
 
-    if (foundPlays.length === 1) {
-      const playNeeded = foundPlays[0];
-      console.log('\ntStickersArray()');
-      console.log(`playNeeded - ${playNeeded}`);
-      const stickerId = getStickerIdByPlay(playNeeded, stickersObj);
-      console.log(`stickerId - ${stickerId}`);
-      if (stickerId) {
-        const singleTelegramCard = tStickerWButtons(stickerId, stickersObj);
-        console.log('singleTelegramCard');
-        console.log(JSON.stringify(singleTelegramCard, null, 2));
-        return singleTelegramCard;
-      }
-      return false;
+    if (foundPlaysIds.length === 1) {
+      console.log('\nHERE-1');
+      const playNeededId = foundPlaysIds[0];
+      console.log(`playNeededId - ${playNeededId}`);
+      if (!Object.keys(stickersObj).includes(playNeededId)) return false;
+      console.log('\nHERE-2');
+      const singleTelegramCard = tStickerWButtons(playNeededId, stickersObj);
+      console.log('singleTelegramCard');
+      console.dir(singleTelegramCard);
+      return singleTelegramCard;
     }
+    console.log('\nHERE-3');
+
     const tCardsCarousel = [];
-    foundPlays.forEach((play) => {
-      const stickerId = getStickerIdByPlay(play, stickersObj);
-      if (!stickerId) return;
-      const playUrl = stickersObj[stickerId].play.text.url;
+    foundPlaysIds.forEach((playId) => {
+      if (!Object.keys(stickersObj).includes(playId)) return false;
+
+      const keyBoard = {
+        inline_keyboard: [
+          [
+            {
+              text: i18n.__('read'),
+              url: `${process.env.domain}/play/${playId}`,
+            },
+            {
+              text: i18n.__('listen'),
+              callback_data: `[### play ###]${playId}`,
+            },
+          ],
+        ],
+      };
 
       tCardsCarousel.push({
         method: 'sendSticker',
         parameters: {
           sticker: {
-            url: `${process.env.imgBaseUrl}/stickers/${stickerId}.png`,
+            url: `${process.env.imgBaseUrl}/stickers/${playId}.png`,
             mediaType: 'image/png',
           },
-          reply_markup: {
-            inline_keyboard: [
-              [
-                {
-                  text: i18n.__('read'),
-                  url: `${process.env.domain}/play/${encodeURIComponent(play)}`, // playUrl,
-                },
-                {
-                  text: i18n.__('listen'),
-                  callback_data: `[### play ###]${play}`,
-                },
-              ],
-            ],
-          },
+          reply_markup: keyBoard,
         },
       });
     });
-    console.log('tCardsCarousel');
-    console.log(JSON.stringify(tCardsCarousel, null, 2));
     return tCardsCarousel;
   } catch (error) {
     console.log(`\n⚠ tStickersArray():\n${error}`);
@@ -296,9 +307,6 @@ function getCarousel(session, foundPlays, stickersObj) {
 
     if (channelId === 'telegram') {
       tCardsCarousel = tStickersArray(foundPlays, stickersObj);
-      if (tCardsCarousel.length > 3) tCardsCarousel = tCardsCarousel.slice(0, 3);
-      console.log('\ngetCarousel():');
-      console.log(JSON.stringify(tCardsCarousel, null, 2));
     }
 
     if (channelId === 'facebook') {
@@ -321,21 +329,24 @@ function getCarousel(session, foundPlays, stickersObj) {
  * @param {string} play Name of the play
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
-function tAudio(play, stickersObj) {
+function tAudio(playId, stickersObj) {
   try {
-    const stickerId = getStickerIdByPlay(play, stickersObj);
-    if (!stickerId) return false;
+    if (!Object.keys(stickersObj).includes(playId)) return false;
 
-    const audio = stickersObj[stickerId].play.audio.fileName;
+    const audio = stickersObj[playId].play.audio.fileName;
 
-    return {
+    const message = {
       method: 'sendAudio',
       parameters: {
         audio: {
-          url: `${process.env.imgBaseUrl}/mp3/${encodeURIComponent(audio)}`,
+          url: `${process.env.imgBaseUrl}/mp3/${audio}`,
         },
       },
     };
+
+    console.log('\ntAudio()');
+    console.dir(message);
+    return message;
   } catch (error) {
     console.log(`\n⚠ tAudio():\n${error}`);
     return false;
@@ -347,23 +358,18 @@ function tAudio(play, stickersObj) {
  * @param {string} play Name of the play
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
-function fbAudio(play, stickersObj) {
+function fbAudio(playId, stickersObj) {
   try {
-    const stickerId = getStickerIdByPlay(play, stickersObj);
-    console.log('fbAudio()');
-    console.log(`stickerId - ${stickerId}`);
-    if (!stickerId) return false;
+    if (!Object.keys(stickersObj).includes(playId)) return false;
 
-    const audio = stickersObj[stickerId].play.audio.fileName;
-    console.log(`audio - ${audio}`);
-    console.log(`audioUrl - ${`${process.env.imgBaseUrl}/mp3/${encodeURIComponent(audio)}`}`);
+    const audio = stickersObj[playId].play.audio.fileName;
 
     return {
       attachment: {
         type: 'audio',
         payload: {
-          // url: `${process.env.imgBaseUrl}/mp3/${encodeURIComponent(audio)}`,
-          attachment_id: '397085417793369',
+          url: `${process.env.imgBaseUrl}/mp3/${encodeURIComponent(audio)}`,
+          // attachment_id: '397085417793369',
         },
         is_reusable: true,
       },
@@ -380,7 +386,7 @@ function fbAudio(play, stickersObj) {
  * @param {string} play Name of the play
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
-function getAudioMsg(session, play, stickersObj) {
+function getAudioMsg(session, playId, stickersObj) {
   try {
     const { channelId } = session.message.address;
 
@@ -388,21 +394,17 @@ function getAudioMsg(session, play, stickersObj) {
     let fbAudioMessage = {};
 
     if (channelId === 'telegram') {
-      tAudioMessage = tAudio(play, stickersObj);
+      tAudioMessage = tAudio(playId, stickersObj);
     }
 
     if (channelId === 'facebook') {
-      console.log('fbAudio()');
-      fbAudioMessage = fbAudio(play, stickersObj);
-      console.log(JSON.stringify(fbAudioMessage, null, 2));
+      fbAudioMessage = fbAudio(playId, stickersObj);
     }
 
     const msg = new builder.Message(session).sourceEvent({
       facebook: fbAudioMessage,
       telegram: tAudioMessage,
     });
-    console.log('');
-    console.dir(msg.data);
     return msg;
   } catch (error) {
     console.log(`\n⚠ getAudioMsg():\n${error}`);
