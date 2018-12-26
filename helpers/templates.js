@@ -53,14 +53,12 @@ function getPlayIbByStickerId(stickerId, stickersObj) {
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
 function fbCard(imageId, stickersObj) {
-  console.log('\nfbCard()');
   try {
     if (!Object.keys(stickersObj).includes(imageId)) {
       return false;
     }
 
     const playId = getPlayIbByStickerId(imageId, stickersObj);
-    console.log(`playId - ${playId}`);
 
     const message = {
       attachment: {
@@ -101,23 +99,15 @@ function fbCard(imageId, stickersObj) {
 }
 
 /**
- * Returns a carousel of generic templates for FB Messenger for relevant plays
- * https://developers.facebook.com/docs/messenger-platform/send-messages/template/generic#carousel
- * @param {array} foundPlays A list of plays' titles
+ * Helper function used by tStickersArray()
+ * @param {array} foundPlaysIds A list of plays' Ids
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
+ * @param {array} nextIds A list of plays' ids to show next onclick on corresponding button
  */
-function fbCarousel(foundPlaysIds, stickersObj) {
+function makeFbCarousel(foundPlaysIds, stickersObj, nextIds = null) {
   try {
-    if (foundPlaysIds.length < 1) return false;
-
-    if (foundPlaysIds.length === 1) {
-      const playNeededId = foundPlaysIds[0];
-      if (!Object.keys(stickersObj).includes(playNeededId)) return false;
-      const singleFbCard = fbCard(playNeededId, stickersObj);
-      return singleFbCard;
-    }
-
     const fbCardsCarousel = [];
+
     foundPlaysIds.forEach((playId) => {
       if (!Object.keys(stickersObj).includes(playId)) return false;
       fbCardsCarousel.push({
@@ -139,6 +129,23 @@ function fbCarousel(foundPlaysIds, stickersObj) {
       });
     });
 
+    // We need a special sticker for this card. So far it'll be #1
+    if (nextIds) {
+      const whatNextStickerId = '48';
+      fbCardsCarousel.push({
+        title: i18n.__('ga'),
+        image_url: `${process.env.imgBaseUrl}/stickers/${whatNextStickerId}.png`,
+        subtitle: '',
+        buttons: [
+          {
+            type: 'postback',
+            payload: `[### next ###]${nextIds.join('|')}`,
+            title: i18n.__('show_more'),
+          },
+        ],
+      });
+    }
+
     return {
       attachment: {
         type: 'template',
@@ -150,6 +157,38 @@ function fbCarousel(foundPlaysIds, stickersObj) {
         },
       },
     };
+  } catch (error) {
+    console.log(`\n⚠ makeFbCarousel():\n${error}`);
+    return false;
+  }
+}
+
+/**
+ * Returns a carousel of generic templates for FB Messenger for relevant plays
+ * https://developers.facebook.com/docs/messenger-platform/send-messages/template/generic#carousel
+ * @param {array} foundPlays A list of plays' titles
+ * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
+ */
+function fbCarousel(foundPlaysIds, stickersObj) {
+  try {
+    if (foundPlaysIds.length < 1) return false;
+
+    if (foundPlaysIds.length === 1) {
+      const playNeededId = foundPlaysIds[0];
+      if (!Object.keys(stickersObj).includes(playNeededId)) return false;
+      const singleFbCard = fbCard(playNeededId, stickersObj);
+      return singleFbCard;
+    }
+
+    let fbCardsCarousel = [];
+    if (foundPlaysIds.length > 3) {
+      const showNow = foundPlaysIds.slice(0, 3);
+      const showNext = foundPlaysIds.slice(3, foundPlaysIds.length);
+      fbCardsCarousel = makeFbCarousel(showNow, stickersObj, showNext);
+    } else {
+      fbCardsCarousel = makeFbCarousel(foundPlaysIds, stickersObj);
+    }
+    return fbCardsCarousel;
   } catch (error) {
     console.log(`\n⚠ fbCarousel():\n${error}`);
     return false;
@@ -204,29 +243,13 @@ function tStickerWButtons(imageId, stickersObj) {
 }
 
 /**
- * Returns message for Telegram: an array of blocks [sticker + 2 buttons] (for relevant plays)
- * https://core.telegram.org/bots/api#sendsticker
- * https://core.telegram.org/bots/api#inlinekeyboardmarkup
- * @param {array} foundPlays A list of plays' titles
+ * Helper function used by tStickersArray()
+ * @param {array} foundPlaysIds A list of plays' Ids
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
+ * @param {array} nextIds A list of plays' ids to show next onclick on corresponding button
  */
-function tStickersArray(foundPlaysIds, stickersObj) {
+function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null) {
   try {
-    if (foundPlaysIds.length < 1) return false;
-
-    if (foundPlaysIds.length === 1) {
-      console.log('\nHERE-1');
-      const playNeededId = foundPlaysIds[0];
-      console.log(`playNeededId - ${playNeededId}`);
-      if (!Object.keys(stickersObj).includes(playNeededId)) return false;
-      console.log('\nHERE-2');
-      const singleTelegramCard = tStickerWButtons(playNeededId, stickersObj);
-      console.log('singleTelegramCard');
-      console.dir(singleTelegramCard);
-      return singleTelegramCard;
-    }
-    console.log('\nHERE-3');
-
     const tCardsCarousel = [];
     foundPlaysIds.forEach((playId) => {
       if (!Object.keys(stickersObj).includes(playId)) return false;
@@ -257,6 +280,49 @@ function tStickersArray(foundPlaysIds, stickersObj) {
         },
       });
     });
+
+    if (nextIds) {
+      tCardsCarousel[tCardsCarousel.length - 1].parameters.reply_markup.inline_keyboard.push([
+        {
+          text: i18n.__('show_more'),
+          callback_data: `[### next ###]${nextIds.join('|')}`,
+        },
+      ]);
+    }
+    return tCardsCarousel;
+  } catch (error) {
+    console.log(`\n⚠ makeTCarousel():\n${error}`);
+    return false;
+  }
+}
+
+/**
+ * Returns message for Telegram: an array of blocks [sticker + 2 buttons] (for relevant plays)
+ * If more than 3 plays are found - show them by 3's + button "Show more"
+ * https://core.telegram.org/bots/api#sendsticker
+ * https://core.telegram.org/bots/api#inlinekeyboardmarkup
+ * @param {array} foundPlaysIds A list of plays' Ids
+ * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
+ */
+function tStickersArray(foundPlaysIds, stickersObj) {
+  try {
+    if (foundPlaysIds.length < 1) return false;
+
+    if (foundPlaysIds.length === 1) {
+      const playNeededId = foundPlaysIds[0];
+      if (!Object.keys(stickersObj).includes(playNeededId)) return false;
+      const singleTelegramCard = tStickerWButtons(playNeededId, stickersObj);
+      return singleTelegramCard;
+    }
+
+    let tCardsCarousel = [];
+    if (foundPlaysIds.length > 3) {
+      const showNow = foundPlaysIds.slice(0, 3);
+      const showNext = foundPlaysIds.slice(3, foundPlaysIds.length);
+      tCardsCarousel = makeTCarousel(showNow, stickersObj, showNext);
+    } else {
+      tCardsCarousel = makeTCarousel(foundPlaysIds, stickersObj);
+    }
     return tCardsCarousel;
   } catch (error) {
     console.log(`\n⚠ tStickersArray():\n${error}`);
@@ -348,9 +414,6 @@ function tAudio(playId, stickersObj) {
         },
       },
     };
-
-    console.log('\ntAudio()');
-    console.dir(message);
     return message;
   } catch (error) {
     console.log(`\n⚠ tAudio():\n${error}`);
@@ -374,7 +437,6 @@ function fbAudio(playId, stickersObj) {
         type: 'audio',
         payload: {
           url: `${process.env.imgBaseUrl}/mp3/${encodeURIComponent(audio)}`,
-          // attachment_id: '397085417793369',
         },
         is_reusable: true,
       },

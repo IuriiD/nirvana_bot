@@ -9,13 +9,16 @@ const { Recognizer } = require('node-nlp');
 
 const modelName = './model.nlp';
 const mainFlow = require('./dialogs/main-flow');
-const getPlay = require('./routes/play');
+const routes = require('./routes');
+const setup = require('./config/fb/');
 
 const app = express();
 const port = process.env.PORT || 4000;
 app.listen(port);
 console.log(`Chatbot listening on port ${port}`);
 app.set('view engine', 'ejs');
+
+// setup();
 
 const connector = new builder.ChatConnector({
   appId: process.env.botAppId,
@@ -34,26 +37,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/api/messages', connector.listen());
-app.get('/', (req, res) => {
-  res.send('Welcome!<br>Check Podervianskogo bot for Telegram and Facebook');
-});
-app.get('/play/:playid', (req, res) => {
-  const {
-    playTitle, playUrl, playText, imgSrc,
-  } = getPlay(req);
-
-  console.log(playTitle);
-  console.log(playUrl);
-  console.log(imgSrc);
-  console.log(playText);
-
-  res.render('play', {
-    playTitle,
-    playUrl,
-    playText,
-    imgSrc,
-  });
-});
+app.get('/', (req, res) => routes.indexPage(req, res));
+app.get('/play/:playid', (req, res) => routes.getPlay(req, res));
 
 const recognizer = new Recognizer();
 recognizer.load(`./nlp/${modelName}`);

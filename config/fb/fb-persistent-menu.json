@@ -1,0 +1,25 @@
+{
+  "persistent_menu": [
+    {
+      "locale": "default",
+      "composer_input_disabled": false,
+      "call_to_actions": [
+        {
+          "type": "postback",
+          "title": "Випадкова фраза",
+          "payload": "[### payload ###]random_phrase"
+        },
+        {
+          "type": "postback",
+          "title": "Що усе це таке?",
+          "payload": "[### payload ###]faq"
+        },
+        {
+          "type": "postback",
+          "title": "Зворотній зв'язок",
+          "payload": "[### payload ###]feedback"
+        }
+      ]
+    }
+  ]
+}

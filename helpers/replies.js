@@ -44,8 +44,6 @@ function sendAnswer(session, answer, stickersObj) {
     if (text) session.send(text);
     if (sticker) {
       const ourCard = templates.getCard(session, sticker, stickersObj);
-      console.log('\n !!! sendAnswer !!!');
-      console.dir(ourCard.data);
       session.send(ourCard);
     }
     return true;
@@ -61,17 +59,23 @@ function sendAnswer(session, answer, stickersObj) {
  * @param {object} session Object to interact with BF platform
  * @param {array} esFoundPlays A list of plays' titles
  */
-function presentPlays(session, esFoundPlays, stickersObj) {
+function presentPlays(session, esFoundPlays, stickersObj, showingNext = false) {
   try {
-    if (esFoundPlays.length > 1) {
-      session.send(i18n.__('relevant_plays', esFoundPlays.length));
+    if (!showingNext) {
+      if (esFoundPlays.length > 1 && esFoundPlays.length <= 3) {
+        session.send(i18n.__('relevant_plays', esFoundPlays.length));
+      } else if (esFoundPlays.length > 3) {
+        session.send(i18n.__('relevant_plays_first_3', esFoundPlays.length));
+      } else {
+        session.send(i18n.__('relevant_play'));
+      }
     } else {
-      session.send(i18n.__('relevant_play'));
+      const replyVariants = [i18n.__('here_they_are'), i18n.__('no_problem'), i18n.__('voila')];
+      const ourVariant = Math.floor(Math.random() * replyVariants.length);
+      session.send(replyVariants[ourVariant]);
     }
+
     const carousel = templates.getCarousel(session, esFoundPlays, stickersObj);
-    console.log('\n !!! presentPlays !!!');
-    console.log('carousel');
-    console.dir(carousel.data);
     session.send(carousel);
     return true;
   } catch (error) {

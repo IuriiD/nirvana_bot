@@ -1,22 +1,33 @@
 const texts = require('../helpers/data/texts');
 const stickers = require('../helpers/data/stickers');
 
-function getPlay(req) {
+function getPlay(req, res) {
   try {
     const playid = decodeURIComponent(req.params.playid);
     const playTitle = stickers[playid].play.name;
-    const { url, text } = texts[playid];
+    const { url: playUrl, text: playText } = texts[playid];
     const imgSrc = `${process.env.imgBaseUrl}/stickers/${playid}.png`;
-    return {
+    res.render('play', {
       playTitle,
-      playUrl: url,
-      playText: text,
+      playUrl,
+      playText,
       imgSrc,
-    };
+    });
+    return true;
   } catch (error) {
     console.log(`\n⚠ getPlay():\n${error}`);
     return false;
   }
 }
 
-module.exports = getPlay;
+function indexPage(req, res) {
+  try {
+    res.render('index');
+    return true;
+  } catch (error) {
+    console.log(`\n⚠ indexPage():\n${error}`);
+    return false;
+  }
+}
+
+module.exports = { getPlay, indexPage };
