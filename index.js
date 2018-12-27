@@ -10,7 +10,7 @@ const { Recognizer } = require('node-nlp');
 const modelName = './model.nlp';
 const mainFlow = require('./dialogs/main-flow');
 const routes = require('./routes');
-const setup = require('./config/fb/');
+const { setup } = require('./config/fb/');
 
 const app = express();
 const port = process.env.PORT || 4000;

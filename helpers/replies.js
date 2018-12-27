@@ -139,13 +139,40 @@ function feedback(session) {
  * General info about the chatbot
  * @param {object} session Object to interact with BF platform
  */
-function getFaq(session) {
+async function getFaq(session, stickersObj) {
   try {
-    const info = templates.faq(session);
-    session.send(info);
+    const info = await templates.faq(session, stickersObj);
+
+    const { channelId } = session.message.address;
+    if (channelId === 'telegram') {
+      session.send(info);
+    }
+
+    if (channelId === 'facebook') {
+      session.send(info[0]);
+      session.send(info[1]);
+    }
+
     return true;
   } catch (error) {
     console.log(`\n⚠ getFaq():\n${error}`);
+    return false;
+  }
+}
+
+/**
+ * General info about the chatbot
+ * @param {object} session Object to interact with BF platform
+ */
+async function firstRun(session, stickersObj) {
+  try {
+    const info = await templates.getFirstRun(session, stickersObj);
+    console.log('\nfirstRun');
+    console.dir(info);
+    session.send(info);
+    return true;
+  } catch (error) {
+    console.log(`\n⚠ firstRun():\n${error}`);
     return false;
   }
 }
@@ -157,4 +184,5 @@ module.exports = {
   randomPhrase,
   feedback,
   getFaq,
+  firstRun,
 };

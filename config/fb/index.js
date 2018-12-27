@@ -14,6 +14,10 @@ function facebookMessengerAPI(jsonFile) {
   return request('POST', '/me/messenger_profile', { data: jsonFile });
 }
 
+function getUserData(senderId) {
+  return request('get', senderId, {});
+}
+
 async function setup() {
   try {
     console.log('Facebook - Get Started Button');
@@ -28,4 +32,4 @@ async function setup() {
   }
 }
 
-module.exports = setup;
+module.exports = { setup, getUserData };

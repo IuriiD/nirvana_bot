@@ -30,14 +30,17 @@ async function mainFlow(session, recognizer) {
 
         // 2.2 Telegram - /faq (Telegram) or [### payload ###]faq (Facebook)
       } else if (text === '/faq' || text === '[### payload ###]faq') {
-        replies.sendAnswer(session, 'Тут іде наш ФАК, шарінг і т.д.');
-        replies.getFaq(session);
+        await replies.getFaq(session, stickersObj);
 
         // 2.3 Telegram - /contacts (Telegram) or [### payload ###]feedback (Facebook)
       } else if (text === '/contacts' || text === '[### payload ###]feedback') {
         replies.feedback(session);
 
-        // 3. Process text inputs
+        // 3. Process clicks on /start (Telegram) or Getting started (FBM) buttons
+      } else if (text === '/start' || text === '[### payload ###]facebook_welcome') {
+        await replies.getFaq(session, stickersObj);
+
+        // 4. Process text inputs
       } else {
         recognizer.recognize(session, async (err, data) => {
           if (err) {

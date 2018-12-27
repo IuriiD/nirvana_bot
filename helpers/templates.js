@@ -8,6 +8,7 @@
 
 const builder = require('botbuilder');
 const i18n = require('i18n');
+const { getUserData } = require('../config/fb/');
 
 /**
  * Returns sticker's ID for a play by play's title
@@ -567,59 +568,132 @@ function getFeedbackInfo(session) {
 
 /**
  * Returns payload with contacts for Telegram platform
+ * @param {object} session Object to interact with BF platform
  */
-function getFaq4T() {
+function getFaq4T(session, stickersObj) {
+  let userFirstName = '';
+
   try {
-    const message = {
+    userFirstName = session.message.sourceEvent.message.chat.first_name;
+  } catch (error) {
+    userFirstName = false;
+  }
+
+  try {
+    let greeting = '';
+    if (userFirstName) greeting = `, ${userFirstName}`;
+
+    const message1 = {
       method: 'sendMessage',
       parameters: {
-        text: i18n.__('general_info'),
-        reply_markup: {
-          inline_keyboard: [
-            [
-              {
-                text: i18n.__('random_phrase'),
-                callback_data: i18n.__('random_phrase_payload'),
-              },
-              {
-                text: i18n.__('get_feedback'),
-                callback_data: i18n.__('get_feedback_payload'),
-              },
-            ],
-          ],
-        },
+        text: i18n.__('general_info', greeting, process.env.botName),
       },
     };
 
-    return message;
+    const stickers = i18n.__('greetings_stickers').split('|');
+    const randStickerIndex = Math.floor(Math.random() * stickers.length);
+    const greetingSticker = stickers[randStickerIndex];
+    const message2 = tStickerWButtons(greetingSticker, stickersObj);
+    message2.parameters.reply_markup.inline_keyboard.push(
+      [
+        {
+          text: i18n.__('random_phrase'),
+          callback_data: i18n.__('random_phrase_payload'),
+        },
+      ],
+      [
+        {
+          text: i18n.__('get_feedback'),
+          callback_data: i18n.__('get_feedback_payload'),
+        },
+      ],
+    );
+
+    return [message1, message2];
   } catch (error) {
     console.log(`\n⚠ getFaq4T():\n${error}`);
     return false;
   }
 }
 
-function faq(session) {
+/**
+ * Returns payload with contacts for Facebook Messenger platform
+ * @param {object} session Object to interact with BF platform
+ */
+async function getFaq4Fb1(session) {
+  let userFirstName = '';
+
+  try {
+    const senderId = session.message.sourceEvent.sender.id;
+    userFirstName = await getUserData(senderId);
+  } catch (error) {
+    userFirstName = false;
+  }
+
+  try {
+    let greeting = '';
+    if (userFirstName) greeting = `, ${userFirstName.data.first_name}`;
+
+    const message = {
+      text: i18n.__('general_info', greeting, process.env.botName),
+    };
+    return message;
+  } catch (error) {
+    console.log(`\n⚠ getFaq4Fb1():\n${error}`);
+    return false;
+  }
+}
+
+function getFaq4Fb2(session, stickersObj) {
+  try {
+    const stickers = i18n.__('greetings_stickers').split('|');
+    const randStickerIndex = Math.floor(Math.random() * stickers.length);
+    const greetingSticker = stickers[randStickerIndex];
+    const message = fbCard(greetingSticker, stickersObj);
+    message.attachment.payload.elements[0].buttons.push({
+      type: 'postback',
+      payload: i18n.__('random_phrase_payload'),
+      title: i18n.__('random_phrase'),
+    });
+    return message;
+  } catch (error) {
+    console.log(`\n⚠ getFaq4Fb2():\n${error}`);
+    return false;
+  }
+}
+
+/**
+ * Returns platform-specific message with short FAQ on the bot
+ * @param {object} session Object to interact with BF platform
+ */
+async function faq(session, stickersObj) {
   try {
     const { channelId } = session.message.address;
 
-    let tMessage = {};
-    let fbMessage = {};
+    let msg;
 
     if (channelId === 'telegram') {
-      tMessage = getFaq4T();
+      const tMessage = getFaq4T(session, stickersObj);
+      msg = new builder.Message(session).sourceEvent({
+        telegram: tMessage,
+      });
     }
 
     if (channelId === 'facebook') {
-      fbMessage = {}; // getFaq4Fb();
+      const fbMessage1 = await getFaq4Fb1(session, stickersObj);
+      const fbMessage2 = getFaq4Fb2(session, stickersObj);
+      const msg1 = new builder.Message(session).sourceEvent({
+        facebook: fbMessage1,
+      });
+      const msg2 = new builder.Message(session).sourceEvent({
+        facebook: fbMessage2,
+      });
+      msg = [msg1, msg2];
     }
 
-    const msg = new builder.Message(session).sourceEvent({
-      telegram: tMessage,
-      facebook: fbMessage,
-    });
     return msg;
   } catch (error) {
-    console.log(`\n⚠ getFeedbackInfo():\n${error}`);
+    console.log(`\n⚠ faq():\n${error}`);
     return false;
   }
 }
