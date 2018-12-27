@@ -48,6 +48,3 @@ const bot = new builder.UniversalBot(connector, (session) => {
 });
 
 bot.set('storage', new builder.MemoryBotStorage());
-
-// First run dialog
-// bot.dialog('firstRunDialog', firstRunDialog(bot));
