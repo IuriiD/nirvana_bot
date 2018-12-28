@@ -290,6 +290,7 @@ function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null) {
         },
       ]);
     }
+    console.log(JSON.stringify(tCardsCarousel[tCardsCarousel.length - 1], null, 2));
     return tCardsCarousel;
   } catch (error) {
     log.error(`\n⚠ makeTCarousel():\n${error}`);

@@ -79,7 +79,6 @@ function presentPlays(session, esFoundPlays, stickersObj, showingNext = false) {
       const ourVariant = Math.floor(Math.random() * replyVariants.length);
       session.send(replyVariants[ourVariant]);
     }
-
     const carousel = templates.getCarousel(session, esFoundPlays, stickersObj);
     session.send(carousel);
     const { channelId, userId } = dataToLog(session);
