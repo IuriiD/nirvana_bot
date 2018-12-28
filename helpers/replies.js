@@ -5,6 +5,8 @@
 
 const i18n = require('i18n');
 const templates = require('./templates');
+const log = require('../config/logger');
+const { dataToLog } = require('../helpers/templates');
 
 function parseAnswer(botReply) {
   try {
@@ -26,7 +28,7 @@ function parseAnswer(botReply) {
     }
     return output;
   } catch (error) {
-    console.log(`\n⚠ parseAnswer():\n${error}`);
+    log.error(`\n⚠ parseAnswer():\n${error}`);
     return false;
   }
 }
@@ -45,10 +47,12 @@ function sendAnswer(session, answer, stickersObj) {
     if (sticker) {
       const ourCard = templates.getCard(session, sticker, stickersObj);
       session.send(ourCard);
+      const { channelId, userId } = dataToLog(session);
+      log.info(`${channelId} - user ${userId} << card for sticker #${sticker}`);
     }
     return true;
   } catch (error) {
-    console.log(`\n⚠ sendAnswer():\n${error}`);
+    log.error(`\n⚠ sendAnswer():\n${error}`);
     return false;
   }
 }
@@ -78,9 +82,11 @@ function presentPlays(session, esFoundPlays, stickersObj, showingNext = false) {
 
     const carousel = templates.getCarousel(session, esFoundPlays, stickersObj);
     session.send(carousel);
+    const { channelId, userId } = dataToLog(session);
+    log.info(`${channelId} - user ${userId} << carousel for plays [${esFoundPlays}]`);
     return true;
   } catch (error) {
-    console.log(`\n⚠ presentPlays():\n${error}`);
+    log.error(`\n⚠ presentPlays():\n${error}`);
     return false;
   }
 }
@@ -95,9 +101,11 @@ function sendAudio(session, playId, stickersObj) {
   try {
     const audioMsg = templates.getAudioMsg(session, playId, stickersObj);
     session.send(audioMsg);
+    const { channelId, userId } = dataToLog(session);
+    log.info(`${channelId} - user ${userId} << audio for play #${playId}`);
     return true;
   } catch (error) {
-    console.log(`\n⚠ sendAudio():\n${error}`);
+    log.error(`\n⚠ sendAudio():\n${error}`);
     return false;
   }
 }
@@ -113,9 +121,13 @@ function randomPhrase(session, stickersObj) {
     const randomIdPos = Math.floor(Math.random() * phrasesIds.length);
     const ourCard = templates.getCard(session, phrasesIds[randomIdPos], stickersObj);
     session.send(ourCard);
+    const { channelId, userId } = dataToLog(session);
+    log.info(
+      `${channelId} - user ${userId} << randomly chosen sticker #${phrasesIds[randomIdPos]}`,
+    );
     return true;
   } catch (error) {
-    console.log(`\n⚠ randomPhrase():\n${error}`);
+    log.error(`\n⚠ randomPhrase():\n${error}`);
     return false;
   }
 }
@@ -128,9 +140,11 @@ function feedback(session) {
   try {
     const feedbackMsg = templates.getFeedbackInfo(session);
     session.send(feedbackMsg);
+    const { channelId, userId } = dataToLog(session);
+    log.info(`${channelId} - user ${userId} << feedback message"`);
     return true;
   } catch (error) {
-    console.log(`\n⚠ feedback():\n${error}`);
+    log.error(`\n⚠ feedback():\n${error}`);
     return false;
   }
 }
@@ -153,26 +167,12 @@ async function getFaq(session, stickersObj) {
       session.send(info[1]);
     }
 
-    return true;
-  } catch (error) {
-    console.log(`\n⚠ getFaq():\n${error}`);
-    return false;
-  }
-}
+    const { userId } = dataToLog(session);
+    log.info(`${channelId} - user ${userId} << FAQ message"`);
 
-/**
- * General info about the chatbot
- * @param {object} session Object to interact with BF platform
- */
-async function firstRun(session, stickersObj) {
-  try {
-    const info = await templates.getFirstRun(session, stickersObj);
-    console.log('\nfirstRun');
-    console.dir(info);
-    session.send(info);
     return true;
   } catch (error) {
-    console.log(`\n⚠ firstRun():\n${error}`);
+    log.error(`\n⚠ getFaq():\n${error}`);
     return false;
   }
 }
@@ -184,5 +184,4 @@ module.exports = {
   randomPhrase,
   feedback,
   getFaq,
-  firstRun,
 };

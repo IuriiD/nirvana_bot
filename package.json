@@ -35,6 +35,7 @@
     "body-parser": "^1.18.3",
     "botbuilder": "^3.13.1",
     "botbuilder-azure": "^3.0.4",
+    "bunyan": "^1.8.12",
     "dotenv": "^6.1.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",

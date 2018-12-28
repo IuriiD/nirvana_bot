@@ -9,6 +9,7 @@
 const builder = require('botbuilder');
 const i18n = require('i18n');
 const { getUserData } = require('../config/fb/');
+const log = require('../config/logger');
 
 /**
  * Returns sticker's ID for a play by play's title
@@ -23,7 +24,7 @@ function getStickerIdByPlay(playName, stickersObj) {
     if (results) return results[0];
     return false;
   } catch (error) {
-    console.log(`\n⚠ getStickerIdByPlay(): \n${error}`);
+    log.error(`\n⚠ getStickerIdByPlay(): \n${error}`);
     return false;
   }
 }
@@ -42,7 +43,7 @@ function getPlayIbByStickerId(stickerId, stickersObj) {
     if (results) return results[0];
     return false;
   } catch (error) {
-    console.log(`\n⚠ getPlayIbByStickerId(): \n${error}`);
+    log.error(`\n⚠ getPlayIbByStickerId(): \n${error}`);
     return false;
   }
 }
@@ -91,10 +92,9 @@ function fbCard(imageId, stickersObj) {
       },
     };
 
-    console.log(JSON.stringify(message, null, 2));
     return message;
   } catch (error) {
-    console.log(`\n⚠ fbCard():\n${error}`);
+    log.error(`\n⚠ fbCard():\n${error}`);
     return false;
   }
 }
@@ -159,7 +159,7 @@ function makeFbCarousel(foundPlaysIds, stickersObj, nextIds = null) {
       },
     };
   } catch (error) {
-    console.log(`\n⚠ makeFbCarousel():\n${error}`);
+    log.error(`\n⚠ makeFbCarousel():\n${error}`);
     return false;
   }
 }
@@ -191,7 +191,7 @@ function fbCarousel(foundPlaysIds, stickersObj) {
     }
     return fbCardsCarousel;
   } catch (error) {
-    console.log(`\n⚠ fbCarousel():\n${error}`);
+    log.error(`\n⚠ fbCarousel():\n${error}`);
     return false;
   }
 }
@@ -238,7 +238,7 @@ function tStickerWButtons(imageId, stickersObj) {
     };
     return message;
   } catch (error) {
-    console.log(`\n⚠ tStickerWButtons():\n${error}`);
+    log.error(`\n⚠ tStickerWButtons():\n${error}`);
     return false;
   }
 }
@@ -292,7 +292,7 @@ function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null) {
     }
     return tCardsCarousel;
   } catch (error) {
-    console.log(`\n⚠ makeTCarousel():\n${error}`);
+    log.error(`\n⚠ makeTCarousel():\n${error}`);
     return false;
   }
 }
@@ -326,7 +326,7 @@ function tStickersArray(foundPlaysIds, stickersObj) {
     }
     return tCardsCarousel;
   } catch (error) {
-    console.log(`\n⚠ tStickersArray():\n${error}`);
+    log.error(`\n⚠ tStickersArray():\n${error}`);
     return false;
   }
 }
@@ -349,7 +349,6 @@ function getCard(session, imageId, stickersObj) {
     }
 
     if (channelId === 'facebook') {
-      console.log('\nCard for FB');
       fbMessage = fbCard(imageId, stickersObj);
     }
 
@@ -359,7 +358,7 @@ function getCard(session, imageId, stickersObj) {
     });
     return msg;
   } catch (error) {
-    console.log(`\n⚠ getCard():\n${error}`);
+    log.error(`\n⚠ getCard():\n${error}`);
     return false;
   }
 }
@@ -391,7 +390,7 @@ function getCarousel(session, foundPlays, stickersObj) {
     });
     return msg;
   } catch (error) {
-    console.log(`\n⚠ getCarousel():\n${error}`);
+    log.error(`\n⚠ getCarousel():\n${error}`);
     return false;
   }
 }
@@ -417,7 +416,7 @@ function tAudio(playId, stickersObj) {
     };
     return message;
   } catch (error) {
-    console.log(`\n⚠ tAudio():\n${error}`);
+    log.error(`\n⚠ tAudio():\n${error}`);
     return false;
   }
 }
@@ -443,7 +442,7 @@ function fbAudio(playId, stickersObj) {
       },
     };
   } catch (error) {
-    console.log(`\n⚠ fbAudio():\n${error}`);
+    log.error(`\n⚠ fbAudio():\n${error}`);
     return false;
   }
 }
@@ -475,7 +474,7 @@ function getAudioMsg(session, playId, stickersObj) {
     });
     return msg;
   } catch (error) {
-    console.log(`\n⚠ getAudioMsg():\n${error}`);
+    log.error(`\n⚠ getAudioMsg():\n${error}`);
     return false;
   }
 }
@@ -505,7 +504,7 @@ function getFeedbackInfo4T() {
 
     return message;
   } catch (error) {
-    console.log(`\n⚠ getFeedbackInfo4T():\n${error}`);
+    log.error(`\n⚠ getFeedbackInfo4T():\n${error}`);
     return false;
   }
 }
@@ -531,7 +530,7 @@ function getFeedbackInfo4Fb() {
 
     return message;
   } catch (error) {
-    console.log(`\n⚠ getFeedbackInfo4Fb():\n${error}`);
+    log.error(`\n⚠ getFeedbackInfo4Fb():\n${error}`);
     return false;
   }
 }
@@ -561,7 +560,7 @@ function getFeedbackInfo(session) {
     });
     return msg;
   } catch (error) {
-    console.log(`\n⚠ getFeedbackInfo():\n${error}`);
+    log.error(`\n⚠ getFeedbackInfo():\n${error}`);
     return false;
   }
 }
@@ -611,7 +610,7 @@ function getFaq4T(session, stickersObj) {
 
     return [message1, message2];
   } catch (error) {
-    console.log(`\n⚠ getFaq4T():\n${error}`);
+    log.error(`\n⚠ getFaq4T():\n${error}`);
     return false;
   }
 }
@@ -639,7 +638,7 @@ async function getFaq4Fb1(session) {
     };
     return message;
   } catch (error) {
-    console.log(`\n⚠ getFaq4Fb1():\n${error}`);
+    log.error(`\n⚠ getFaq4Fb1():\n${error}`);
     return false;
   }
 }
@@ -657,7 +656,7 @@ function getFaq4Fb2(session, stickersObj) {
     });
     return message;
   } catch (error) {
-    console.log(`\n⚠ getFaq4Fb2():\n${error}`);
+    log.error(`\n⚠ getFaq4Fb2():\n${error}`);
     return false;
   }
 }
@@ -693,7 +692,28 @@ async function faq(session, stickersObj) {
 
     return msg;
   } catch (error) {
-    console.log(`\n⚠ faq():\n${error}`);
+    log.error(`\n⚠ faq():\n${error}`);
+    return false;
+  }
+}
+
+/**
+ * Retrieves channelId and userId for the channel for logging
+ * @param {object} session Object to interact with BF platform
+ */
+function dataToLog(session) {
+  try {
+    const { channelId } = session.message.address;
+    let userId = 'undetermined';
+    if (channelId === 'telegram') {
+      userId = session.message.sourceEvent.message.from.id;
+    }
+    if (channelId === 'facebook') {
+      userId = session.message.sourceEvent.sender.id;
+    }
+    return { channelId, userId };
+  } catch (error) {
+    log.error(`\n⚠ dataToLog():\n${error}`);
     return false;
   }
 }
@@ -705,4 +725,5 @@ module.exports = {
   getStickerIdByPlay,
   getFeedbackInfo,
   faq,
+  dataToLog,
 };

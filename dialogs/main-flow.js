@@ -3,13 +3,15 @@ const replies = require('../helpers/replies');
 const search = require('../helpers/search');
 const stickersObj = require('../helpers/data/stickers');
 const texts = require('../helpers/data/texts');
+const log = require('../config/logger');
+const { dataToLog } = require('../helpers/templates');
 
 async function mainFlow(session, recognizer) {
   try {
-    // session.userData.firstRun = false; // temp, needed at dev stage
+    const { channelId, userId } = dataToLog(session);
     if (session.message.text) {
-      console.log('\nMAIN FLOW');
-      console.log(session.message.text);
+      const userEntered = session.message.text;
+      log.info(`${channelId} - user ${userId} >> ${userEntered}`);
       // 1. Process callbacks/payloads from button clicks from different platforms
       const { text } = session.message;
 
@@ -50,7 +52,7 @@ async function mainFlow(session, recognizer) {
       } else {
         recognizer.recognize(session, async (err, data) => {
           if (err) {
-            console.log(`Error: ${err}`);
+            log.error(`Recognizer rrror: ${err}`);
             session.sendTyping();
             replies.sendAnswer(session, i18n.__('error_happened'), stickersObj);
           }
@@ -75,10 +77,11 @@ async function mainFlow(session, recognizer) {
     } else if (session.message.attachments && session.message.attachments.length > 0) {
       session.sendTyping();
       replies.sendAnswer(session, i18n.__('dont_understand'), stickersObj);
+      log.info(`${channelId} - user ${userId} >> Non-text input`);
     }
     return;
   } catch (error) {
-    console.log(`\n⚠ tStickerWButtons():\n${error}`);
+    log.error(`\n⚠ tStickerWButtons():\n${error}`);
   }
 }
 
