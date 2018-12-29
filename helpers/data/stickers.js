@@ -1686,7 +1686,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=68',
       },
       audio: {
-        fileName: 'Mistze_vstrechi_izmenit_nilzya,_blyat.mp3',
+        fileName: 'Mistze_vstrechi_izmenit_nilzya_blyat.mp3',
         telegramFileId: '',
       },
     },
@@ -1984,7 +1984,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=68',
       },
       audio: {
-        fileName: 'Mistze_vstrechi_izmenit_nilzya,_blyat.mp3',
+        fileName: 'Mistze_vstrechi_izmenit_nilzya_blyat.mp3',
         telegramFileId: '',
       },
     },
@@ -2332,115 +2332,147 @@ module.exports = {
 };
 
 /*
+// ID1 - for uncompressed mp3
+// ID2 - for compressed mp3
+
 console.log('1');
 console.log(encodeURIComponent('Цікaві досліди'));
 // 589221521526834
+// 2244513779206972
 
 console.log('2');
 console.log(encodeURIComponent('Васіліса Єгоровна і мужичкі'));
 // 267044980636073
+// 299232987390138
 
 console.log('3');
 console.log(encodeURIComponent('Піздєц'));
 // failed to upload
+// 208565290085138
 
 console.log('4');
 console.log(encodeURIComponent('Пацавата історія'));
 // failed to upload
+// 726846827702204
 
 console.log('5');
 console.log(encodeURIComponent('Герой нашого часу. Повість перша'));
 // 608850812869052
+// 300850140538729
 
 console.log('6');
 console.log(encodeURIComponent('Герой нашого часу. Повість друга'));
 // Failed to upload
+// 2395151203892496
 
 console.log('7');
 console.log(encodeURIComponent('Кaцaпи'));
 // failed to upload
+// 477587852767002
 
 console.log('8');
 console.log(encodeURIComponent('Місце встрєчі ізмєніть ніззя, блядь!'));
 // failed to upload
+// failed to upload 5.7mb
 
 console.log('9');
 console.log(encodeURIComponent('Хвороба Івасика'));
 // 575498379577550
+// 2218256031723102
 
 console.log('10');
 console.log(encodeURIComponent('Данко'));
 // 385215772249386
+// 277113369653750
 
 console.log('11');
 console.log(encodeURIComponent('Павлік Морозов'));
 // failed to upload
+//
 
 console.log('12');
 console.log(encodeURIComponent('Гамлєт, або Феномен датського кацапізма'));
 // 212707086299422
+// 1104119996414363
 
 console.log('13');
 console.log(encodeURIComponent('Остановісь, мгновєньє – ти прєкрасно!'));
 // failed to upload
+// 279924579382102
 
 console.log('14');
 console.log(encodeURIComponent('Сноби'));
 // 1785219468268115
+// 352534092226911
 
 console.log('15');
 console.log(encodeURIComponent('Король Літр'));
 // failed to upload
+// failed to upload 12.1mb
 
 console.log('16');
 console.log(encodeURIComponent('Нірвана'));
 // failed to upload
+// 237703550461004 6.2mb
 
 console.log('17');
 console.log(encodeURIComponent('Йоги'));
 // 2047629812200936
+// 2254408391317739
 
 console.log('18');
 console.log(encodeURIComponent('Казка про рєпку, або Хулі не ясно?'));
 // failed to upload
+// failed to upload 8.6mb
 
 console.log('19');
 console.log(encodeURIComponent('До хуя масла'));
 // 469920323412540
+// 333817517220885
 
 console.log('20');
 console.log(encodeURIComponent('Йоко і самураї'));
 // 362303267837063
+// 787510958265969
 
 console.log('21');
 console.log(encodeURIComponent('Рух життя, або Дінамо'));
 // 265679960766709
+// 607753666337221
 
 console.log('22');
 console.log(encodeURIComponent('Жан Маре та інші'));
 // 529317977566215
+// 2517266184966469
 
 console.log('23');
 console.log(encodeURIComponent('Утопія'));
 // 345302409623113
+// 306837346611675
 
 console.log('24');
 console.log(encodeURIComponent('Діана'));
 // Failed to upload
+// 615034912288996
 
 console.log('25');
 console.log(encodeURIComponent('Множення в умі, або Плинність часу'));
 // 1235625709921330
+// 543953042747588
 
 console.log('26');
 console.log(encodeURIComponent('Іржик'));
 // 322518718364098
+// 353637245438123
 
 // Восток
 // 229936887899717
+// 364297984304001
 
 // Свобода
 // 2194963440824832
+// 1259515080863294
 
 // Failed to upload 11/28
+Діана
 */
