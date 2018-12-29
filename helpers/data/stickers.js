@@ -1686,7 +1686,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=68',
       },
       audio: {
-        fileName: 'Mistze_vstrechi_izmenit_nilzya_blyat.mp3',
+        fileName: 'Mistze_vstrechi_izmenit_nilzya,_blyat.mp3',
         telegramFileId: '',
       },
     },
@@ -1984,7 +1984,7 @@ module.exports = {
         url: 'http://doslidy.org.ua/?page_id=68',
       },
       audio: {
-        fileName: 'Mistze_vstrechi_izmenit_nilzya_blyat.mp3',
+        fileName: 'Mistze_vstrechi_izmenit_nilzya,_blyat.mp3',
         telegramFileId: '',
       },
     },
