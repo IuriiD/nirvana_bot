@@ -39,6 +39,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/api/messages', connector.listen());
 app.get('/', (req, res) => routes.indexPage(req, res));
 app.get('/play/:playid', (req, res) => routes.getPlay(req, res));
+app.get('/sticker/:stickerid', (req, res) => routes.redirectToS3(req, res));
 
 const recognizer = new Recognizer();
 recognizer.load(`./nlp/${modelName}`);

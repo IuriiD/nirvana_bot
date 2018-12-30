@@ -4,3 +4,46 @@
 {"name":"PBLogger","hostname":"iuriid-pc","pid":5915,"level":30,"msg":"facebook - user 1969769179759333 << card for sticker #155","time":"2018-12-29T21:21:18.896Z","v":0}
 {"name":"PBLogger","hostname":"iuriid-pc","pid":14934,"level":30,"msg":"telegram - user 178180819 >> /random","time":"2018-12-30T15:45:46.151Z","v":0}
 {"name":"PBLogger","hostname":"iuriid-pc","pid":14934,"level":30,"msg":"telegram - user 178180819 << randomly chosen sticker #144","time":"2018-12-30T15:45:46.153Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":15752,"level":30,"msg":"telegram - user 178180819 >> /random","time":"2018-12-30T15:55:16.119Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":15752,"level":30,"msg":"telegram - user 178180819 << randomly chosen sticker #104","time":"2018-12-30T15:55:16.121Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":15942,"level":30,"msg":"telegram - user 178180819 >> /random","time":"2018-12-30T16:03:13.189Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":15942,"level":30,"msg":"telegram - user 178180819 << randomly chosen sticker #77","time":"2018-12-30T16:03:13.192Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":15982,"level":30,"msg":"telegram - user 178180819 >> /random","time":"2018-12-30T16:03:51.883Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":15982,"level":30,"msg":"telegram - user 178180819 << randomly chosen sticker #151","time":"2018-12-30T16:03:51.885Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":16214,"level":30,"msg":"telegram - user 178180819 >> /random","time":"2018-12-30T16:06:47.151Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":16214,"level":30,"msg":"telegram - user 178180819 << randomly chosen sticker #45","time":"2018-12-30T16:06:47.154Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":16334,"level":30,"msg":"telegram - user 178180819 >> /random","time":"2018-12-30T16:09:30.343Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":16334,"level":30,"msg":"telegram - user 178180819 << randomly chosen sticker #6","time":"2018-12-30T16:09:30.346Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":16374,"level":30,"msg":"telegram - user 178180819 >> /random","time":"2018-12-30T16:10:16.647Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":16374,"level":30,"msg":"telegram - user 178180819 << randomly chosen sticker #80","time":"2018-12-30T16:10:16.649Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":16442,"level":30,"msg":"telegram - user 178180819 >> /random","time":"2018-12-30T16:12:22.152Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":16442,"level":30,"msg":"telegram - user 178180819 << randomly chosen sticker #60","time":"2018-12-30T16:12:22.154Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":16442,"level":30,"msg":"telegram - user 178180819 >> n.","time":"2018-12-30T16:13:26.525Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":16442,"level":30,"msg":"telegram - user 178180819 << card for sticker #20","time":"2018-12-30T16:13:26.907Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":16442,"level":30,"msg":"telegram - user 178180819 >> тю","time":"2018-12-30T16:13:32.676Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":16442,"level":30,"msg":"telegram - user 178180819 << carousel for plays [154,155,156,157,158,159,160,161,163,165]","time":"2018-12-30T16:13:32.798Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17008,"level":30,"msg":"telegram - user 178180819 >> /random","time":"2018-12-30T16:18:49.154Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17008,"level":30,"msg":"telegram - user 178180819 << randomly chosen sticker #21","time":"2018-12-30T16:18:49.156Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17269,"level":30,"msg":"telegram - user 178180819 >> /random","time":"2018-12-30T16:21:29.142Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17269,"level":30,"msg":"telegram - user 178180819 << randomly chosen sticker #135","time":"2018-12-30T16:21:29.145Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17379,"level":30,"msg":"telegram - user 178180819 >> тю","time":"2018-12-30T16:24:38.169Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17379,"level":50,"msg":"\n⚠ makeTCarousel():\nReferenceError: imageId is not defined","time":"2018-12-30T16:24:38.531Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17379,"level":30,"msg":"telegram - user 178180819 << carousel for plays [154,155,156,157,158,159,160,161,163,165]","time":"2018-12-30T16:24:38.532Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17415,"level":30,"msg":"telegram - user 178180819 >> тю","time":"2018-12-30T16:25:03.668Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17415,"level":30,"msg":"telegram - user 178180819 << carousel for plays [154,155,156,157,158,159,160,161,163,165]","time":"2018-12-30T16:25:04.024Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17415,"level":50,"msg":"\n⚠ dataToLog():\nTypeError: Cannot read property 'from' of undefined","time":"2018-12-30T16:26:24.513Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17415,"level":30,"msg":"undefined - user undefined >> [### next ###]157|158|159|160|161|163|165","time":"2018-12-30T16:26:24.513Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17415,"level":50,"msg":"\n⚠ dataToLog():\nTypeError: Cannot read property 'from' of undefined","time":"2018-12-30T16:26:24.514Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17415,"level":30,"msg":"undefined - user undefined << carousel for plays [157,158,159,160,161,163,165]","time":"2018-12-30T16:26:24.514Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17550,"level":30,"msg":"telegram - user 178180819 >> тю","time":"2018-12-30T16:28:30.134Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17550,"level":30,"msg":"telegram - user 178180819 << carousel for plays [154,155,156,157,158,159,160,161,163,165]","time":"2018-12-30T16:28:30.487Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17786,"level":30,"msg":"telegram - user 178180819 >> тю","time":"2018-12-30T16:31:06.140Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":17786,"level":30,"msg":"telegram - user 178180819 << carousel for plays [154,155,156,157,158,159,160,161,163,165]","time":"2018-12-30T16:31:06.500Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":18259,"level":30,"msg":"telegram - user 178180819 >> тю","time":"2018-12-30T16:37:33.159Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":18259,"level":30,"msg":"telegram - user 178180819 << carousel for plays [154,155,156,157,158,159,160,161,163,165]","time":"2018-12-30T16:37:33.523Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":18259,"level":30,"msg":"telegram - user 178180819 >> /random","time":"2018-12-30T16:39:09.429Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":18259,"level":30,"msg":"telegram - user 178180819 << randomly chosen sticker #62","time":"2018-12-30T16:39:09.430Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":18770,"level":30,"msg":"telegram - user 178180819 >> /random","time":"2018-12-30T16:48:18.177Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":18770,"level":30,"msg":"telegram - user 178180819 << randomly chosen sticker #53","time":"2018-12-30T16:48:18.180Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":18770,"level":30,"msg":"telegram - user 178180819 >> тю","time":"2018-12-30T16:49:02.703Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":18770,"level":30,"msg":"telegram - user 178180819 << carousel for plays [154,155,156,157,158,159,160,161,163,165]","time":"2018-12-30T16:49:03.086Z","v":0}

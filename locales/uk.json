@@ -21,5 +21,7 @@
   "random_phrase_payload": "[### payload ###]random_phrase",
   "get_feedback_payload": "[### payload ###]feedback",
   "random_phrase": "Випадкова фраза",
-  "get_feedback": "Зворотній зв'язок"
+  "get_feedback": "Зворотній зв'язок",
+  "share_telegram": "Пошарити у Telegram",
+  "share_fb": "Пошарити у Messenger"
 }

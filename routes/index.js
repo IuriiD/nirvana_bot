@@ -1,5 +1,6 @@
 const texts = require('../helpers/data/texts');
 const stickers = require('../helpers/data/stickers');
+const log = require('../config/logger');
 
 function getPlay(req, res) {
   try {
@@ -15,7 +16,7 @@ function getPlay(req, res) {
     });
     return true;
   } catch (error) {
-    console.log(`\n⚠ getPlay():\n${error}`);
+    log.error(`\n⚠ getPlay():\n${error}`);
     return false;
   }
 }
@@ -25,9 +26,23 @@ function indexPage(req, res) {
     res.render('index');
     return true;
   } catch (error) {
-    console.log(`\n⚠ indexPage():\n${error}`);
+    log.error(`\n⚠ indexPage():\n${error}`);
     return false;
   }
 }
 
-module.exports = { getPlay, indexPage };
+function redirectToS3(req, res) {
+  try {
+    const { stickerid } = req.params;
+    res.redirect(`${process.env.imgBaseUrl}/stickers/${stickerid}.png`);
+    return;
+  } catch (error) {
+    log.error(`\n⚠ redirectToS3():\n${error}`);
+  }
+}
+
+module.exports = {
+  getPlay,
+  indexPage,
+  redirectToS3,
+};

@@ -223,6 +223,12 @@ function tStickerWButtons(imageId, stickersObj) {
             callback_data: `[### play ###]${playId}`,
           },
         ],
+        [
+          {
+            text: i18n.__('share_telegram'),
+            switch_inline_query: `😆🤬👍 ${process.env.domain}/sticker/${imageId}`,
+          },
+        ],
       ],
     };
 
@@ -265,6 +271,12 @@ function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null) {
             {
               text: i18n.__('listen'),
               callback_data: `[### play ###]${playId}`,
+            },
+          ],
+          [
+            {
+              text: i18n.__('share_telegram'),
+              switch_inline_query: `😆🤬👍${process.env.domain}/sticker/${playId}`,
             },
           ],
         ],
