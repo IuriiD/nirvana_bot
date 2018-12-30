@@ -49,6 +49,42 @@ function getPlayIbByStickerId(stickerId, stickersObj) {
 }
 
 /**
+ * Returns JSON for a button to share to FB Messenger
+ * @param {string} stickerId # of a sticker ('1', '20' etc)
+ */
+function shareToFbPayload(stickerId) {
+  return {
+    type: 'element_share',
+    share_contents: {
+      attachment: {
+        type: 'template',
+        payload: {
+          template_type: 'generic',
+          elements: [
+            {
+              title: i18n.__('fbshare_slogan'),
+              image_url: `${process.env.imgBaseUrl}/stickers/${stickerId}.png`,
+              default_action: {
+                type: 'web_url',
+                url: process.env.fbmBotUrl,
+              },
+              buttons: [
+                {
+                  type: 'web_url',
+                  url: process.env.fbmBotUrl,
+                  title: i18n.__('lets_go'),
+                },
+              ],
+            },
+          ],
+          image_aspect_ratio: 'square',
+        },
+      },
+    },
+  };
+}
+
+/**
  * Returns a generic template for FB Messenger for a given phrase
  * https://developers.facebook.com/docs/messenger-platform/send-messages/template/generic
  * @param {string} imageId # of a sticker ('1', '20' etc)
@@ -61,6 +97,7 @@ function fbCard(imageId, stickersObj) {
     }
 
     const playId = getPlayIbByStickerId(imageId, stickersObj);
+    const shareButton = shareToFbPayload(imageId);
 
     const message = {
       attachment: {
@@ -83,6 +120,7 @@ function fbCard(imageId, stickersObj) {
                   payload: `[### play ###]${playId}`,
                   title: i18n.__('listen'),
                 },
+                shareButton,
               ],
             },
           ],
@@ -111,6 +149,7 @@ function makeFbCarousel(foundPlaysIds, stickersObj, nextIds = null) {
 
     foundPlaysIds.forEach((playId) => {
       if (!Object.keys(stickersObj).includes(playId)) return false;
+      const shareButton = shareToFbPayload(playId);
       fbCardsCarousel.push({
         title: i18n.__('what_to_do'),
         image_url: `${process.env.imgBaseUrl}/stickers/${playId}.png`,
@@ -126,11 +165,12 @@ function makeFbCarousel(foundPlaysIds, stickersObj, nextIds = null) {
             payload: `[### play ###]${playId}`,
             title: i18n.__('listen'),
           },
+          shareButton,
         ],
       });
     });
 
-    // We need a special sticker for this card. So far it'll be #1
+    // We need a special sticker for this card. So far it'll be #48
     if (nextIds) {
       const whatNextStickerId = '48';
       fbCardsCarousel.push({

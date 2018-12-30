@@ -47,3 +47,19 @@
 {"name":"PBLogger","hostname":"iuriid-pc","pid":18770,"level":30,"msg":"telegram - user 178180819 << randomly chosen sticker #53","time":"2018-12-30T16:48:18.180Z","v":0}
 {"name":"PBLogger","hostname":"iuriid-pc","pid":18770,"level":30,"msg":"telegram - user 178180819 >> тю","time":"2018-12-30T16:49:02.703Z","v":0}
 {"name":"PBLogger","hostname":"iuriid-pc","pid":18770,"level":30,"msg":"telegram - user 178180819 << carousel for plays [154,155,156,157,158,159,160,161,163,165]","time":"2018-12-30T16:49:03.086Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":19837,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2018-12-30T17:05:03.267Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":19837,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #123","time":"2018-12-30T17:05:03.270Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":21697,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2018-12-30T20:08:34.554Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":21697,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #59","time":"2018-12-30T20:08:34.558Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":22676,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2018-12-30T20:42:51.312Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":22676,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #92","time":"2018-12-30T20:42:51.315Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":22715,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2018-12-30T20:43:29.968Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":22715,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #134","time":"2018-12-30T20:43:29.971Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":22745,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2018-12-30T20:44:06.028Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":22745,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #130","time":"2018-12-30T20:44:06.031Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":22794,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2018-12-30T20:44:26.503Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":22794,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #28","time":"2018-12-30T20:44:26.505Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":22838,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2018-12-30T20:45:14.294Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":22838,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #61","time":"2018-12-30T20:45:14.296Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":22916,"level":30,"msg":"facebook - user 1969769179759333 >> тю","time":"2018-12-30T20:48:46.795Z","v":0}
+{"name":"PBLogger","hostname":"iuriid-pc","pid":22916,"level":30,"msg":"facebook - user 1969769179759333 << carousel for plays [154,155,156,157,158,159,160,161,163,165]","time":"2018-12-30T20:48:47.149Z","v":0}
