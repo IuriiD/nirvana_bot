@@ -85,3 +85,123 @@
 {"name":"PBLogger","hostname":"iuriid","pid":26716,"level":30,"msg":"telegram - user 178180819 << FAQ message\"","time":"2019-01-02T07:26:16.596Z","v":0}
 {"name":"PBLogger","hostname":"iuriid","pid":26750,"level":30,"msg":"telegram - user 178180819 >> /start","time":"2019-01-02T07:26:31.895Z","v":0}
 {"name":"PBLogger","hostname":"iuriid","pid":26750,"level":30,"msg":"telegram - user 178180819 << FAQ message\"","time":"2019-01-02T07:26:31.905Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27274,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T07:42:53.836Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27274,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T07:42:54.108Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27306,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T07:43:53.029Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27306,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T07:43:53.265Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27376,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T07:44:47.371Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27376,"level":50,"msg":"\n⚠ getFaq():\nTypeError: Converting circular structure to JSON","time":"2019-01-02T07:44:47.609Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27410,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T07:45:31.067Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27410,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T07:45:31.295Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27440,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T07:45:49.110Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27440,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T07:45:49.356Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27462,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T07:46:13.959Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27462,"level":50,"msg":"\n⚠ getFaq():\nTypeError: Cannot read property 'data' of undefined","time":"2019-01-02T07:46:14.190Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27462,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T07:46:19.357Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27462,"level":50,"msg":"\n⚠ getFaq():\nTypeError: Cannot read property 'data' of undefined","time":"2019-01-02T07:46:19.541Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27504,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T07:47:13.195Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27504,"level":50,"msg":"\n⚠ getFaq():\nTypeError: Cannot read property 'data' of undefined","time":"2019-01-02T07:47:13.428Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27538,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T07:47:54.003Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27538,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T07:47:54.232Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27566,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T07:50:35.990Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27566,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T07:50:36.237Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27735,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T07:50:57.131Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27735,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T07:50:57.388Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27756,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T07:51:13.525Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27756,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T07:51:13.760Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27777,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T07:51:34.868Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27777,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T07:51:35.104Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27800,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2019-01-02T07:51:53.366Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27800,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #141","time":"2019-01-02T07:51:53.369Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27828,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2019-01-02T07:53:43.836Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27828,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #63","time":"2019-01-02T07:53:43.840Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27828,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2019-01-02T07:56:56.110Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":27828,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #3","time":"2019-01-02T07:56:56.111Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28050,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2019-01-02T07:57:45.152Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28050,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #32","time":"2019-01-02T07:57:45.154Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2019-01-02T07:59:10.706Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #60","time":"2019-01-02T07:59:10.709Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:00:14.960Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:00:15.205Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 >> n.","time":"2019-01-02T08:00:42.520Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 << card for sticker #20","time":"2019-01-02T08:00:42.823Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 >> тю","time":"2019-01-02T08:00:47.907Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 << carousel for plays [154,155,156,157,158,159,160,161,163,165]","time":"2019-01-02T08:00:48.016Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 >> [### next ###]157|158|159|160|161|163|165","time":"2019-01-02T08:00:58.927Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 << carousel for plays [157,158,159,160,161,163,165]","time":"2019-01-02T08:00:58.929Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]feedback","time":"2019-01-02T08:02:12.070Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 << feedback message\"","time":"2019-01-02T08:02:12.073Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:02:32.319Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28112,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:02:32.502Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28259,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:03:58.338Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28259,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:03:58.564Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28429,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:05:30.632Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28429,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:05:30.886Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28459,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:05:49.896Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28459,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:05:50.123Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28483,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:06:01.807Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28483,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:06:02.035Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28483,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:08:19.587Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28483,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:08:19.774Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28628,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:08:37.202Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28628,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:08:37.453Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28689,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:09:01.345Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28689,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:09:01.604Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28689,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2019-01-02T08:09:13.981Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28689,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #1","time":"2019-01-02T08:09:13.986Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28820,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:13:17.524Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28820,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:13:17.752Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28820,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2019-01-02T08:13:55.427Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28820,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #15","time":"2019-01-02T08:13:55.429Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28820,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:14:57.120Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28820,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:14:57.314Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28943,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:15:41.301Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28943,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:15:41.542Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28986,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:16:54.322Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":28986,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:16:54.553Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29150,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:21:59.262Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29150,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:21:59.486Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29183,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:22:16.477Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29183,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:22:16.766Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29183,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:25:13.189Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29183,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:25:13.380Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29393,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:26:17.097Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29393,"level":50,"msg":"\n⚠ getFaq():\nTypeError: Converting circular structure to JSON","time":"2019-01-02T08:26:17.336Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29429,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:26:40.449Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29429,"level":50,"msg":"\n⚠ getFaq():\nTypeError: Converting circular structure to JSON","time":"2019-01-02T08:26:40.711Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29459,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:26:53.194Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29459,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:26:53.431Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29484,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:27:06.478Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29484,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:27:06.728Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29516,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:27:33.991Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29516,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:27:34.297Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29588,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:28:57.248Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29588,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:28:57.481Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29635,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:30:07.291Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29635,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:30:07.569Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29702,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:31:04.897Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29702,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:31:05.131Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29702,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]random_phrase","time":"2019-01-02T08:31:36.508Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29702,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #124","time":"2019-01-02T08:31:36.513Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29777,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:33:40.954Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29777,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:33:41.187Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29777,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:33:48.877Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29777,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:33:49.080Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29867,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:35:31.906Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29867,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:35:32.228Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29916,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:36:47.933Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29916,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:36:48.171Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29979,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:37:56.981Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":29979,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:37:57.218Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":30015,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:38:34.334Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":30015,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:38:34.553Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":30062,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:39:15.751Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":30062,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:39:15.985Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":30094,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:39:48.959Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":30094,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:39:49.213Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":30126,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:40:47.216Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":30126,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:40:47.448Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":30247,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:44:17.745Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":30247,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:44:17.989Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":30283,"level":30,"msg":"facebook - user 1969769179759333 >> [### payload ###]faq","time":"2019-01-02T08:45:06.962Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":30283,"level":30,"msg":"facebook - user 1969769179759333 << FAQ message\"","time":"2019-01-02T08:45:07.290Z","v":0}

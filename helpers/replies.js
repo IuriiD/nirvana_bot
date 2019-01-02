@@ -167,6 +167,9 @@ async function getFaq(session, stickersObj) {
       session.send(info[1]);
     }
 
+    console.log('\ngetFaq');
+    console.log(info[1].data.sourceEvent); // .data.sourceEvent, null, 2));
+
     if (channelId === 'facebook') {
       session.send(info[0]);
       delay(3000);

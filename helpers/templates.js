@@ -95,7 +95,6 @@ function fbCard(imageId, stickersObj) {
     if (!Object.keys(stickersObj).includes(imageId)) {
       return false;
     }
-
     const playId = getPlayIbByStickerId(imageId, stickersObj);
     const shareButton = shareToFbPayload(imageId);
 
@@ -129,7 +128,6 @@ function fbCard(imageId, stickersObj) {
         },
       },
     };
-
     return message;
   } catch (error) {
     log.error(`\n⚠ fbCard():\n${error}`);
@@ -342,7 +340,6 @@ function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null) {
         },
       ]);
     }
-    console.log(JSON.stringify(tCardsCarousel[tCardsCarousel.length - 1], null, 2));
     return tCardsCarousel;
   } catch (error) {
     log.error(`\n⚠ makeTCarousel():\n${error}`);
@@ -696,17 +693,12 @@ async function getFaq4Fb1(session) {
   }
 }
 
-function getFaq4Fb2(session, stickersObj) {
+function getFaq4Fb2(stickersObj) {
   try {
     const stickers = i18n.__('greetings_stickers').split('|');
     const randStickerIndex = Math.floor(Math.random() * stickers.length);
     const greetingSticker = stickers[randStickerIndex];
     const message = fbCard(greetingSticker, stickersObj);
-    message.attachment.payload.elements[0].buttons.push({
-      type: 'postback',
-      payload: i18n.__('random_phrase_payload'),
-      title: i18n.__('random_phrase'),
-    });
     return message;
   } catch (error) {
     log.error(`\n⚠ getFaq4Fb2():\n${error}`);
@@ -737,7 +729,7 @@ async function faq(session, stickersObj) {
 
     if (channelId === 'facebook') {
       const fbMessage1 = await getFaq4Fb1(session, stickersObj);
-      const fbMessage2 = getFaq4Fb2(session, stickersObj);
+      const fbMessage2 = getFaq4Fb2(stickersObj);
       const msg1 = new builder.Message(session).sourceEvent({
         facebook: fbMessage1,
       });
