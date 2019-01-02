@@ -1899,7 +1899,7 @@ module.exports = {
     },
     phraseN: 'null',
     sticker: {
-      telegramStickerId: 'CAADAgADcgAD09KeCjJHk2exLozXAg-Ag',
+      telegramStickerId: 'CAADAgADcgAD09KeCjJHk2exLozXAg',
     },
   },
   156: {
@@ -2138,7 +2138,7 @@ module.exports = {
     },
     phraseN: 'null',
     sticker: {
-      telegramStickerId: 'CAADAgADfwAD09KeCusRl34yjjZ3Ag',
+      telegramStickerId: 'CAADAgADgAAD09KeCmx7vPT739V-Ag',
     },
   },
   169: {

@@ -270,13 +270,11 @@ function tStickerWButtons(imageId, stickersObj) {
       ],
     };
 
+    const { telegramStickerId } = stickersObj[imageId].sticker;
     const message = {
       method: 'sendSticker',
       parameters: {
-        sticker: {
-          url: `${process.env.imgBaseUrl}/stickers/${imageId}.png`,
-          mediaType: 'image/png',
-        },
+        sticker: telegramStickerId,
         reply_markup: keyBoard,
       },
     };
@@ -319,14 +317,11 @@ function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null) {
           ],
         ],
       };
-
+      const { telegramStickerId } = stickersObj[playId].sticker;
       tCardsCarousel.push({
         method: 'sendSticker',
         parameters: {
-          sticker: {
-            url: `${process.env.imgBaseUrl}/stickers/${playId}.png`,
-            mediaType: 'image/png',
-          },
+          sticker: telegramStickerId,
           reply_markup: keyBoard,
         },
       });
@@ -340,6 +335,8 @@ function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null) {
         },
       ]);
     }
+    console.log('\nmakeTCarousel');
+    console.log(JSON.stringify(tCardsCarousel, null, 2));
     return tCardsCarousel;
   } catch (error) {
     log.error(`\n⚠ makeTCarousel():\n${error}`);
