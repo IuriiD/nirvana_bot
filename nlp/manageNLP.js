@@ -17,6 +17,7 @@ manager.addDocument('ru', 'опиши себе', 'smalltalk.agent.acquaintance')
 manager.addDocument('ru', 'представся', 'smalltalk.agent.acquaintance');
 manager.addDocument('ru', 'ти хто', 'smalltalk.agent.acquaintance');
 manager.addDocument('ru', 'розкажи про себе', 'smalltalk.agent.acquaintance');
+
 manager.addDocument('ru', 'скільки тобі років', 'smalltalk.agent.age');
 manager.addDocument('ru', 'який твій вік', 'smalltalk.agent.age');
 manager.addDocument('ru', 'ти нудний', 'smalltalk.agent.annoying');
@@ -27,6 +28,7 @@ manager.addDocument('ru', 'мені нудно', 'smalltalk.agent.annoying');
 manager.addDocument('ru', 'ти такий нудний', 'smalltalk.agent.annoying');
 manager.addDocument('ru', 'зануда', 'smalltalk.agent.annoying');
 manager.addDocument('ru', 'ну і зануда', 'smalltalk.agent.annoying');
+
 manager.addDocument('ru', 'відповідай', 'smalltalk.agent.answer_my_question');
 manager.addDocument('ru', 'відповідайте', 'smalltalk.agent.answer_my_question');
 manager.addDocument('ru', 'дай відповіть', 'smalltalk.agent.answer_my_question');
@@ -34,6 +36,7 @@ manager.addDocument('ru', 'можеш відповісти', 'smalltalk.agent.an
 manager.addDocument('ru', 'у мене питання', 'smalltalk.agent.answer_my_question');
 manager.addDocument('ru', 'є питання', 'smalltalk.agent.answer_my_question');
 manager.addDocument('ru', 'відповідай мені', 'smalltalk.agent.answer_my_question');
+
 manager.addDocument('ru', 'ти поганий', 'smalltalk.agent.bad');
 manager.addDocument('ru', 'ти без толку', 'smalltalk.agent.bad');
 manager.addDocument('ru', 'ти жахливий', 'smalltalk.agent.bad');
@@ -42,7 +45,18 @@ manager.addDocument('ru', 'фігня', 'smalltalk.agent.bad');
 manager.addDocument('ru', 'шлак', 'smalltalk.agent.bad');
 manager.addDocument('ru', 'отстой', 'smalltalk.agent.bad');
 manager.addDocument('ru', 'лажа', 'smalltalk.agent.bad');
+
 manager.addDocument('ru', 'ти хорош', 'smalltalk.agent.beautiful');
+manager.addDocument('ru', 'круто', 'smalltalk.agent.beautiful');
+manager.addDocument('ru', 'крутяк', 'smalltalk.agent.beautiful');
+manager.addDocument('ru', 'нічосє', 'smalltalk.agent.beautiful');
+manager.addDocument('ru', 'нічого собі', 'smalltalk.agent.beautiful');
+manager.addDocument('ru', 'оце так', 'smalltalk.agent.beautiful');
+manager.addDocument('ru', 'оце да', 'smalltalk.agent.beautiful');
+manager.addDocument('ru', 'офігеть', 'smalltalk.agent.beautiful');
+manager.addDocument('ru', 'офігєть', 'smalltalk.agent.beautiful');
+manager.addDocument('ru', 'непогано', 'smalltalk.agent.beautiful');
+manager.addDocument('ru', 'молодець', 'smalltalk.agent.beautiful');
 manager.addDocument('ru', 'ти крутий', 'smalltalk.agent.beautiful');
 manager.addDocument('ru', 'ти красавчік', 'smalltalk.agent.beautiful');
 manager.addDocument('ru', 'ти молодець', 'smalltalk.agent.beautiful');
@@ -51,12 +65,15 @@ manager.addDocument('ru', 'красава', 'smalltalk.agent.beautiful');
 manager.addDocument('ru', 'маладца', 'smalltalk.agent.beautiful');
 manager.addDocument('ru', 'ти розумний', 'smalltalk.agent.beautiful');
 manager.addDocument('ru', 'розумно', 'smalltalk.agent.beautiful');
+
 manager.addDocument('ru', 'коли ти народився', 'smalltalk.agent.birth_date');
 manager.addDocument('ru', 'коли твій день народження', 'smalltalk.agent.birth_date');
 manager.addDocument('ru', 'твій день народження', 'smalltalk.agent.birth_date');
+
 manager.addDocument('ru', 'на кого ти працюєш', 'smalltalk.agent.boss');
 manager.addDocument('ru', 'хто твій власник', 'smalltalk.agent.boss');
 manager.addDocument('ru', 'хто твій бос', 'smalltalk.agent.boss');
+
 manager.addDocument('ru', 'допоможи', 'smalltalk.agent.get_help');
 manager.addDocument('ru', 'можеш допомогти', 'smalltalk.agent.get_help');
 manager.addDocument('ru', 'треба допомога', 'smalltalk.agent.get_help');
@@ -71,6 +88,7 @@ manager.addDocument('ru', 'зроби послугу', 'smalltalk.agent.get_help
 manager.addDocument('ru', 'ти мені потрібен', 'smalltalk.agent.get_help');
 manager.addDocument('ru', 'хелп', 'smalltalk.agent.get_help');
 manager.addDocument('ru', 'що тут робити', 'smalltalk.user.get_help');
+
 manager.addDocument('ru', 'ти бот', 'smalltalk.agent.chatbot');
 manager.addDocument('ru', 'ти чатбот', 'smalltalk.agent.chatbot');
 manager.addDocument('ru', 'ти робот', 'smalltalk.agent.chatbot');
@@ -86,6 +104,7 @@ manager.addDocument('ru', 'ти справжня людина?', 'smalltalk.agen
 manager.addDocument('ru', 'я говорю з людиною?', 'smalltalk.agent.chatbot');
 manager.addDocument('ru', 'ти лесь?', 'smalltalk.agent.chatbot');
 manager.addDocument('ru', 'ти реальна людина?', 'smalltalk.agent.chatbot');
+
 manager.addDocument('ru', 'ти чокнутий', 'smalltalk.agent.crazy');
 manager.addDocument('ru', 'ти дурний', 'smalltalk.agent.crazy');
 manager.addDocument('ru', 'ти не в собі', 'smalltalk.agent.crazy');
@@ -94,11 +113,13 @@ manager.addDocument('ru', "ти з'їхав з глузду", 'smalltalk.agent.c
 manager.addDocument('ru', 'ти без розуму', 'smalltalk.agent.crazy');
 manager.addDocument('ru', 'ти дивний', 'smalltalk.agent.crazy');
 manager.addDocument('ru', 'ти якийсь дивний', 'smalltalk.agent.crazy');
+
 manager.addDocument('ru', 'смішно', 'smalltalk.agent.funny');
 manager.addDocument('ru', 'ти смішний', 'smalltalk.agent.funny');
 manager.addDocument('ru', 'ти такий смішний', 'smalltalk.agent.funny');
 manager.addDocument('ru', 'ржака', 'smalltalk.agent.funny');
 manager.addDocument('ru', 'оце прикол', 'smalltalk.agent.funny');
+manager.addDocument('ru', 'прикольно', 'smalltalk.agent.funny');
 manager.addDocument('ru', 'прикол', 'smalltalk.agent.funny');
 manager.addDocument('ru', 'ти дуже смішний', 'smalltalk.agent.funny');
 manager.addDocument('ru', 'ти забавний', 'smalltalk.agent.funny');
@@ -106,14 +127,18 @@ manager.addDocument('ru', 'ха', 'smalltalk.agent.funny');
 manager.addDocument('ru', 'хахаха', 'smalltalk.agent.funny');
 manager.addDocument('ru', 'ха ха', 'smalltalk.agent.funny');
 manager.addDocument('ru', 'це було смішно', 'smalltalk.agent.funny');
+manager.addDocument('ru', 'здорово', 'smalltalk.agent.funny');
+
 manager.addDocument('ru', 'ти щасливий ', 'smalltalk.agent.happy');
 manager.addDocument('ru', 'ти дуже щасливий', 'smalltalk.agent.happy');
+
 manager.addDocument('ru', 'у тебе є хоббі', 'smalltalk.agent.hobby');
 manager.addDocument('ru', 'твоє хоббі', 'smalltalk.agent.hobby');
 manager.addDocument('ru', 'твоє хобі', 'smalltalk.agent.hobby');
 manager.addDocument('ru', 'яке твое хоббі', 'smalltalk.agent.hobby');
 manager.addDocument('ru', 'чим ти цікавишся', 'smalltalk.agent.hobby');
 manager.addDocument('ru', 'що ти любиш', 'smalltalk.agent.hobby');
+
 manager.addDocument('ru', 'давай дружити', 'smalltalk.agent.my_friend');
 manager.addDocument('ru', 'ти мій друг', 'smalltalk.agent.my_friend');
 manager.addDocument('ru', 'будеш моїм другом?', 'smalltalk.agent.my_friend');
@@ -123,6 +148,7 @@ manager.addDocument('ru', 'давай подружимось', 'smalltalk.agent.
 manager.addDocument('ru', 'я твій друг', 'smalltalk.agent.my_friend');
 manager.addDocument('ru', 'ти мій друг', 'smalltalk.agent.my_friend');
 manager.addDocument('ru', 'ти мій товариш', 'smalltalk.agent.my_friend');
+
 manager.addDocument('ru', 'ти готовий ', 'smalltalk.agent.ready');
 manager.addDocument('ru', 'готовий', 'smalltalk.agent.ready');
 manager.addDocument('ru', 'ти закінчив', 'smalltalk.agent.ready');
@@ -132,10 +158,12 @@ manager.addDocument('ru', 'де ти', 'smalltalk.agent.ready');
 manager.addDocument('ru', 'де ти живеш', 'smalltalk.agent.ready');
 manager.addDocument('ru', 'з якого ти міста', 'smalltalk.agent.ready');
 manager.addDocument('ru', 'де твоє місто', 'smalltalk.agent.ready');
+
 manager.addDocument('ru', 'де твій дім', 'smalltalk.agent.residence');
 manager.addDocument('ru', 'де ти знаходишся', 'smalltalk.agent.residence');
 manager.addDocument('ru', 'звідки ти', 'smalltalk.agent.residence');
 manager.addDocument('ru', 'де ти є', 'smalltalk.agent.residence');
+
 manager.addDocument('ru', 'це правда', 'smalltalk.agent.right');
 manager.addDocument('ru', 'це точно', 'smalltalk.agent.right');
 manager.addDocument('ru', 'це вірно', 'smalltalk.agent.right');
@@ -144,9 +172,11 @@ manager.addDocument('ru', 'вірно', 'smalltalk.agent.right');
 manager.addDocument('ru', 'твоя правда', 'smalltalk.agent.right');
 manager.addDocument('ru', 'ти правий', 'smalltalk.agent.right');
 manager.addDocument('ru', 'цілком вірно', 'smalltalk.agent.right');
+
 manager.addDocument('ru', 'ти упевнений?', 'smalltalk.agent.sure');
 manager.addDocument('ru', 'ти увєрен?', 'smalltalk.agent.sure');
 manager.addDocument('ru', 'упевнений в цьому', 'smalltalk.agent.sure');
+
 manager.addDocument('ru', 'поговори зі мною', 'smalltalk.agent.talk_to_me');
 manager.addDocument('ru', 'побалакай зі мною', 'smalltalk.agent.talk_to_me');
 manager.addDocument('ru', 'поговоримо', 'smalltalk.agent.talk_to_me');
@@ -156,10 +186,12 @@ manager.addDocument('ru', 'поговориш зі мною', 'smalltalk.agent.t
 manager.addDocument('ru', 'давай поговорим', 'smalltalk.agent.talk_to_me');
 manager.addDocument('ru', 'давай побалакаєм', 'smalltalk.agent.talk_to_me');
 manager.addDocument('ru', 'давай говорити)', 'smalltalk.agent.talk_to_me');
+
 manager.addDocument('ru', 'ви тут', 'smalltalk.agent.there');
 manager.addDocument('ru', 'ти все ще тут', 'smalltalk.agent.there');
 manager.addDocument('ru', 'ти ще тут', 'smalltalk.agent.there');
 manager.addDocument('ru', 'ти тут', 'smalltalk.agent.there');
+
 manager.addDocument('ru', 'погано', 'smalltalk.appraisal.bad');
 manager.addDocument('ru', 'це погано', 'smalltalk.appraisal.bad');
 manager.addDocument('ru', 'це було погано', 'smalltalk.appraisal.bad');
@@ -173,6 +205,7 @@ manager.addDocument('ru', 'це було жахливо', 'smalltalk.appraisal.b
 manager.addDocument('ru', 'фігня', 'smalltalk.appraisal.bad');
 manager.addDocument('ru', 'фігово', 'smalltalk.appraisal.bad');
 manager.addDocument('ru', 'хуйня', 'smalltalk.appraisal.bad');
+
 manager.addDocument('ru', 'це кльово', 'smalltalk.appraisal.good');
 manager.addDocument('ru', 'це класно', 'smalltalk.appraisal.good');
 manager.addDocument('ru', 'заєбісь', 'smalltalk.appraisal.good');
@@ -183,6 +216,7 @@ manager.addDocument('ru', 'відмінно', 'smalltalk.appraisal.good');
 manager.addDocument('ru', 'охуєнно', 'smalltalk.appraisal.good');
 manager.addDocument('ru', 'це було класно', 'smalltalk.appraisal.good');
 manager.addDocument('ru', 'було охуєнно', 'smalltalk.appraisal.good');
+
 manager.addDocument('ru', 'дякую', 'smalltalk.appraisal.thank_you');
 manager.addDocument('ru', 'спасибі', 'smalltalk.appraisal.thank_you');
 manager.addDocument('ru', 'спасибо', 'smalltalk.appraisal.thank_you');
@@ -192,8 +226,10 @@ manager.addDocument('ru', 'вдячний', 'smalltalk.appraisal.thank_you');
 manager.addDocument('ru', 'дяка', 'smalltalk.appraisal.thank_you');
 manager.addDocument('ru', 'сенкс', 'smalltalk.appraisal.thank_you');
 manager.addDocument('ru', 'будь ласка', 'smalltalk.appraisal.thank_you');
+
 manager.addDocument('ru', 'будь-ласка', 'smalltalk.appraisal.welcome');
 manager.addDocument('ru', 'будьласка', 'smalltalk.appraisal.welcome');
+
 manager.addDocument('ru', 'відміна', 'smalltalk.confirmation.cancel');
 manager.addDocument('ru', 'скасувати', 'smalltalk.confirmation.cancel');
 manager.addDocument('ru', 'відмінити', 'smalltalk.confirmation.cancel');
@@ -201,6 +237,7 @@ manager.addDocument('ru', 'відбій', 'smalltalk.confirmation.cancel');
 manager.addDocument('ru', 'забудь', 'smalltalk.confirmation.cancel');
 manager.addDocument('ru', 'забудь про це', 'smalltalk.confirmation.cancel');
 manager.addDocument('ru', 'скасуй', 'smalltalk.confirmation.cancel');
+
 manager.addDocument('ru', 'ні', 'smalltalk.confirmation.no');
 manager.addDocument('ru', 'ні дякую', 'smalltalk.confirmation.no');
 manager.addDocument('ru', 'вибач але ні', 'smalltalk.confirmation.no');
@@ -213,6 +250,7 @@ manager.addDocument('ru', 'не так', 'smalltalk.confirmation.no');
 manager.addDocument('ru', 'ні дякую', 'smalltalk.confirmation.no');
 manager.addDocument('ru', 'ніі', 'smalltalk.confirmation.no');
 manager.addDocument('ru', 'думаю ні', 'smalltalk.confirmation.no');
+
 manager.addDocument('ru', 'так', 'smalltalk.confirmation.yes');
 manager.addDocument('ru', 'да', 'smalltalk.confirmation.yes');
 manager.addDocument('ru', 'вірно', 'smalltalk.confirmation.yes');
@@ -225,6 +263,7 @@ manager.addDocument('ru', 'це вірно', 'smalltalk.confirmation.yes');
 manager.addDocument('ru', 'цілком вірно', 'smalltalk.confirmation.yes');
 manager.addDocument('ru', 'ок', 'smalltalk.confirmation.yes');
 manager.addDocument('ru', 'давай', 'smalltalk.confirmation.yes');
+
 manager.addDocument('ru', 'чекай', 'smalltalk.dialog.hold_on');
 manager.addDocument('ru', 'почекай', 'smalltalk.dialog.hold_on');
 manager.addDocument('ru', 'чекайте', 'smalltalk.dialog.hold_on');
@@ -232,12 +271,14 @@ manager.addDocument('ru', 'зачекайте', 'smalltalk.dialog.hold_on');
 manager.addDocument('ru', 'секунду', 'smalltalk.dialog.hold_on');
 manager.addDocument('ru', 'не поспішай', 'smalltalk.dialog.hold_on');
 manager.addDocument('ru', 'не спіши', 'smalltalk.dialog.hold_on');
+
 manager.addDocument('ru', 'вибач', 'smalltalk.dialog.sorry');
 manager.addDocument('ru', 'пробач', 'smalltalk.dialog.sorry');
 manager.addDocument('ru', 'вибачте', 'smalltalk.dialog.sorry');
 manager.addDocument('ru', 'пробачте', 'smalltalk.dialog.sorry');
 manager.addDocument('ru', 'мої вибачення', 'smalltalk.dialog.sorry');
 manager.addDocument('ru', 'пробачте мене', 'smalltalk.dialog.sorry');
+
 manager.addDocument('ru', 'що ти маєш на увазі', 'smalltalk.dialog.what_do_you_mean');
 manager.addDocument('ru', 'що ви маєте на увазі', 'smalltalk.dialog.what_do_you_mean');
 manager.addDocument('ru', 'в смислє', 'smalltalk.dialog.what_do_you_mean');
@@ -245,6 +286,7 @@ manager.addDocument('ru', 'в смисле', 'smalltalk.dialog.what_do_you_mean'
 manager.addDocument('ru', 'всмислі', 'smalltalk.dialog.what_do_you_mean');
 manager.addDocument('ru', 'сміслє', 'smalltalk.dialog.what_do_you_mean');
 manager.addDocument('ru', 'смислє', 'smalltalk.dialog.what_do_you_mean');
+
 manager.addDocument('ru', 'бувай', 'smalltalk.greetings.bye');
 manager.addDocument('ru', 'пока', 'smalltalk.greetings.bye');
 manager.addDocument('ru', 'до скорого', 'smalltalk.greetings.bye');
@@ -253,6 +295,7 @@ manager.addDocument('ru', 'допобачення', 'smalltalk.greetings.bye');
 manager.addDocument('ru', 'адйос', 'smalltalk.greetings.bye');
 manager.addDocument('ru', 'на все добре', 'smalltalk.greetings.bye');
 manager.addDocument('ru', 'чао', 'smalltalk.greetings.bye');
+
 manager.addDocument('ru', 'привіт', 'smalltalk.greetings.hello');
 manager.addDocument('ru', 'здоров', 'smalltalk.greetings.hello');
 manager.addDocument('ru', 'здоровенькі були', 'smalltalk.greetings.hello');
@@ -265,10 +308,19 @@ manager.addDocument('ru', 'добрий ранок', 'smalltalk.greetings.hello'
 manager.addDocument('ru', 'добрий вечір', 'smalltalk.greetings.hello');
 manager.addDocument('ru', 'доброго ранку', 'smalltalk.greetings.hello');
 manager.addDocument('ru', 'вітання', 'smalltalk.greetings.hello');
+manager.addDocument('ru', 'хей', 'smalltalk.greetings.hello');
+
 manager.addDocument('ru', 'як справи', 'smalltalk.greetings.how_are_you');
 manager.addDocument('ru', 'як поживаєш', 'smalltalk.greetings.how_are_you');
 manager.addDocument('ru', 'як сам', 'smalltalk.greetings.how_are_you');
 manager.addDocument('ru', 'як ти', 'smalltalk.greetings.how_are_you');
+manager.addDocument('ru', 'що нового', 'smalltalk.greetings.how_are_you');
+manager.addDocument('ru', 'що розкажеш', 'smalltalk.greetings.how_are_you');
+manager.addDocument('ru', 'шо розкажеш', 'smalltalk.greetings.how_are_you');
+manager.addDocument('ru', 'как дела', 'smalltalk.greetings.how_are_you');
+manager.addDocument('ru', 'як діла', 'smalltalk.greetings.how_are_you');
+manager.addDocument('ru', 'як воно', 'smalltalk.greetings.how_are_you');
+
 manager.addDocument('ru', 'жартую', 'smalltalk.user.joking');
 manager.addDocument('ru', 'то я жартую', 'smalltalk.user.joking');
 manager.addDocument('ru', 'я жартую', 'smalltalk.user.joking');
@@ -279,6 +331,7 @@ manager.addDocument('ru', 'то був жарт', 'smalltalk.user.joking');
 manager.addDocument('ru', 'я приколююсь', 'smalltalk.user.joking');
 manager.addDocument('ru', 'тест', 'smalltalk.user.testing_agent');
 manager.addDocument('ru', 'старт', 'smalltalk.user.testing_agent');
+
 manager.addDocument('ru', 'хуй', 'smalltalk.user.rude');
 manager.addDocument('ru', 'хуйово', 'smalltalk.user.rude');
 manager.addDocument('ru', 'нехуйово', 'smalltalk.user.rude');
@@ -287,6 +340,13 @@ manager.addDocument('ru', 'нахуя', 'smalltalk.user.rude');
 manager.addDocument('ru', 'пізда', 'smalltalk.user.rude');
 manager.addDocument('ru', 'пизда', 'smalltalk.user.rude');
 manager.addDocument('ru', 'піздато', 'smalltalk.user.rude');
+manager.addDocument('ru', 'охуеть', 'smalltalk.user.rude');
+manager.addDocument('ru', 'охуєнно', 'smalltalk.user.rude');
+manager.addDocument('ru', 'ніхуйово', 'smalltalk.user.rude');
+manager.addDocument('ru', 'ніхуя', 'smalltalk.user.rude');
+manager.addDocument('ru', 'блять', 'smalltalk.user.rude');
+manager.addDocument('ru', 'ебать', 'smalltalk.user.rude');
+
 manager.addDocument('ru', 'випадковий стікер', 'smalltalk.user.random_stiker');
 manager.addDocument('ru', 'рандомний стікер', 'smalltalk.user.random_stiker');
 manager.addDocument('ru', 'будь-який стікер', 'smalltalk.user.random_stiker');
@@ -300,28 +360,51 @@ manager.addDocument('ru', 'випадкова фраза', 'smalltalk.user.rando
 manager.addDocument('ru', 'рандомна фраза', 'smalltalk.user.random_stiker');
 manager.addDocument('ru', 'случайный стикер', 'smalltalk.user.random_stiker');
 manager.addDocument('ru', 'стікер на твій вибір', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'покажи стікер', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'покажи фразу', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'покажи картинку', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'дай стікер', 'smalltalk.user.random_stiker');
+manager.addDocument('ru', 'наступний стікер', 'smalltalk.user.random_stiker');
 
 manager.addDocument('ru', 'Цiкaвi дослiди', 'smalltalk.show_play_doslidy');
 manager.addDocument('ru', 'пєса Цiкaвi дослiди', 'smalltalk.show_play_doslidy');
 manager.addDocument('ru', 'покажи Цiкaвi дослiди', 'smalltalk.show_play_doslidy');
 manager.addDocument('ru', 'читай Цiкaвi дослiди', 'smalltalk.show_play_doslidy');
+manager.addDocument('ru', 'читати Цiкaвi дослiди', 'smalltalk.show_play_doslidy');
+manager.addDocument('ru', 'цитуй Цiкaвi дослiди', 'smalltalk.show_play_doslidy');
+manager.addDocument('ru', 'читай дослiди', 'smalltalk.show_play_doslidy');
+manager.addDocument('ru', 'дослiди про тварин', 'smalltalk.show_play_doslidy');
+manager.addDocument('ru', 'бога нема', 'smalltalk.show_play_doslidy');
 
 manager.addDocument('ru', 'Вaсiлiсa Єгоровнa i мужичкi', 'smalltalk.show_play_vasilisa');
 manager.addDocument('ru', 'пєса Вaсiлiсa Єгоровнa i мужичкi', 'smalltalk.show_play_vasilisa');
 manager.addDocument('ru', 'покажи Вaсiлiсa Єгоровнa i мужичкi', 'smalltalk.show_play_vasilisa');
 manager.addDocument('ru', 'читай Вaсiлiсa Єгоровнa i мужичкi', 'smalltalk.show_play_vasilisa');
+manager.addDocument('ru', 'читай про вaсiлiсу єгоровну', 'smalltalk.show_play_vasilisa');
+manager.addDocument('ru', 'читай про вaсiлiсу', 'smalltalk.show_play_vasilisa');
+manager.addDocument('ru', 'вaсiлiса єгоровна і мужички', 'smalltalk.show_play_vasilisa');
+manager.addDocument('ru', 'хочу вaсiлiса єгоровна і мужички', 'smalltalk.show_play_vasilisa');
+manager.addDocument('ru', 'вaсiлiса і мужички', 'smalltalk.show_play_vasilisa');
 
 manager.addDocument('ru', 'Піздєц', 'smalltalk.show_play_pizdets');
 manager.addDocument('ru', 'пєса Піздєц', 'smalltalk.show_play_pizdets');
 manager.addDocument('ru', 'покажи Піздєц', 'smalltalk.show_play_pizdets');
 manager.addDocument('ru', 'читай Піздєц', 'smalltalk.show_play_pizdets');
+manager.addDocument('ru', 'хочу Піздєц', 'smalltalk.show_play_pizdets');
 
 manager.addDocument('ru', 'Пацавата історія', 'smalltalk.show_play_patzavataStory');
 manager.addDocument('ru', 'пєса Пацавата історія', 'smalltalk.show_play_patzavataStory');
 manager.addDocument('ru', 'покажи Пацавата історія', 'smalltalk.show_play_patzavataStory');
 manager.addDocument('ru', 'читай Пацавата історія', 'smalltalk.show_play_patzavataStory');
+manager.addDocument('ru', 'читай Пацавату історію', 'smalltalk.show_play_patzavataStory');
+manager.addDocument('ru', 'давай Пацавату історію', 'smalltalk.show_play_patzavataStory');
+manager.addDocument('ru', 'хочу Пацавату історію', 'smalltalk.show_play_patzavataStory');
 
 manager.addDocument('ru', 'Герой нaшого чaсу. Повiсть першa', 'smalltalk.show_play_timeHero1');
+manager.addDocument('ru', 'читай Герой нaшого чaсу', 'smalltalk.show_play_timeHero1');
+manager.addDocument('ru', 'цитуй Герой нaшого чaсу', 'smalltalk.show_play_timeHero1');
+manager.addDocument('ru', 'давай Герой нaшого чaсу', 'smalltalk.show_play_timeHero1');
+manager.addDocument('ru', 'Герой нaшого чaсу', 'smalltalk.show_play_timeHero1');
 manager.addDocument('ru', 'Герой нaшого чaсу. Повiсть 1', 'smalltalk.show_play_timeHero1');
 manager.addDocument('ru', 'пєса Герой нaшого чaсу. Повiсть першa', 'smalltalk.show_play_timeHero1');
 manager.addDocument(
@@ -336,6 +419,8 @@ manager.addDocument(
 );
 
 manager.addDocument('ru', 'Герой нaшого чaсу. Повiсть другa', 'smalltalk.show_play_timeHero2');
+manager.addDocument('ru', 'Герой нaшого чaсу. Другa частина', 'smalltalk.show_play_timeHero2');
+manager.addDocument('ru', 'Герой нaшого чaсу. Другa повість', 'smalltalk.show_play_timeHero2');
 manager.addDocument('ru', 'Герой нaшого чaсу. Повiсть 2', 'smalltalk.show_play_timeHero2');
 manager.addDocument('ru', 'пєса Герой нaшого чaсу. Повiсть другa', 'smalltalk.show_play_timeHero2');
 manager.addDocument(
@@ -350,9 +435,12 @@ manager.addDocument(
 );
 
 manager.addDocument('ru', 'Кaцaпи', 'smalltalk.show_play_katzapy');
+manager.addDocument('ru', 'читай про Кaцaпів', 'smalltalk.show_play_katzapy');
 manager.addDocument('ru', 'пєса Кaцaпи', 'smalltalk.show_play_katzapy');
 manager.addDocument('ru', 'покажи Кaцaпи', 'smalltalk.show_play_katzapy');
 manager.addDocument('ru', 'читай Кaцaпи', 'smalltalk.show_play_katzapy');
+manager.addDocument('ru', 'про кaцaпів', 'smalltalk.show_play_katzapy');
+manager.addDocument('ru', 'кaцaпізм', 'smalltalk.show_play_katzapy');
 
 manager.addDocument(
   'ru',
@@ -374,23 +462,45 @@ manager.addDocument(
   'читай Місце встрєчі ізмєніть ніззя, блядь!',
   'smalltalk.show_play_mistzeVstrechi',
 );
+manager.addDocument('ru', 'читай Місце встрєчі', 'smalltalk.show_play_mistzeVstrechi');
+manager.addDocument('ru', 'читай Місце встрєчі', 'smalltalk.show_play_mistzeVstrechi');
+manager.addDocument(
+  'ru',
+  'Місце встрєчі ізмєніть ніззя, блять',
+  'smalltalk.show_play_mistzeVstrechi',
+);
+manager.addDocument(
+  'ru',
+  'Місце встрєчі ізмєніть ніззя, блядь',
+  'smalltalk.show_play_mistzeVstrechi',
+);
+manager.addDocument('ru', 'Місце встрєчі ізмєніть ніззя', 'smalltalk.show_play_mistzeVstrechi');
+manager.addDocument('ru', 'Місце встрєчі ізмєніть нізя', 'smalltalk.show_play_mistzeVstrechi');
 
 manager.addDocument('ru', 'Хвороба Івасика', 'smalltalk.show_play_ivasyk');
 manager.addDocument('ru', 'пєса Хвороба Івасика', 'smalltalk.show_play_ivasyk');
 manager.addDocument('ru', 'покажи Хвороба Івасика', 'smalltalk.show_play_ivasyk');
 manager.addDocument('ru', 'читай Хвороба Івасика', 'smalltalk.show_play_ivasyk');
+manager.addDocument('ru', 'читай Хворобу Івасика', 'smalltalk.show_play_ivasyk');
+manager.addDocument('ru', 'Хворобу Івасика', 'smalltalk.show_play_ivasyk');
 
 manager.addDocument('ru', 'Данко', 'smalltalk.show_play_danko');
 manager.addDocument('ru', 'пєса Данко', 'smalltalk.show_play_danko');
 manager.addDocument('ru', 'покажи Данко', 'smalltalk.show_play_danko');
 manager.addDocument('ru', 'читай Данко', 'smalltalk.show_play_danko');
+manager.addDocument('ru', 'давай Данко', 'smalltalk.show_play_danko');
 
 manager.addDocument('ru', 'Павлік Морозов', 'smalltalk.show_play_morozov');
 manager.addDocument('ru', 'пєса Павлік Морозов', 'smalltalk.show_play_morozov');
 manager.addDocument('ru', 'покажи Павлік Морозов', 'smalltalk.show_play_morozov');
 manager.addDocument('ru', 'читай Павлік Морозов', 'smalltalk.show_play_morozov');
+manager.addDocument('ru', 'читай Павліка Морозова', 'smalltalk.show_play_morozov');
+manager.addDocument('ru', 'покажи Павліка Морозова', 'smalltalk.show_play_morozov');
 
 manager.addDocument('ru', 'Гамлєт, або Феномен датського кацапізма', 'smalltalk.show_play_hamlet');
+manager.addDocument('ru', 'Гамлєт або Феномен датського кацапізма', 'smalltalk.show_play_hamlet');
+manager.addDocument('ru', 'Гамлєт або Феномен датського кацапізму', 'smalltalk.show_play_hamlet');
+manager.addDocument('ru', 'Гамлєт', 'smalltalk.show_play_hamlet');
 manager.addDocument(
   'ru',
   'пєса Гамлєт, або Феномен датського кацапізма',
@@ -408,8 +518,11 @@ manager.addDocument(
 );
 manager.addDocument('ru', 'читай Гамлєта', 'smalltalk.show_play_hamlet');
 manager.addDocument('ru', 'читай Гамлета', 'smalltalk.show_play_hamlet');
+manager.addDocument('ru', 'читай про Гамлєта', 'smalltalk.show_play_hamlet');
 
 manager.addDocument('ru', 'Остановісь, мгновєньє – ти прєкрасно!', 'smalltalk.show_play_mgnovenie');
+manager.addDocument('ru', 'Остановісь, мгновєньє - ти прєкрасно!', 'smalltalk.show_play_mgnovenie');
+manager.addDocument('ru', 'Остановісь мгновєньє ти прєкрасно!', 'smalltalk.show_play_mgnovenie');
 manager.addDocument(
   'ru',
   'пєса Остановісь, мгновєньє – ти прєкрасно!',
@@ -425,50 +538,68 @@ manager.addDocument(
   'читай Остановісь, мгновєньє – ти прєкрасно!',
   'smalltalk.show_play_mgnovenie',
 );
+manager.addDocument('ru', 'Остановісь, мгновєньє', 'smalltalk.show_play_mgnovenie');
+manager.addDocument('ru', 'Остановісь, мгновєніє', 'smalltalk.show_play_mgnovenie');
 
 manager.addDocument('ru', 'Сноби', 'smalltalk.show_play_snobs');
 manager.addDocument('ru', 'пєса Сноби', 'smalltalk.show_play_snobs');
 manager.addDocument('ru', 'покажи Сноби', 'smalltalk.show_play_snobs');
 manager.addDocument('ru', 'читай Сноби', 'smalltalk.show_play_snobs');
+manager.addDocument('ru', 'читай Снобів', 'smalltalk.show_play_snobs');
+manager.addDocument('ru', 'читай про Снобів', 'smalltalk.show_play_snobs');
+manager.addDocument('ru', 'покажи Снобів', 'smalltalk.show_play_snobs');
 
 manager.addDocument('ru', 'Король Літр', 'smalltalk.show_play_litr');
 manager.addDocument('ru', 'пєса Король Літр', 'smalltalk.show_play_litr');
 manager.addDocument('ru', 'покажи Король Літр', 'smalltalk.show_play_litr');
 manager.addDocument('ru', 'читай Король Літр', 'smalltalk.show_play_litr');
+manager.addDocument('ru', 'читай про Короля Літра', 'smalltalk.show_play_litr');
 
 manager.addDocument('ru', 'Нірвана', 'smalltalk.show_play_nirvana');
 manager.addDocument('ru', 'пєса Нірвана', 'smalltalk.show_play_nirvana');
 manager.addDocument('ru', 'покажи Нірвана', 'smalltalk.show_play_nirvana');
 manager.addDocument('ru', 'читай Нірвана', 'smalltalk.show_play_nirvana');
+manager.addDocument('ru', 'хочу Нірвана', 'smalltalk.show_play_nirvana');
+manager.addDocument('ru', 'про Нірвану', 'smalltalk.show_play_nirvana');
 
 manager.addDocument('ru', 'Йоги', 'smalltalk.show_play_jogy');
 manager.addDocument('ru', 'пєса Йоги', 'smalltalk.show_play_jogy');
 manager.addDocument('ru', 'покажи Йоги', 'smalltalk.show_play_jogy');
 manager.addDocument('ru', 'читай Йоги', 'smalltalk.show_play_jogy');
+manager.addDocument('ru', 'про йогів', 'smalltalk.show_play_jogy');
 
 manager.addDocument('ru', 'Казка про рєпку, або Хулі не ясно?', 'smalltalk.show_play_repka');
+manager.addDocument('ru', 'Казка про рєпку або Хулі не ясно', 'smalltalk.show_play_repka');
 manager.addDocument('ru', 'Казка про рєпку', 'smalltalk.show_play_repka');
 manager.addDocument('ru', 'пєса Казка про рєпку, або Хулі не ясно?', 'smalltalk.show_play_repka');
 manager.addDocument('ru', 'покажи Казка про рєпку, або Хулі не ясно?', 'smalltalk.show_play_repka');
 manager.addDocument('ru', 'читай Казка про рєпку, або Хулі не ясно?', 'smalltalk.show_play_repka');
+manager.addDocument('ru', 'про рєпку', 'smalltalk.show_play_repka');
 
 manager.addDocument('ru', 'До хуя масла', 'smalltalk.show_play_maslo');
 manager.addDocument('ru', 'Дохуя масла', 'smalltalk.show_play_maslo');
+manager.addDocument('ru', 'масла дохуя', 'smalltalk.show_play_maslo');
+manager.addDocument('ru', 'масла дофіга', 'smalltalk.show_play_maslo');
 manager.addDocument('ru', 'пєса До хуя масла', 'smalltalk.show_play_maslo');
 manager.addDocument('ru', 'покажи До хуя масла', 'smalltalk.show_play_maslo');
 manager.addDocument('ru', 'читай До хуя масла', 'smalltalk.show_play_maslo');
+manager.addDocument('ru', 'читай Дохуя масла', 'smalltalk.show_play_maslo');
 
 manager.addDocument('ru', 'Йоко і самураї', 'smalltalk.show_play_joko');
 manager.addDocument('ru', 'пєса Йоко і самураї', 'smalltalk.show_play_joko');
 manager.addDocument('ru', 'покажи Йоко і самураї', 'smalltalk.show_play_joko');
 manager.addDocument('ru', 'читай Йоко і самураї', 'smalltalk.show_play_joko');
+manager.addDocument('ru', 'про Йоко і самураїв', 'smalltalk.show_play_joko');
 
-manager.addDocument('ru', 'Рух життя, або Динамо', 'smalltalk.show_play_dynamo');
+manager.addDocument('ru', 'Рух життя, або Дінамо', 'smalltalk.show_play_dynamo');
+manager.addDocument('ru', 'Рух життя або Дінамо', 'smalltalk.show_play_dynamo');
+manager.addDocument('ru', 'Рух життя або Динамо', 'smalltalk.show_play_dynamo');
 manager.addDocument('ru', 'пєса Рух життя, або Динамо', 'smalltalk.show_play_dynamo');
 manager.addDocument('ru', 'покажи Рух життя, або Динамо', 'smalltalk.show_play_dynamo');
 manager.addDocument('ru', 'читай Рух життя, або Динамо', 'smalltalk.show_play_dynamo');
 
 manager.addDocument('ru', 'Жан Маре та інші', 'smalltalk.show_play_janMare');
+manager.addDocument('ru', 'Жан Маре', 'smalltalk.show_play_janMare');
 manager.addDocument('ru', 'пєса Жан Маре та інші', 'smalltalk.show_play_janMare');
 manager.addDocument('ru', 'покажи Жан Маре та інші', 'smalltalk.show_play_janMare');
 manager.addDocument('ru', 'читай Жан Маре та інші', 'smalltalk.show_play_janMare');
@@ -479,6 +610,7 @@ manager.addDocument('ru', 'покажи Утопія', 'smalltalk.show_play_utop
 manager.addDocument('ru', 'читай Утопія', 'smalltalk.show_play_utopia');
 
 manager.addDocument('ru', 'Діана', 'smalltalk.show_play_diana');
+manager.addDocument('ru', 'про Діану', 'smalltalk.show_play_diana');
 manager.addDocument('ru', 'пєса Діана', 'smalltalk.show_play_diana');
 manager.addDocument('ru', 'покажи Діана', 'smalltalk.show_play_diana');
 manager.addDocument('ru', 'читай Діана', 'smalltalk.show_play_diana');
@@ -488,6 +620,7 @@ manager.addDocument(
   'Множення в умі, або Плинність часу',
   'smalltalk.show_play_mnozhennyaVUmi',
 );
+manager.addDocument('ru', 'Множення в умі', 'smalltalk.show_play_mnozhennyaVUmi');
 manager.addDocument(
   'ru',
   'пєса Множення в умі, або Плинність часу',
@@ -509,6 +642,7 @@ manager.addDocument('ru', 'Іржик', 'smalltalk.show_play_irzhyk');
 manager.addDocument('ru', 'пєса Іржик', 'smalltalk.show_play_irzhyk');
 manager.addDocument('ru', 'покажи Іржик', 'smalltalk.show_play_irzhyk');
 manager.addDocument('ru', 'читай Іржик', 'smalltalk.show_play_irzhyk');
+manager.addDocument('ru', 'про іржика', 'smalltalk.show_play_irzhyk');
 
 // Bot's responses
 manager.addAnswer(
@@ -581,7 +715,7 @@ manager.addAnswer('ru', 'smalltalk.dialog.hold_on', '{stickers}7|25|29|33|88|89'
 manager.addAnswer('ru', 'smalltalk.dialog.sorry', '{stickers}3|60');
 manager.addAnswer('ru', 'smalltalk.dialog.what_do_you_mean', '{stickers}18|24|40|130');
 manager.addAnswer('ru', 'smalltalk.greetings.bye', '{stickers}28|44');
-manager.addAnswer('ru', 'smalltalk.greetings.hello', '{stickers}152|1|48|104|127');
+manager.addAnswer('ru', 'smalltalk.greetings.hello', '{stickers}152|1|32|48|140|104|127');
 manager.addAnswer('ru', 'smalltalk.greetings.how_are_you', '{stickers}25|92|128|136');
 manager.addAnswer('ru', 'smalltalk.user.joking', '{stickers}6|11|63|116|127');
 manager.addAnswer('ru', 'smalltalk.user.testing_agent', '{stickers}20|22|30|46|48|87|109|130');
