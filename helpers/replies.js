@@ -4,9 +4,12 @@
  * */
 
 const i18n = require('i18n');
+const { promisify } = require('util');
 const templates = require('./templates');
 const log = require('../config/logger');
 const { dataToLog } = require('../helpers/templates');
+
+const delay = promisify(setTimeout);
 
 function parseAnswer(botReply) {
   try {
@@ -158,11 +161,16 @@ async function getFaq(session, stickersObj) {
 
     const { channelId } = session.message.address;
     if (channelId === 'telegram') {
-      session.send(info);
+      session.send(info[0]);
+      delay(3000);
+      session.sendTyping();
+      session.send(info[1]);
     }
 
     if (channelId === 'facebook') {
       session.send(info[0]);
+      delay(3000);
+      session.sendTyping();
       session.send(info[1]);
     }
 

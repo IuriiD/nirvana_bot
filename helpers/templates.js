@@ -726,9 +726,13 @@ async function faq(session, stickersObj) {
 
     if (channelId === 'telegram') {
       const tMessage = getFaq4T(session, stickersObj);
-      msg = new builder.Message(session).sourceEvent({
-        telegram: tMessage,
+      const msg1 = new builder.Message(session).sourceEvent({
+        telegram: tMessage[0],
       });
+      const msg2 = new builder.Message(session).sourceEvent({
+        telegram: tMessage[1],
+      });
+      msg = [msg1, msg2];
     }
 
     if (channelId === 'facebook') {

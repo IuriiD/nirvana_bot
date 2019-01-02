@@ -63,3 +63,25 @@
 {"name":"PBLogger","hostname":"iuriid-pc","pid":22838,"level":30,"msg":"facebook - user 1969769179759333 << randomly chosen sticker #61","time":"2018-12-30T20:45:14.296Z","v":0}
 {"name":"PBLogger","hostname":"iuriid-pc","pid":22916,"level":30,"msg":"facebook - user 1969769179759333 >> тю","time":"2018-12-30T20:48:46.795Z","v":0}
 {"name":"PBLogger","hostname":"iuriid-pc","pid":22916,"level":30,"msg":"facebook - user 1969769179759333 << carousel for plays [154,155,156,157,158,159,160,161,163,165]","time":"2018-12-30T20:48:47.149Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26365,"level":30,"msg":"telegram - user 178180819 >> /start","time":"2019-01-02T07:18:40.355Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26365,"level":30,"msg":"telegram - user 178180819 << FAQ message\"","time":"2019-01-02T07:18:40.369Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26365,"level":50,"msg":"\n⚠ dataToLog():\nTypeError: Cannot read property 'from' of undefined","time":"2019-01-02T07:19:26.799Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26365,"level":30,"msg":"undefined - user undefined >> [### payload ###]feedback","time":"2019-01-02T07:19:26.799Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26365,"level":50,"msg":"\n⚠ dataToLog():\nTypeError: Cannot read property 'from' of undefined","time":"2019-01-02T07:19:26.799Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26365,"level":30,"msg":"undefined - user undefined << feedback message\"","time":"2019-01-02T07:19:26.800Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26470,"level":50,"msg":"\n⚠ dataToLog():\nTypeError: Cannot read property 'from' of undefined","time":"2019-01-02T07:20:08.239Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26470,"level":30,"msg":"undefined - user undefined >> [### payload ###]feedback","time":"2019-01-02T07:20:08.240Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26470,"level":50,"msg":"\n⚠ dataToLog():\nTypeError: Cannot read property 'from' of undefined","time":"2019-01-02T07:20:08.244Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26470,"level":30,"msg":"undefined - user undefined << feedback message\"","time":"2019-01-02T07:20:08.244Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26470,"level":50,"msg":"\n⚠ dataToLog():\nTypeError: Cannot read property 'from' of undefined","time":"2019-01-02T07:20:18.944Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26470,"level":30,"msg":"undefined - user undefined >> [### payload ###]random_phrase","time":"2019-01-02T07:20:18.944Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26470,"level":50,"msg":"\n⚠ dataToLog():\nTypeError: Cannot read property 'from' of undefined","time":"2019-01-02T07:20:18.947Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26470,"level":30,"msg":"undefined - user undefined << randomly chosen sticker #36","time":"2019-01-02T07:20:18.947Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26646,"level":30,"msg":"telegram - user 178180819 >> /start","time":"2019-01-02T07:24:55.177Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26646,"level":30,"msg":"telegram - user 178180819 << FAQ message\"","time":"2019-01-02T07:24:55.188Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26716,"level":30,"msg":"telegram - user 178180819 >> /start","time":"2019-01-02T07:26:06.695Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26716,"level":30,"msg":"telegram - user 178180819 << FAQ message\"","time":"2019-01-02T07:26:06.706Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26716,"level":30,"msg":"telegram - user 178180819 >> /start","time":"2019-01-02T07:26:16.595Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26716,"level":30,"msg":"telegram - user 178180819 << FAQ message\"","time":"2019-01-02T07:26:16.596Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26750,"level":30,"msg":"telegram - user 178180819 >> /start","time":"2019-01-02T07:26:31.895Z","v":0}
+{"name":"PBLogger","hostname":"iuriid","pid":26750,"level":30,"msg":"telegram - user 178180819 << FAQ message\"","time":"2019-01-02T07:26:31.905Z","v":0}
