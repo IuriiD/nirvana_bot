@@ -3,6 +3,15 @@ const log = require('../config/logger');
 function relevantPlays(query, texts) {
   try {
     const plays = [];
+
+    const queryPrompts = ['шукати', 'шукай', 'знайти', 'покажи', 'знайди', 'виведи', 'пошук'];
+    if (queryPrompts.indexOf(query.split(' ')[0]) !== -1) {
+      query = query
+        .split(' ')
+        .slice(1, query.length - 1)
+        .join(' ');
+    }
+
     Object.keys(texts).forEach((playId) => {
       const { text, name } = texts[playId];
       if (
