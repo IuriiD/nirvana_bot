@@ -9,11 +9,11 @@ const { dataToLog } = require('../helpers/templates');
 async function mainFlow(session, recognizer) {
   try {
     const { channelId, userId } = dataToLog(session);
+
     if (session.message.text) {
-      const userEntered = session.message.text;
-      log.info(`${channelId} - user ${userId} >> ${userEntered}`);
       // 1. Process callbacks/payloads from button clicks from different platforms
       const { text } = session.message;
+      log.info(`${channelId} - user ${userId} >> ${text}`);
 
       // 1.1 User clicked 'Play' button
       if (text.includes('[### play ###]')) {

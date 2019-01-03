@@ -335,8 +335,6 @@ function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null) {
         },
       ]);
     }
-    console.log('\nmakeTCarousel');
-    console.log(JSON.stringify(tCardsCarousel, null, 2));
     return tCardsCarousel;
   } catch (error) {
     log.error(`\n⚠ makeTCarousel():\n${error}`);
@@ -379,30 +377,145 @@ function tStickersArray(foundPlaysIds, stickersObj) {
 }
 
 /**
+ * Returns a HeroCard template for Skype for a given phrase
+ * Looks like HeroCard doesn't allow to set up image proportions so
+ * images are display partly hidden >> decided to use separate image + card with only buttons
+ * @param {string} imageId # of a sticker ('1', '20' etc)
+ * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
+ */
+function skypeCard(session, imageId, stickersObj) {
+  try {
+    if (!Object.keys(stickersObj).includes(imageId)) {
+      return false;
+    }
+
+    const playId = getPlayIbByStickerId(imageId, stickersObj);
+    // const shareButton = shareToFbPayload(imageId);
+
+    const image = {
+      contentType: 'image/png',
+      contentUrl: `${process.env.imgBaseUrl}/stickers/${imageId}.png`,
+      name: `${process.env.imgBaseUrl}/stickers/${imageId}.png`,
+    };
+
+    const card = new builder.HeroCard(session).buttons([
+      {
+        type: 'openUrl',
+        value: `${process.env.domain}/play/${playId}`,
+        title: i18n.__('read'),
+      },
+      {
+        type: 'postBack',
+        value: `[### play ###]${playId}`,
+        title: i18n.__('listen'),
+      },
+    ]);
+
+    return [image, card];
+  } catch (error) {
+    log.error(`\n⚠ skypeCard():\n${error}`);
+    return false;
+  }
+}
+
+/**
+ * Helper function used by tStickersArray()
+ * @param {array} foundPlaysIds A list of plays' Ids
+ * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
+ * @param {array} nextIds A list of plays' ids to show next onclick on corresponding button
+ */
+function makeSkypeCarousel(session, foundPlaysIds, stickersObj, nextIds = null) {
+  try {
+    let skypeCardsCarousel = [];
+    foundPlaysIds.forEach((playId) => {
+      if (!Object.keys(stickersObj).includes(playId)) return false;
+
+      const everyCard = skypeCard(session, playId, stickersObj);
+      skypeCardsCarousel = skypeCardsCarousel.concat(everyCard);
+    });
+
+    if (nextIds) {
+      skypeCardsCarousel[skypeCardsCarousel.length - 1].data.content.buttons.push({
+        type: 'postBack',
+        value: `[### next ###]${nextIds.join('|')}`,
+        title: i18n.__('show_more'),
+      });
+    }
+    return skypeCardsCarousel;
+  } catch (error) {
+    log.error(`\n⚠ makeSkypeCarousel():\n${error}`);
+    return false;
+  }
+}
+
+/**
+ * Returns a carousel of HeroCards for Skype for relevant plays
+ * @param {array} foundPlays A list of plays' titles
+ * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
+ */
+function skypeCarousel(session, foundPlaysIds, stickersObj) {
+  try {
+    if (foundPlaysIds.length < 1) return false;
+
+    if (foundPlaysIds.length === 1) {
+      const playNeededId = foundPlaysIds[0];
+      if (!Object.keys(stickersObj).includes(playNeededId)) return false;
+      const singleSkypeCard = skypeCard(session, playNeededId, stickersObj);
+      return singleSkypeCard;
+    }
+
+    let skypeCardsCarousel = [];
+    if (foundPlaysIds.length > 3) {
+      const showNow = foundPlaysIds.slice(0, 3);
+      const showNext = foundPlaysIds.slice(3, foundPlaysIds.length);
+      skypeCardsCarousel = makeSkypeCarousel(session, showNow, stickersObj, showNext);
+    } else {
+      skypeCardsCarousel = makeSkypeCarousel(session, foundPlaysIds, stickersObj);
+    }
+    return skypeCardsCarousel;
+  } catch (error) {
+    log.error(`\n⚠ skypeCarousel():\n${error}`);
+    return false;
+  }
+}
+
+/**
  * Returns a platform-specific message with a single sticker
  * @param {object} session Object to interact with BF platform
  * @param {string} imageId # of a sticker ('1', '20' etc)
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
 function getCard(session, imageId, stickersObj) {
+  console.log('\ngetCard');
+  console.dir(session.message);
+
   try {
     const { channelId } = session.message.address;
 
+    let msg;
     let tMessage = {};
     let fbMessage = {};
+    let skypeMessage = {};
 
     if (channelId === 'telegram') {
       tMessage = tStickerWButtons(imageId, stickersObj);
+      msg = new builder.Message(session).sourceEvent({
+        telegram: tMessage,
+      });
     }
 
     if (channelId === 'facebook') {
       fbMessage = fbCard(imageId, stickersObj);
+      msg = new builder.Message(session).sourceEvent({
+        facebook: fbMessage,
+      });
     }
 
-    const msg = new builder.Message(session).sourceEvent({
-      telegram: tMessage,
-      facebook: fbMessage,
-    });
+    if (channelId === 'skype') {
+      skypeMessage = skypeCard(session, imageId, stickersObj);
+      msg = new builder.Message(session).attachments(skypeMessage).attachmentLayout('list');
+    }
+
     return msg;
   } catch (error) {
     log.error(`\n⚠ getCard():\n${error}`);
@@ -420,21 +533,30 @@ function getCarousel(session, foundPlays, stickersObj) {
   try {
     const { channelId } = session.message.address;
 
+    let msg;
     let fbCardsCarousel = {};
     let tCardsCarousel = {};
+    let skypeCardsCarousel = {};
 
     if (channelId === 'telegram') {
       tCardsCarousel = tStickersArray(foundPlays, stickersObj);
+      msg = new builder.Message(session).sourceEvent({
+        telegram: tCardsCarousel,
+      });
     }
 
     if (channelId === 'facebook') {
       fbCardsCarousel = fbCarousel(foundPlays, stickersObj);
+      msg = new builder.Message(session).sourceEvent({
+        facebook: fbCardsCarousel,
+      });
     }
 
-    const msg = new builder.Message(session).sourceEvent({
-      facebook: fbCardsCarousel,
-      telegram: tCardsCarousel,
-    });
+    if (channelId === 'skype') {
+      skypeCardsCarousel = skypeCarousel(session, foundPlays, stickersObj);
+      msg = new builder.Message(session).attachments(skypeCardsCarousel).attachmentLayout('list');
+    }
+
     return msg;
   } catch (error) {
     log.error(`\n⚠ getCarousel():\n${error}`);
@@ -756,6 +878,9 @@ function dataToLog(session) {
     }
     if (channelId === 'facebook') {
       userId = session.message.sourceEvent.sender.id;
+    }
+    if (channelId === 'skype') {
+      userId = session.message.user.id;
     }
     return { channelId, userId };
   } catch (error) {

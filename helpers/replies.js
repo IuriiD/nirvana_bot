@@ -46,11 +46,14 @@ function parseAnswer(botReply) {
 function sendAnswer(session, answer, stickersObj) {
   try {
     const { text, sticker } = parseAnswer(answer);
-    if (text) session.send(text);
+    const { channelId, userId } = dataToLog(session);
+    if (text) {
+      session.send(text);
+      log.info(`${channelId} - user ${userId} << text response: ${text}`);
+    }
     if (sticker) {
       const ourCard = templates.getCard(session, sticker, stickersObj);
       session.send(ourCard);
-      const { channelId, userId } = dataToLog(session);
       log.info(`${channelId} - user ${userId} << card for sticker #${sticker}`);
     }
     return true;
@@ -84,6 +87,7 @@ function presentPlays(session, esFoundPlays, stickersObj, showingNext = false) {
     }
     const carousel = templates.getCarousel(session, esFoundPlays, stickersObj);
     session.send(carousel);
+
     const { channelId, userId } = dataToLog(session);
     log.info(`${channelId} - user ${userId} << carousel for plays [${esFoundPlays}]`);
     return true;
@@ -166,9 +170,6 @@ async function getFaq(session, stickersObj) {
       session.sendTyping();
       session.send(info[1]);
     }
-
-    console.log('\ngetFaq');
-    console.log(info[1].data.sourceEvent); // .data.sourceEvent, null, 2));
 
     if (channelId === 'facebook') {
       session.send(info[0]);
