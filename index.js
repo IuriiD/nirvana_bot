@@ -49,3 +49,16 @@ const bot = new builder.UniversalBot(connector, (session) => {
 });
 
 bot.set('storage', new builder.MemoryBotStorage());
+
+// Especially for Skype..
+// const replies = require('./helpers/replies');
+// const stickers = require('./helpers/data/stickers');
+
+bot.on('contactRelationUpdate', async (message) => {
+  console.log('Welcome Skype');
+  console.log(message);
+  console.log(builder.session);
+  bot.send(new builder.Message().address(message.address).text('Hi!'));
+  // await replies.getFaq(builder.session, stickers);
+  // bot.beginDialog(message.address, '/');
+});
