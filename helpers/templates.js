@@ -591,6 +591,33 @@ function tAudio(playId, stickersObj) {
 }
 
 /**
+ * Returns a message used to send an mp3 for a given play to Skype
+ * @param {string} play Name of the play
+ * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
+ */
+function skypeAudio(session, playId, stickersObj) {
+  try {
+    if (!Object.keys(stickersObj).includes(playId)) return false;
+
+    const audio = stickersObj[playId].play.audio.fileName;
+    const { name } = stickersObj[playId].play;
+
+    const message = new builder.AudioCard(session)
+      .title(name)
+      .image(builder.CardImage.create(session, `${process.env.imgBaseUrl}/stickers/${playId}.png`))
+      .media([builder.CardMedia.create(session, `${process.env.imgBaseUrl}/mp3/${audio}`)])
+      .autoloop(false)
+      .autostart(false)
+      .shareable(false);
+
+    return [message];
+  } catch (error) {
+    log.error(`\n⚠ skypeAudio():\n${error}`);
+    return false;
+  }
+}
+
+/**
  * Returns a message used to send an mp3 with the play needed to Facebook
  * @param {string} play Name of the play
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
@@ -626,21 +653,30 @@ function getAudioMsg(session, playId, stickersObj) {
   try {
     const { channelId } = session.message.address;
 
+    let msg;
     let tAudioMessage = {};
     let fbAudioMessage = {};
+    let skypeAudioMessage = {};
 
     if (channelId === 'telegram') {
       tAudioMessage = tAudio(playId, stickersObj);
+      msg = new builder.Message(session).sourceEvent({
+        telegram: tAudioMessage,
+      });
     }
 
     if (channelId === 'facebook') {
       fbAudioMessage = fbAudio(playId, stickersObj);
+      msg = new builder.Message(session).sourceEvent({
+        facebook: fbAudioMessage,
+      });
     }
 
-    const msg = new builder.Message(session).sourceEvent({
-      facebook: fbAudioMessage,
-      telegram: tAudioMessage,
-    });
+    if (channelId === 'skype') {
+      skypeAudioMessage = skypeAudio(session, playId, stickersObj);
+      msg = new builder.Message(session).attachments(skypeAudioMessage);
+    }
+
     return msg;
   } catch (error) {
     log.error(`\n⚠ getAudioMsg():\n${error}`);
