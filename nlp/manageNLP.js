@@ -761,11 +761,15 @@ manager.addAnswer(
   'smalltalk.user.random_stiker',
   '{stickers}1|2|3|4|6|7|8|9|11|12|13|15|18|19|20|21|22|24|25|28|29|30|32|33|36|39|40|41|43|44|45|46|47|48|49|50|51|53|56|58|59|60|61|62|63|65|66|69|72|73|76|77|78|79|80|82|83|84|87|88|89|90|92|95|96|98|99|100|101|102|104|106|107|108|109|113|115|116|122|123|124|127|128|130|134|135|136|137|140|141|142|143|144|146|147|149|150|151|152',
 );
-manager.addAnswer(
+
+/* manager.addAnswer(
   'ru',
   'smalltalk.user.get_help',
   'Можна запросити конкретну п\'єсу (напр., "Павлік Морозов" або "покажи Гамлета"), випадковий стікер ("покажи випадковий стікер") або спробувати просто побалакати ;){stickers}1|20|24|32|40|41|48',
-);
+); */
+
+manager.addAnswer('ru', 'smalltalk.get_help', '[### trigger ###]help');
+
 manager.addAnswer('ru', 'smalltalk.show_play_doslidy', '{stickers}153');
 manager.addAnswer('ru', 'smalltalk.show_play_vasilisa', '{stickers}154');
 manager.addAnswer('ru', 'smalltalk.show_play_pizdets', '{stickers}155');

@@ -32,7 +32,7 @@ function relevantPlays(query, texts) {
     });
     if (plays.length > 0) {
       // TEMP - Telegram postback must be <64bit
-      if (plays.length > 10) return plays.slice(0, 10);
+      // if (plays.length > 10) return plays.slice(0, 10);
       return plays;
     }
     return false;

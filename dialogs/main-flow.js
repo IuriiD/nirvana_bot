@@ -4,7 +4,7 @@ const search = require('../helpers/search');
 const stickersObj = require('../helpers/data/stickers');
 const texts = require('../helpers/data/texts');
 const log = require('../config/logger');
-const { dataToLog } = require('../helpers/templates');
+const { dataToLog, letter2Number } = require('../helpers/templates');
 
 async function mainFlow(session, recognizer) {
   console.log(session.message);
@@ -25,9 +25,11 @@ async function mainFlow(session, recognizer) {
 
         // 1.2 User clicked "Show more" [plays] button
       } else if (text.includes('[### next ###]')) {
-        const nextPlaysIds = text.split('[### next ###]')[1].split('|');
+        const nextPlaysIdsLetters = text.split('[### next ###]')[1].split('|');
+        const nextPlaysIds = nextPlaysIdsLetters.map(letter => letter2Number[letter]);
+        console.log(`main-flow - nextPlaysIds: ${nextPlaysIds}`);
         session.sendTyping();
-        replies.presentPlays(session, nextPlaysIds, stickersObj, true);
+        replies.presentPlays(session, nextPlaysIds, stickersObj, true, letter2Number);
 
         // 2. Process callbacks/payloads from Commands Menu (Telegram) etc
         // 2.1 Telegram - /random (Telegram) or [### payload ###]random_phrase (Facebook)
@@ -64,7 +66,7 @@ async function mainFlow(session, recognizer) {
             const relevantPlaysIds = search(data.utterance, texts);
             if (relevantPlaysIds) {
               session.sendTyping();
-              replies.presentPlays(session, relevantPlaysIds, stickersObj);
+              replies.presentPlays(session, relevantPlaysIds, stickersObj, false, letter2Number);
             } else {
               // If nothing found - Default fallback answer
               session.sendTyping();
@@ -74,7 +76,7 @@ async function mainFlow(session, recognizer) {
             // We have result from NLP - this may be a response or trigger ([### trigger ###]triggerName)
             if (data.answer.includes('[### trigger ###]')) {
               const trigger = data.answer.split('[### trigger ###]')[1];
-              if (trigger === 'start') {
+              if (trigger === 'start' || trigger === 'help') {
                 session.sendTyping();
                 await replies.getFaq(session, stickersObj);
               }

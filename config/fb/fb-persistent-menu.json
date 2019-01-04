@@ -16,7 +16,7 @@
         },
         {
           "type": "postback",
-          "title": "Зворотній зв'язок",
+          "title": "Контакти",
           "payload": "[### payload ###]feedback"
         }
       ]

@@ -71,7 +71,7 @@ function sendAnswer(session, answer, stickersObj) {
  * @param {array} esFoundPlays A list of plays' titles
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
-function presentPlays(session, esFoundPlays, stickersObj, showingNext = false) {
+function presentPlays(session, esFoundPlays, stickersObj, showingNext = false, letters2Numbers) {
   try {
     if (!showingNext) {
       if (esFoundPlays.length > 1 && esFoundPlays.length <= 3) {
@@ -86,7 +86,10 @@ function presentPlays(session, esFoundPlays, stickersObj, showingNext = false) {
       const ourVariant = Math.floor(Math.random() * replyVariants.length);
       session.send(replyVariants[ourVariant]);
     }
-    const carousel = templates.getCarousel(session, esFoundPlays, stickersObj);
+    console.log('\n\npresentPlays');
+    console.log(esFoundPlays);
+
+    const carousel = templates.getCarousel(session, esFoundPlays, stickersObj, letters2Numbers);
     session.send(carousel);
 
     const { channelId, userId } = dataToLog(session);
@@ -107,8 +110,14 @@ function presentPlays(session, esFoundPlays, stickersObj, showingNext = false) {
 function sendAudio(session, playId, stickersObj) {
   try {
     const audioMsg = templates.getAudioMsg(session, playId, stickersObj);
-    session.send(audioMsg);
     const { channelId, userId } = dataToLog(session);
+
+    if (channelId === 'facebook') {
+      audioMsg.forEach(message => session.send(message));
+    } else {
+      session.send(audioMsg);
+    }
+
     log.info(`${channelId} - user ${userId} << audio for play #${playId}`);
     return true;
   } catch (error) {

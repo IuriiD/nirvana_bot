@@ -49,6 +49,65 @@ function getPlayIbByStickerId(stickerId, stickersObj) {
 }
 
 /**
+ * Telegram postback button payload can be <=64bit so it couldn't
+ * contain 23+ numbers like 156|158 etc >> using letters instead
+ */
+const letter2Number = {
+  153: 'a',
+  154: 'b',
+  155: 'c',
+  156: 'd',
+  157: 'e',
+  158: 'f',
+  159: 'g',
+  160: 'h',
+  161: 'i',
+  162: 'j',
+  163: 'k',
+  164: 'l',
+  165: 'm',
+  166: 'n',
+  167: 'o',
+  168: 'p',
+  169: 'q',
+  170: 'r',
+  171: 's',
+  172: 't',
+  173: 'u',
+  174: 'v',
+  175: 'w',
+  176: 'x',
+  177: 'y',
+  178: 'z',
+  a: '153',
+  b: '154',
+  c: '155',
+  d: '156',
+  e: '157',
+  f: '158',
+  g: '159',
+  h: '160',
+  i: '161',
+  j: '162',
+  k: '163',
+  l: '164',
+  m: '165',
+  n: '166',
+  o: '167',
+  p: '168',
+  q: '169',
+  r: '170',
+  s: '171',
+  t: '172',
+  u: '173',
+  v: '174',
+  w: '175',
+  x: '176',
+  y: '177',
+  z: '178',
+};
+
+/**
  * Returns JSON for a button to share to FB Messenger
  * @param {string} stickerId # of a sticker ('1', '20' etc)
  */
@@ -96,7 +155,7 @@ function fbCard(imageId, stickersObj) {
       return false;
     }
     const playId = getPlayIbByStickerId(imageId, stickersObj);
-    const shareButton = shareToFbPayload(imageId);
+    // const shareButton = shareToFbPayload(imageId);
 
     const message = {
       attachment: {
@@ -119,7 +178,12 @@ function fbCard(imageId, stickersObj) {
                   payload: `[### play ###]${playId}`,
                   title: i18n.__('listen'),
                 },
-                shareButton,
+                // shareButton,
+                {
+                  type: 'postback',
+                  payload: i18n.__('random_phrase_payload'),
+                  title: i18n.__('random_phrase'),
+                },
               ],
             },
           ],
@@ -168,7 +232,7 @@ function makeFbCarousel(foundPlaysIds, stickersObj, nextIds = null) {
       });
     });
 
-    // We need a special sticker for this card. So far it'll be #48
+    // A special sticker would be good for this card. So far it'll be #48
     if (nextIds) {
       const whatNextStickerId = '48';
       fbCardsCarousel.push({
@@ -300,7 +364,7 @@ function tStickerWButtons(imageId, stickersObj, randomPhraseBtn = false) {
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  * @param {array} nextIds A list of plays' ids to show next onclick on corresponding button
  */
-function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null) {
+function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null, numbers2Letters) {
   try {
     const tCardsCarousel = [];
     foundPlaysIds.forEach((playId) => {
@@ -337,21 +401,22 @@ function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null) {
     });
 
     if (nextIds) {
-      tCardsCarousel[tCardsCarousel.length - 1].parameters.reply_markup.inline_keyboard.push(
-        [
-          {
-            text: i18n.__('show_more'),
-            callback_data: `[### next ###]${nextIds.join('|')}`,
-          },
-        ],
-        [
-          {
-            text: i18n.__('random_phrase'),
-            callback_data: i18n.__('random_phrase_payload'),
-          },
-        ],
-      );
+      const letters = nextIds.map(number => numbers2Letters[number]);
+
+      tCardsCarousel[tCardsCarousel.length - 1].parameters.reply_markup.inline_keyboard.push([
+        {
+          text: i18n.__('show_more'),
+          callback_data: `[### next ###]${letters.join('|')}`,
+        },
+      ]);
     }
+
+    tCardsCarousel[tCardsCarousel.length - 1].parameters.reply_markup.inline_keyboard.push([
+      {
+        text: i18n.__('random_phrase'),
+        callback_data: i18n.__('random_phrase_payload'),
+      },
+    ]);
     return tCardsCarousel;
   } catch (error) {
     log.error(`\n⚠ makeTCarousel():\n${error}`);
@@ -367,7 +432,7 @@ function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null) {
  * @param {array} foundPlaysIds A list of plays' Ids
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
-function tStickersArray(foundPlaysIds, stickersObj) {
+function tStickersArray(foundPlaysIds, stickersObj, numbersForLetters) {
   try {
     if (foundPlaysIds.length < 1) return false;
 
@@ -382,7 +447,7 @@ function tStickersArray(foundPlaysIds, stickersObj) {
     if (foundPlaysIds.length > 3) {
       const showNow = foundPlaysIds.slice(0, 3);
       const showNext = foundPlaysIds.slice(3, foundPlaysIds.length);
-      tCardsCarousel = makeTCarousel(showNow, stickersObj, showNext);
+      tCardsCarousel = makeTCarousel(showNow, stickersObj, showNext, numbersForLetters);
     } else {
       tCardsCarousel = makeTCarousel(foundPlaysIds, stickersObj);
     }
@@ -555,31 +620,28 @@ function getCard(session, imageId, stickersObj) {
  * @param {array} foundPlays A list of plays' titles
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
-function getCarousel(session, foundPlays, stickersObj) {
+function getCarousel(session, foundPlays, stickersObj, numbersForLetters) {
   try {
     const { channelId } = session.message.address;
 
     let msg;
-    let fbCardsCarousel = {};
-    let tCardsCarousel = {};
-    let skypeCardsCarousel = {};
 
     if (channelId === 'telegram') {
-      tCardsCarousel = tStickersArray(foundPlays, stickersObj);
+      const tCardsCarousel = tStickersArray(foundPlays, stickersObj, numbersForLetters);
       msg = new builder.Message(session).sourceEvent({
         telegram: tCardsCarousel,
       });
     }
 
     if (channelId === 'facebook') {
-      fbCardsCarousel = fbCarousel(foundPlays, stickersObj);
+      const fbCardsCarousel = fbCarousel(foundPlays, stickersObj);
       msg = new builder.Message(session).sourceEvent({
         facebook: fbCardsCarousel,
       });
     }
 
     if (channelId === 'skype' || channelId === 'webchat') {
-      skypeCardsCarousel = skypeCarousel(session, foundPlays, stickersObj);
+      const skypeCardsCarousel = skypeCarousel(session, foundPlays, stickersObj);
       msg = new builder.Message(session).attachments(skypeCardsCarousel).attachmentLayout('list');
     }
 
@@ -600,15 +662,26 @@ function tAudio(playId, stickersObj) {
     if (!Object.keys(stickersObj).includes(playId)) return false;
 
     const audio = stickersObj[playId].play.audio.fileName;
-
+    // here2
     const message = {
       method: 'sendAudio',
       parameters: {
         audio: {
           url: `${process.env.imgBaseUrl}/mp3/${audio}`,
         },
+        reply_markup: {
+          inline_keyboard: [
+            [
+              {
+                text: i18n.__('random_phrase'),
+                callback_data: i18n.__('random_phrase_payload'),
+              },
+            ],
+          ],
+        },
       },
     };
+
     return message;
   } catch (error) {
     log.error(`\n⚠ tAudio():\n${error}`);
@@ -634,7 +707,14 @@ function skypeAudio(session, playId, stickersObj) {
       .media([builder.CardMedia.create(session, `${process.env.imgBaseUrl}/mp3/${audio}`)])
       .autoloop(false)
       .autostart(false)
-      .shareable(false);
+      .shareable(false)
+      .buttons([
+        {
+          type: 'postBack',
+          value: i18n.__('random_phrase_payload'),
+          title: i18n.__('random_phrase'),
+        },
+      ]);
 
     return [message];
   } catch (error) {
@@ -654,7 +734,7 @@ function fbAudio(playId, stickersObj) {
 
     const audio = stickersObj[playId].play.audio.fileName;
 
-    return {
+    const audioBlock = {
       attachment: {
         type: 'audio',
         payload: {
@@ -663,6 +743,26 @@ function fbAudio(playId, stickersObj) {
         is_reusable: true,
       },
     };
+
+    const shareButton = shareToFbPayload(playId);
+    const buttons = {
+      attachment: {
+        type: 'template',
+        payload: {
+          template_type: 'button',
+          text: i18n.__('what_to_do_now'),
+          buttons: [
+            {
+              type: 'postback',
+              payload: i18n.__('random_phrase_payload'),
+              title: i18n.__('random_phrase'),
+            },
+            shareButton,
+          ],
+        },
+      },
+    };
+    return [audioBlock, buttons];
   } catch (error) {
     log.error(`\n⚠ fbAudio():\n${error}`);
     return false;
@@ -680,26 +780,27 @@ function getAudioMsg(session, playId, stickersObj) {
     const { channelId } = session.message.address;
 
     let msg;
-    let tAudioMessage = {};
-    let fbAudioMessage = {};
-    let skypeAudioMessage = {};
 
     if (channelId === 'telegram') {
-      tAudioMessage = tAudio(playId, stickersObj);
+      const tAudioMessage = tAudio(playId, stickersObj);
       msg = new builder.Message(session).sourceEvent({
         telegram: tAudioMessage,
       });
     }
 
     if (channelId === 'facebook') {
-      fbAudioMessage = fbAudio(playId, stickersObj);
-      msg = new builder.Message(session).sourceEvent({
-        facebook: fbAudioMessage,
+      const fbAudioMessage = fbAudio(playId, stickersObj);
+      const msg1 = new builder.Message(session).sourceEvent({
+        facebook: fbAudioMessage[0],
       });
+      const msg2 = new builder.Message(session).sourceEvent({
+        facebook: fbAudioMessage[1],
+      });
+      msg = [msg1, msg2];
     }
 
     if (channelId === 'skype' || channelId === 'webchat') {
-      skypeAudioMessage = skypeAudio(session, playId, stickersObj);
+      const skypeAudioMessage = skypeAudio(session, playId, stickersObj);
       msg = new builder.Message(session).attachments(skypeAudioMessage);
     }
 
@@ -806,6 +907,11 @@ function getFeedbackInfo4Skype(session) {
         type: 'openUrl',
         value: process.env.fbmBotUrl,
         title: i18n.__('fbm'),
+      },
+      {
+        type: 'openUrl',
+        value: process.env.webChatUrl,
+        title: i18n.__('webchat'),
       },
     ]);
     const message = [i18n.__('lp_fb_descr'), [buttons]];
@@ -1054,4 +1160,5 @@ module.exports = {
   getFeedbackInfo,
   faq,
   dataToLog,
+  letter2Number,
 };
