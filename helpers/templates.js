@@ -337,16 +337,20 @@ function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null) {
     });
 
     if (nextIds) {
-      tCardsCarousel[tCardsCarousel.length - 1].parameters.reply_markup.inline_keyboard.push([
-        {
-          text: i18n.__('show_more'),
-          callback_data: `[### next ###]${nextIds.join('|')}`,
-        },
-        {
-          text: i18n.__('random_phrase'),
-          callback_data: i18n.__('random_phrase_payload'),
-        },
-      ]);
+      tCardsCarousel[tCardsCarousel.length - 1].parameters.reply_markup.inline_keyboard.push(
+        [
+          {
+            text: i18n.__('show_more'),
+            callback_data: `[### next ###]${nextIds.join('|')}`,
+          },
+        ],
+        [
+          {
+            text: i18n.__('random_phrase'),
+            callback_data: i18n.__('random_phrase_payload'),
+          },
+        ],
+      );
     }
     return tCardsCarousel;
   } catch (error) {
@@ -981,8 +985,6 @@ async function faq(session, stickersObj) {
     if (channelId === 'skype') {
       const skypeMessage = getFaq4Skype(session, stickersObj);
 
-      console.log('skypeMessage[0]');
-      console.log(skypeMessage[0]);
       const msg1 = new builder.Message(session).text(skypeMessage[0].text);
       const msg2 = new builder.Message(session)
         .attachments(skypeMessage[1])

@@ -14,8 +14,21 @@ function relevantPlays(query, texts) {
 
     Object.keys(texts).forEach((playId) => {
       const { text, name } = texts[playId];
+      const textWoTags = text
+        .replace(/<p>/g, '')
+        .replace(/<\/p>/g, '')
+        .replace(/<h3>/g, '')
+        .replace(/<\/h3>/g, '')
+        .replace(/<strong>/g, '')
+        .replace(/<\/strong>/g, '')
+        .replace(/<em>/g, '')
+        .replace(/<br \/>/g, '')
+        .replace(/<\/em>/g, '');
+
+      console.log();
+      console.log(textWoTags);
       if (
-        text.toLowerCase().includes(query.toLowerCase())
+        textWoTags.toLowerCase().includes(query.toLowerCase())
         || name.toLowerCase().includes(query.toLowerCase())
       ) plays.push(playId);
     });

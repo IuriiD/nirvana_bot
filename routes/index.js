@@ -41,8 +41,21 @@ function redirectToS3(req, res) {
   }
 }
 
+function webChatPage(req, res) {
+  try {
+    res.send(
+      `<iframe src='https://webchat.botframework.com/embed/shipyard?s=${
+        process.env.webChatKey
+      }'  style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>`,
+    );
+  } catch (error) {
+    log.error(`\n⚠ webChatPage():\n${error}`);
+  }
+}
+
 module.exports = {
   getPlay,
   indexPage,
   redirectToS3,
+  webChatPage,
 };
