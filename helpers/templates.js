@@ -534,7 +534,7 @@ function skypeCard(session, imageId, stickersObj, randomPhraseBtn = false) {
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  * @param {array} nextIds A list of plays' ids to show next onclick on corresponding button
  */
-function makeSkypeCarousel(session, foundPlaysIds, stickersObj, nextIds = null) {
+function makeSkypeCarousel(session, foundPlaysIds, stickersObj, nextIds = null, numbers2Letters) {
   try {
     let skypeCardsCarousel = [];
     foundPlaysIds.forEach((playId) => {
@@ -545,12 +545,22 @@ function makeSkypeCarousel(session, foundPlaysIds, stickersObj, nextIds = null) 
     });
 
     if (nextIds) {
+      const letters = nextIds.map(number => numbers2Letters[number]);
+
       skypeCardsCarousel[skypeCardsCarousel.length - 1].data.content.buttons.push(
         {
           type: 'postBack',
-          value: `[### next ###]${nextIds.join('|')}`,
+          value: `[### next ###]${letters.join('|')}`,
           title: i18n.__('show_more'),
         },
+        {
+          type: 'postBack',
+          value: i18n.__('random_phrase_payload'),
+          title: i18n.__('random_phrase'),
+        },
+      );
+    } else {
+      skypeCardsCarousel[skypeCardsCarousel.length - 1].data.content.buttons.push(
         {
           type: 'postBack',
           value: i18n.__('random_phrase_payload'),
@@ -570,7 +580,7 @@ function makeSkypeCarousel(session, foundPlaysIds, stickersObj, nextIds = null) 
  * @param {array} foundPlays A list of plays' titles
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
-function skypeCarousel(session, foundPlaysIds, stickersObj) {
+function skypeCarousel(session, foundPlaysIds, stickersObj, numbers2Letters) {
   try {
     if (foundPlaysIds.length < 1) return false;
 
@@ -585,7 +595,13 @@ function skypeCarousel(session, foundPlaysIds, stickersObj) {
     if (foundPlaysIds.length > 3) {
       const showNow = foundPlaysIds.slice(0, 3);
       const showNext = foundPlaysIds.slice(3, foundPlaysIds.length);
-      skypeCardsCarousel = makeSkypeCarousel(session, showNow, stickersObj, showNext);
+      skypeCardsCarousel = makeSkypeCarousel(
+        session,
+        showNow,
+        stickersObj,
+        showNext,
+        numbers2Letters,
+      );
     } else {
       skypeCardsCarousel = makeSkypeCarousel(session, foundPlaysIds, stickersObj);
     }
