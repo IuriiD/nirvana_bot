@@ -241,7 +241,7 @@ function fbCarousel(foundPlaysIds, stickersObj) {
  * @param {string} imageId # of a sticker ('1', '20' etc)
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)s
  */
-function tStickerWButtons(imageId, stickersObj) {
+function tStickerWButtons(imageId, stickersObj, randomPhraseBtn = false) {
   try {
     if (!Object.keys(stickersObj).includes(imageId)) {
       return false;
@@ -269,6 +269,15 @@ function tStickerWButtons(imageId, stickersObj) {
         ],
       ],
     };
+
+    if (randomPhraseBtn) {
+      keyBoard.inline_keyboard.push([
+        {
+          text: i18n.__('random_phrase'),
+          callback_data: i18n.__('random_phrase_payload'),
+        },
+      ]);
+    }
 
     const { telegramStickerId } = stickersObj[imageId].sticker;
     const message = {
@@ -333,6 +342,10 @@ function makeTCarousel(foundPlaysIds, stickersObj, nextIds = null) {
           text: i18n.__('show_more'),
           callback_data: `[### next ###]${nextIds.join('|')}`,
         },
+        {
+          text: i18n.__('random_phrase'),
+          callback_data: i18n.__('random_phrase_payload'),
+        },
       ]);
     }
     return tCardsCarousel;
@@ -357,7 +370,7 @@ function tStickersArray(foundPlaysIds, stickersObj) {
     if (foundPlaysIds.length === 1) {
       const playNeededId = foundPlaysIds[0];
       if (!Object.keys(stickersObj).includes(playNeededId)) return false;
-      const singleTelegramCard = tStickerWButtons(playNeededId, stickersObj);
+      const singleTelegramCard = tStickerWButtons(playNeededId, stickersObj, false);
       return singleTelegramCard;
     }
 
@@ -492,7 +505,7 @@ function getCard(session, imageId, stickersObj) {
     let msg;
 
     if (channelId === 'telegram') {
-      const tMessage = tStickerWButtons(imageId, stickersObj);
+      const tMessage = tStickerWButtons(imageId, stickersObj, true);
       msg = new builder.Message(session).sourceEvent({
         telegram: tMessage,
       });
@@ -693,7 +706,11 @@ function getFeedbackInfo4T() {
             [
               {
                 text: i18n.__('fbm'),
-                url: 'https://www.messenger.com/t/344980636080979',
+                url: process.env.fbmBotUrl,
+              },
+              {
+                text: i18n.__('skype'),
+                url: process.env.skypeBotUrl,
               },
             ],
           ],
@@ -708,6 +725,9 @@ function getFeedbackInfo4T() {
   }
 }
 
+/**
+ * Returns payload with contacts for FBM
+ */
 function getFeedbackInfo4Fb() {
   try {
     const message = {
@@ -719,8 +739,13 @@ function getFeedbackInfo4Fb() {
           buttons: [
             {
               type: 'web_url',
-              url: 'http://t.me/PodervianskogoBot',
+              url: process.env.tBotUrl,
               title: i18n.__('telegram'),
+            },
+            {
+              type: 'web_url',
+              url: process.env.skypeBotUrl,
+              title: i18n.__('skype'),
             },
           ],
         },
@@ -735,28 +760,62 @@ function getFeedbackInfo4Fb() {
 }
 
 /**
+ * Returns payload with contacts for Skype
+ */
+function getFeedbackInfo4Skype(session) {
+  try {
+    const buttons = new builder.HeroCard(session).buttons([
+      {
+        type: 'openUrl',
+        value: process.env.tBotUrl,
+        title: i18n.__('telegram'),
+      },
+      {
+        type: 'openUrl',
+        value: process.env.fbmBotUrl,
+        title: i18n.__('fbm'),
+      },
+    ]);
+    const message = [i18n.__('lp_fb_descr'), [buttons]];
+
+    return message;
+  } catch (error) {
+    log.error(`\n⚠ getFeedbackInfo4Skype():\n${error}`);
+    return false;
+  }
+}
+
+/**
  * Returns a message with contacts of L.Poderviansky and me
  * @param {object} session Object to interact with BF platform
  */
 function getFeedbackInfo(session) {
   try {
     const { channelId } = session.message.address;
-
-    let tMessage = {};
-    let fbMessage = {};
+    let msg;
 
     if (channelId === 'telegram') {
-      tMessage = getFeedbackInfo4T();
+      const tMessage = getFeedbackInfo4T();
+      msg = new builder.Message(session).sourceEvent({
+        telegram: tMessage,
+      });
     }
 
     if (channelId === 'facebook') {
-      fbMessage = getFeedbackInfo4Fb();
+      const fbMessage = getFeedbackInfo4Fb();
+      msg = new builder.Message(session).sourceEvent({
+        facebook: fbMessage,
+      });
     }
 
-    const msg = new builder.Message(session).sourceEvent({
-      telegram: tMessage,
-      facebook: fbMessage,
-    });
+    if (channelId === 'skype') {
+      const skypeMessage = getFeedbackInfo4Skype(session);
+      msg = new builder.Message(session)
+        .text(skypeMessage[0])
+        .attachments(skypeMessage[1])
+        .attachmentLayout('list');
+    }
+
     return msg;
   } catch (error) {
     log.error(`\n⚠ getFeedbackInfo():\n${error}`);
@@ -791,21 +850,13 @@ function getFaq4T(session, stickersObj) {
     const stickers = i18n.__('greetings_stickers').split('|');
     const randStickerIndex = Math.floor(Math.random() * stickers.length);
     const greetingSticker = stickers[randStickerIndex];
-    const message2 = tStickerWButtons(greetingSticker, stickersObj);
-    message2.parameters.reply_markup.inline_keyboard.push(
-      [
-        {
-          text: i18n.__('random_phrase'),
-          callback_data: i18n.__('random_phrase_payload'),
-        },
-      ],
-      /* [
-        {
-          text: i18n.__('get_feedback'),
-          callback_data: i18n.__('get_feedback_payload'),
-        },
-      ], */
-    );
+    const message2 = tStickerWButtons(greetingSticker, stickersObj, true);
+    /* message2.parameters.reply_markup.inline_keyboard.push([
+      {
+        text: i18n.__('random_phrase'),
+        callback_data: i18n.__('random_phrase_payload'),
+      },
+    ]); */
 
     return [message1, message2];
   } catch (error) {

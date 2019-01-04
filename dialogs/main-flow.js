@@ -43,7 +43,7 @@ async function mainFlow(session, recognizer) {
         session.sendTyping();
         replies.feedback(session);
 
-        // 3. Process clicks on /start (Telegram) or Getting started (FBM) buttons
+        // 3. Process clicks on /start (Telegram), Getting started (FBM) buttons or keywords (Skype)
       } else if (text === '/start' || text === '[### payload ###]facebook_welcome') {
         session.sendTyping();
         await replies.getFaq(session, stickersObj);
@@ -69,8 +69,23 @@ async function mainFlow(session, recognizer) {
               replies.sendAnswer(session, i18n.__('dont_understand'), stickersObj);
             }
           } else {
-            session.sendTyping();
-            replies.sendAnswer(session, data.answer, stickersObj);
+            // We have result from NLP - this may be a response or trigger ([### trigger ###]triggerName)
+            if (data.answer.includes('[### trigger ###]')) {
+              const trigger = data.answer.split('[### trigger ###]')[1];
+              if (trigger === 'start') {
+                session.sendTyping();
+                await replies.getFaq(session, stickersObj);
+              }
+              if (trigger === 'contacts') {
+                session.sendTyping();
+                replies.feedback(session);
+              }
+            }
+
+            if (!data.answer.includes('[### trigger ###]')) {
+              session.sendTyping();
+              replies.sendAnswer(session, data.answer, stickersObj);
+            }
           }
         });
       }
@@ -81,7 +96,7 @@ async function mainFlow(session, recognizer) {
     }
     return;
   } catch (error) {
-    log.error(`\n⚠ tStickerWButtons():\n${error}`);
+    log.error(`\n⚠ mainFlow():\n${error}`);
   }
 }
 

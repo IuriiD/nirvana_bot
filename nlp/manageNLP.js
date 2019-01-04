@@ -6,6 +6,32 @@ const { NlpManager } = require('node-nlp');
 const manager = new NlpManager({ languages: ['ru'] });
 
 // Utterances - intents
+manager.addDocument('ru', 'start', 'smalltalk.restart');
+manager.addDocument('ru', '\\start', 'smalltalk.restart');
+manager.addDocument('ru', 'почати', 'smalltalk.restart');
+manager.addDocument('ru', 'begin', 'smalltalk.restart');
+manager.addDocument('ru', 'старт', 'smalltalk.restart');
+manager.addDocument('ru', 'запуск', 'smalltalk.restart');
+manager.addDocument('ru', 'спочатку', 'smalltalk.restart');
+manager.addDocument('ru', 'стартуй', 'smalltalk.restart');
+manager.addDocument('ru', 'почни', 'smalltalk.restart');
+manager.addDocument('ru', 'рестарт', 'smalltalk.restart');
+manager.addDocument('ru', 'зпочатку', 'smalltalk.restart');
+
+manager.addDocument('ru', 'контакти', 'smalltalk.contacts');
+manager.addDocument('ru', 'покажи контакти', 'smalltalk.contacts');
+manager.addDocument('ru', 'автор', 'smalltalk.contacts');
+manager.addDocument('ru', 'хто це зробив', 'smalltalk.contacts');
+manager.addDocument('ru', 'розробник', 'smalltalk.contacts');
+manager.addDocument('ru', 'автор бота', 'smalltalk.contacts');
+manager.addDocument('ru', 'чия це робота', 'smalltalk.contacts');
+manager.addDocument('ru', 'показати контакти', 'smalltalk.contacts');
+manager.addDocument('ru', 'покажи email', 'smalltalk.contacts');
+manager.addDocument('ru', 'як звязатись з автором', 'smalltalk.contacts');
+manager.addDocument('ru', 'як звязатись з авторами', 'smalltalk.contacts');
+manager.addDocument('ru', 'хто розробник', 'smalltalk.contacts');
+manager.addDocument('ru', 'контакти розробника', 'smalltalk.contacts');
+
 manager.addDocument('ru', 'розкажи щось про себе', 'smalltalk.agent.acquaintance');
 manager.addDocument('ru', 'хто ти такий', 'smalltalk.agent.acquaintance');
 manager.addDocument('ru', 'хто ти', 'smalltalk.agent.acquaintance');
@@ -74,20 +100,26 @@ manager.addDocument('ru', 'на кого ти працюєш', 'smalltalk.agent.
 manager.addDocument('ru', 'хто твій власник', 'smalltalk.agent.boss');
 manager.addDocument('ru', 'хто твій бос', 'smalltalk.agent.boss');
 
-manager.addDocument('ru', 'допоможи', 'smalltalk.agent.get_help');
-manager.addDocument('ru', 'можеш допомогти', 'smalltalk.agent.get_help');
-manager.addDocument('ru', 'треба допомога', 'smalltalk.agent.get_help');
-manager.addDocument('ru', 'треба твоя допомога', 'smalltalk.agent.get_help');
-manager.addDocument('ru', 'допоможи мені', 'smalltalk.agent.get_help');
-manager.addDocument('ru', 'мені треба твоя допомога', 'smalltalk.agent.get_help');
-manager.addDocument('ru', 'потрібна поміч', 'smalltalk.agent.get_help');
-manager.addDocument('ru', 'будь ласка допоможи', 'smalltalk.agent.get_help');
-manager.addDocument('ru', 'будь-ласка допоможи', 'smalltalk.agent.get_help');
-manager.addDocument('ru', 'допоможеш мені', 'smalltalk.agent.get_help');
-manager.addDocument('ru', 'зроби послугу', 'smalltalk.agent.get_help');
-manager.addDocument('ru', 'ти мені потрібен', 'smalltalk.agent.get_help');
-manager.addDocument('ru', 'хелп', 'smalltalk.agent.get_help');
+manager.addDocument('ru', 'допоможи', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'можеш допомогти', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'треба допомога', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'треба твоя допомога', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'допоможи мені', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'мені треба твоя допомога', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'потрібна поміч', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'будь ласка допоможи', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'будь-ласка допоможи', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'допоможеш мені', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'зроби послугу', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'ти мені потрібен', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'хелп', 'smalltalk.user.get_help');
 manager.addDocument('ru', 'що тут робити', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'help', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'need help', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'що робити', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'що мені робити', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'що треба робити', 'smalltalk.user.get_help');
+manager.addDocument('ru', 'що слід робити', 'smalltalk.user.get_help');
 
 manager.addDocument('ru', 'ти бот', 'smalltalk.agent.chatbot');
 manager.addDocument('ru', 'ти чатбот', 'smalltalk.agent.chatbot');
@@ -645,6 +677,10 @@ manager.addDocument('ru', 'читай Іржик', 'smalltalk.show_play_irzhyk')
 manager.addDocument('ru', 'про іржика', 'smalltalk.show_play_irzhyk');
 
 // Bot's responses
+manager.addAnswer('ru', 'smalltalk.contacts', '[### trigger ###]contacts');
+
+manager.addAnswer('ru', 'smalltalk.restart', '[### trigger ###]start');
+
 manager.addAnswer(
   'ru',
   'smalltalk.agent.acquaintance',
@@ -724,11 +760,6 @@ manager.addAnswer(
   'ru',
   'smalltalk.user.random_stiker',
   '{stickers}1|2|3|4|6|7|8|9|11|12|13|15|18|19|20|21|22|24|25|28|29|30|32|33|36|39|40|41|43|44|45|46|47|48|49|50|51|53|56|58|59|60|61|62|63|65|66|69|72|73|76|77|78|79|80|82|83|84|87|88|89|90|92|95|96|98|99|100|101|102|104|106|107|108|109|113|115|116|122|123|124|127|128|130|134|135|136|137|140|141|142|143|144|146|147|149|150|151|152',
-);
-manager.addAnswer(
-  'ru',
-  'smalltalk.user.get_help',
-  'Можна запросити конкретну п\'єсу (напр., "Павлік Морозов" або "покажи Гамлета"), випадковий стікер ("покажи випадковий стікер") або спробувати просто побалакати ;){stickers}1|20|24|32|40|41|48',
 );
 manager.addAnswer(
   'ru',

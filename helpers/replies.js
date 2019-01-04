@@ -47,6 +47,12 @@ function sendAnswer(session, answer, stickersObj) {
   try {
     const { text, sticker } = parseAnswer(answer);
     const { channelId, userId } = dataToLog(session);
+
+    console.log('\nsendAnswer');
+    console.log(JSON.stringify(answer, null, 2));
+    console.log(text);
+    console.log(sticker);
+
     if (text) {
       session.send(text);
       log.info(`${channelId} - user ${userId} << text response: ${text}`);
