@@ -6,16 +6,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const i18n = require('i18n');
 const { Recognizer } = require('node-nlp');
+const log = require('./config/logger');
 
 const modelName = './model.nlp';
 const mainFlow = require('./dialogs/main-flow');
 const routes = require('./routes');
+const replies = require('./helpers/replies');
+const stickersObj = require('./helpers/data/stickers');
 const { setup } = require('./config/fb/');
 
 const app = express();
 const port = process.env.PORT || 4000;
 app.listen(port);
-console.log(`Chatbot listening on port ${port}`);
+log.info(`Chatbot listening on port ${port}`);
 app.set('view engine', 'ejs');
 
 // setup();
@@ -48,17 +51,10 @@ const bot = new builder.UniversalBot(connector, (session) => {
   mainFlow(session, recognizer);
 });
 
-bot.set('storage', new builder.MemoryBotStorage());
+const inMemoryStorage = new builder.MemoryBotStorage();
+bot.set('storage', inMemoryStorage);
 
-// Especially for Skype..
-// const replies = require('./helpers/replies');
-// const stickers = require('./helpers/data/stickers');
-
-bot.on('contactRelationUpdate', async (message) => {
-  console.log('Welcome Skype');
-  console.log(message);
-  console.log(builder.session);
-  bot.send(new builder.Message().address(message.address).text('Hi!'));
-  // await replies.getFaq(builder.session, stickers);
-  // bot.beginDialog(message.address, '/');
+// Especially for Skype - imitating FB's Getting started feature
+bot.on('contactRelationUpdate', (message) => {
+  replies.gettingStartedSkype(bot, message, stickersObj);
 });

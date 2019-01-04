@@ -160,30 +160,62 @@ function feedback(session) {
  * @param {object} session Object to interact with BF platform
  */
 async function getFaq(session, stickersObj) {
+  console.log('\ngetFaq');
   try {
     const info = await templates.faq(session, stickersObj);
+    console.log('info');
+    console.log(info);
+
+    session.send(info[0]);
+    delay(3000);
+    session.sendTyping();
+    session.send(info[1]);
 
     const { channelId } = session.message.address;
-    if (channelId === 'telegram') {
-      session.send(info[0]);
-      delay(3000);
-      session.sendTyping();
-      session.send(info[1]);
-    }
-
-    if (channelId === 'facebook') {
-      session.send(info[0]);
-      delay(3000);
-      session.sendTyping();
-      session.send(info[1]);
-    }
-
     const { userId } = dataToLog(session);
     log.info(`${channelId} - user ${userId} << FAQ message"`);
 
     return true;
   } catch (error) {
     log.error(`\n⚠ getFaq():\n${error}`);
+    return false;
+  }
+}
+
+/**
+ * Greet Skype's user when he adds the bot to contacts
+ * @param {object} bot
+ * @param {object} message Received when user adds the bot to contacts
+ * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
+ */
+function gettingStartedSkype(bot, message, stickersObj) {
+  console.log('\ngettingStartedSkype');
+  console.log(message);
+  try {
+    bot.loadSession(message.address, async (error, session) => {
+      const { id } = message.address.user;
+      console.log('\nsession.userData[id]');
+      console.log(session.userData[id]);
+
+      console.log(`id - ${id}`);
+      if (message.action === 'add') {
+        console.log('Here1');
+        if (!session.userData[id] || session.userData[id] !== true) {
+          console.log('Launching getFaq');
+          await getFaq(session, stickersObj);
+          console.log('Here5');
+          session.userData[id] = true;
+          console.log('Here6');
+        } else {
+          console.log('2nd time, mute');
+        }
+      } else if (message.action === 'remove') {
+        session.userData[id] = false;
+      }
+    });
+    return true;
+  } catch (error) {
+    log.error(`\n⚠ gettingStartedSkype():\n${error}`);
     return false;
   }
 }
@@ -195,4 +227,5 @@ module.exports = {
   randomPhrase,
   feedback,
   getFaq,
+  gettingStartedSkype,
 };

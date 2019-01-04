@@ -486,33 +486,27 @@ function skypeCarousel(session, foundPlaysIds, stickersObj) {
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
 function getCard(session, imageId, stickersObj) {
-  console.log('\ngetCard');
-  console.dir(session.message);
-
   try {
     const { channelId } = session.message.address;
 
     let msg;
-    let tMessage = {};
-    let fbMessage = {};
-    let skypeMessage = {};
 
     if (channelId === 'telegram') {
-      tMessage = tStickerWButtons(imageId, stickersObj);
+      const tMessage = tStickerWButtons(imageId, stickersObj);
       msg = new builder.Message(session).sourceEvent({
         telegram: tMessage,
       });
     }
 
     if (channelId === 'facebook') {
-      fbMessage = fbCard(imageId, stickersObj);
+      const fbMessage = fbCard(imageId, stickersObj);
       msg = new builder.Message(session).sourceEvent({
         facebook: fbMessage,
       });
     }
 
     if (channelId === 'skype') {
-      skypeMessage = skypeCard(session, imageId, stickersObj);
+      const skypeMessage = skypeCard(session, imageId, stickersObj);
       msg = new builder.Message(session).attachments(skypeMessage).attachmentLayout('list');
     }
 
@@ -805,17 +799,56 @@ function getFaq4T(session, stickersObj) {
           callback_data: i18n.__('random_phrase_payload'),
         },
       ],
-      [
+      /* [
         {
           text: i18n.__('get_feedback'),
           callback_data: i18n.__('get_feedback_payload'),
         },
-      ],
+      ], */
     );
 
     return [message1, message2];
   } catch (error) {
     log.error(`\n⚠ getFaq4T():\n${error}`);
+    return false;
+  }
+}
+
+/**
+ * Returns payload with contacts for Telegram platform
+ * @param {object} session Object to interact with BF platform
+ */
+function getFaq4Skype(session, stickersObj) {
+  let userFirstName = '';
+
+  try {
+    userFirstName = session.message.address.user.name;
+  } catch (error) {
+    userFirstName = false;
+  }
+
+  try {
+    let greeting = '';
+    if (userFirstName) greeting = `, ${userFirstName}`;
+
+    const message1 = {
+      text: i18n.__('general_info', greeting, process.env.botName),
+    };
+
+    const stickers = i18n.__('greetings_stickers').split('|');
+    const randStickerIndex = Math.floor(Math.random() * stickers.length);
+    const greetingSticker = stickers[randStickerIndex];
+
+    const message2 = skypeCard(session, greetingSticker, stickersObj);
+    message2[message2.length - 1].data.content.buttons.push({
+      type: 'postBack',
+      value: i18n.__('random_phrase_payload'),
+      title: i18n.__('random_phrase'),
+    });
+
+    return [message1, message2];
+  } catch (error) {
+    log.error(`\n⚠ getFaq4Skype():\n${error}`);
     return false;
   }
 }
@@ -891,6 +924,18 @@ async function faq(session, stickersObj) {
       const msg2 = new builder.Message(session).sourceEvent({
         facebook: fbMessage2,
       });
+      msg = [msg1, msg2];
+    }
+
+    if (channelId === 'skype') {
+      const skypeMessage = getFaq4Skype(session, stickersObj);
+
+      console.log('skypeMessage[0]');
+      console.log(skypeMessage[0]);
+      const msg1 = new builder.Message(session).text(skypeMessage[0].text);
+      const msg2 = new builder.Message(session)
+        .attachments(skypeMessage[1])
+        .attachmentLayout('list');
       msg = [msg1, msg2];
     }
 
