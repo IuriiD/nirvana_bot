@@ -205,7 +205,7 @@ function fbCard(imageId, stickersObj) {
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  * @param {array} nextIds A list of plays' ids to show next onclick on corresponding button
  */
-function makeFbCarousel(foundPlaysIds, stickersObj, nextIds = null) {
+function makeFbCarousel(foundPlaysIds, stickersObj, nextIds = null, numbers2Letters) {
   try {
     const fbCardsCarousel = [];
 
@@ -234,6 +234,7 @@ function makeFbCarousel(foundPlaysIds, stickersObj, nextIds = null) {
 
     // A special sticker would be good for this card. So far it'll be #48
     if (nextIds) {
+      const letters = nextIds.map(number => numbers2Letters[number]);
       const whatNextStickerId = '48';
       fbCardsCarousel.push({
         title: i18n.__('ga'),
@@ -242,8 +243,27 @@ function makeFbCarousel(foundPlaysIds, stickersObj, nextIds = null) {
         buttons: [
           {
             type: 'postback',
-            payload: `[### next ###]${nextIds.join('|')}`,
+            payload: `[### next ###]${letters.join('|')}`,
             title: i18n.__('show_more'),
+          },
+          {
+            type: 'postback',
+            payload: i18n.__('random_phrase_payload'),
+            title: i18n.__('random_phrase'),
+          },
+        ],
+      });
+    } else {
+      const whatNextStickerId = '48';
+      fbCardsCarousel.push({
+        title: i18n.__('ga'),
+        image_url: `${process.env.imgBaseUrl}/stickers/${whatNextStickerId}.png`,
+        subtitle: '',
+        buttons: [
+          {
+            type: 'postback',
+            payload: i18n.__('random_phrase_payload'),
+            title: i18n.__('random_phrase'),
           },
         ],
       });
@@ -272,7 +292,7 @@ function makeFbCarousel(foundPlaysIds, stickersObj, nextIds = null) {
  * @param {array} foundPlays A list of plays' titles
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
-function fbCarousel(foundPlaysIds, stickersObj) {
+function fbCarousel(foundPlaysIds, stickersObj, numbersForLetters) {
   try {
     if (foundPlaysIds.length < 1) return false;
 
@@ -287,7 +307,7 @@ function fbCarousel(foundPlaysIds, stickersObj) {
     if (foundPlaysIds.length > 3) {
       const showNow = foundPlaysIds.slice(0, 3);
       const showNext = foundPlaysIds.slice(3, foundPlaysIds.length);
-      fbCardsCarousel = makeFbCarousel(showNow, stickersObj, showNext);
+      fbCardsCarousel = makeFbCarousel(showNow, stickersObj, showNext, numbersForLetters);
     } else {
       fbCardsCarousel = makeFbCarousel(foundPlaysIds, stickersObj);
     }
@@ -634,14 +654,14 @@ function getCarousel(session, foundPlays, stickersObj, numbersForLetters) {
     }
 
     if (channelId === 'facebook') {
-      const fbCardsCarousel = fbCarousel(foundPlays, stickersObj);
+      const fbCardsCarousel = fbCarousel(foundPlays, stickersObj, numbersForLetters);
       msg = new builder.Message(session).sourceEvent({
         facebook: fbCardsCarousel,
       });
     }
 
     if (channelId === 'skype' || channelId === 'webchat') {
-      const skypeCardsCarousel = skypeCarousel(session, foundPlays, stickersObj);
+      const skypeCardsCarousel = skypeCarousel(session, foundPlays, stickersObj, numbersForLetters);
       msg = new builder.Message(session).attachments(skypeCardsCarousel).attachmentLayout('list');
     }
 
