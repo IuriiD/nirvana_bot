@@ -46,7 +46,7 @@ function webChatPage(req, res) {
     res.send(
       `<iframe src='https://webchat.botframework.com/embed/shipyard?s=${
         process.env.webChatKey
-      }'  style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>`,
+      }'  style='min-width: 400px; width: 90%; min-height: 700px;'></iframe>`,
     );
   } catch (error) {
     log.error(`\n⚠ webChatPage():\n${error}`);

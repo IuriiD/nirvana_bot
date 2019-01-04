@@ -7,6 +7,8 @@ const log = require('../config/logger');
 const { dataToLog } = require('../helpers/templates');
 
 async function mainFlow(session, recognizer) {
+  console.log(session.message);
+
   try {
     const { channelId, userId } = dataToLog(session);
 

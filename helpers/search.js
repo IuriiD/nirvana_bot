@@ -25,8 +25,6 @@ function relevantPlays(query, texts) {
         .replace(/<br \/>/g, '')
         .replace(/<\/em>/g, '');
 
-      console.log();
-      console.log(textWoTags);
       if (
         textWoTags.toLowerCase().includes(query.toLowerCase())
         || name.toLowerCase().includes(query.toLowerCase())

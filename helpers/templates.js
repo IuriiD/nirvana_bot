@@ -400,7 +400,7 @@ function tStickersArray(foundPlaysIds, stickersObj) {
  * @param {string} imageId # of a sticker ('1', '20' etc)
  * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
  */
-function skypeCard(session, imageId, stickersObj) {
+function skypeCard(session, imageId, stickersObj, randomPhraseBtn = false) {
   try {
     if (!Object.keys(stickersObj).includes(imageId)) {
       return false;
@@ -428,6 +428,14 @@ function skypeCard(session, imageId, stickersObj) {
       },
     ]);
 
+    if (randomPhraseBtn) {
+      card.data.content.buttons.push({
+        type: 'postBack',
+        value: i18n.__('random_phrase_payload'),
+        title: i18n.__('random_phrase'),
+      });
+    }
+
     return [image, card];
   } catch (error) {
     log.error(`\n⚠ skypeCard():\n${error}`);
@@ -452,11 +460,18 @@ function makeSkypeCarousel(session, foundPlaysIds, stickersObj, nextIds = null) 
     });
 
     if (nextIds) {
-      skypeCardsCarousel[skypeCardsCarousel.length - 1].data.content.buttons.push({
-        type: 'postBack',
-        value: `[### next ###]${nextIds.join('|')}`,
-        title: i18n.__('show_more'),
-      });
+      skypeCardsCarousel[skypeCardsCarousel.length - 1].data.content.buttons.push(
+        {
+          type: 'postBack',
+          value: `[### next ###]${nextIds.join('|')}`,
+          title: i18n.__('show_more'),
+        },
+        {
+          type: 'postBack',
+          value: i18n.__('random_phrase_payload'),
+          title: i18n.__('random_phrase'),
+        },
+      );
     }
     return skypeCardsCarousel;
   } catch (error) {
@@ -522,8 +537,8 @@ function getCard(session, imageId, stickersObj) {
       });
     }
 
-    if (channelId === 'skype') {
-      const skypeMessage = skypeCard(session, imageId, stickersObj);
+    if (channelId === 'skype' || channelId === 'webchat') {
+      const skypeMessage = skypeCard(session, imageId, stickersObj, true);
       msg = new builder.Message(session).attachments(skypeMessage).attachmentLayout('list');
     }
 
@@ -563,7 +578,7 @@ function getCarousel(session, foundPlays, stickersObj) {
       });
     }
 
-    if (channelId === 'skype') {
+    if (channelId === 'skype' || channelId === 'webchat') {
       skypeCardsCarousel = skypeCarousel(session, foundPlays, stickersObj);
       msg = new builder.Message(session).attachments(skypeCardsCarousel).attachmentLayout('list');
     }
@@ -683,7 +698,7 @@ function getAudioMsg(session, playId, stickersObj) {
       });
     }
 
-    if (channelId === 'skype') {
+    if (channelId === 'skype' || channelId === 'webchat') {
       skypeAudioMessage = skypeAudio(session, playId, stickersObj);
       msg = new builder.Message(session).attachments(skypeAudioMessage);
     }
@@ -712,9 +727,17 @@ function getFeedbackInfo4T() {
                 text: i18n.__('fbm'),
                 url: process.env.fbmBotUrl,
               },
+            ],
+            [
               {
                 text: i18n.__('skype'),
                 url: process.env.skypeBotUrl,
+              },
+            ],
+            [
+              {
+                text: i18n.__('webchat'),
+                url: process.env.webChatUrl,
               },
             ],
           ],
@@ -750,6 +773,11 @@ function getFeedbackInfo4Fb() {
               type: 'web_url',
               url: process.env.skypeBotUrl,
               title: i18n.__('skype'),
+            },
+            {
+              type: 'web_url',
+              url: process.env.webChatUrl,
+              title: i18n.__('webchat'),
             },
           ],
         },
@@ -812,7 +840,7 @@ function getFeedbackInfo(session) {
       });
     }
 
-    if (channelId === 'skype') {
+    if (channelId === 'skype' || channelId === 'webchat') {
       const skypeMessage = getFeedbackInfo4Skype(session);
       msg = new builder.Message(session)
         .text(skypeMessage[0])
@@ -894,12 +922,7 @@ function getFaq4Skype(session, stickersObj) {
     const randStickerIndex = Math.floor(Math.random() * stickers.length);
     const greetingSticker = stickers[randStickerIndex];
 
-    const message2 = skypeCard(session, greetingSticker, stickersObj);
-    message2[message2.length - 1].data.content.buttons.push({
-      type: 'postBack',
-      value: i18n.__('random_phrase_payload'),
-      title: i18n.__('random_phrase'),
-    });
+    const message2 = skypeCard(session, greetingSticker, stickersObj, true);
 
     return [message1, message2];
   } catch (error) {
@@ -982,7 +1005,7 @@ async function faq(session, stickersObj) {
       msg = [msg1, msg2];
     }
 
-    if (channelId === 'skype') {
+    if (channelId === 'skype' || channelId === 'webchat') {
       const skypeMessage = getFaq4Skype(session, stickersObj);
 
       const msg1 = new builder.Message(session).text(skypeMessage[0].text);
@@ -1013,7 +1036,7 @@ function dataToLog(session) {
     if (channelId === 'facebook') {
       userId = session.message.sourceEvent.sender.id;
     }
-    if (channelId === 'skype') {
+    if (channelId === 'skype' || channelId === 'webchat') {
       userId = session.message.user.id;
     }
     return { channelId, userId };
