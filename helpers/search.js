@@ -25,6 +25,7 @@ function relevantPlays(query, texts) {
         .replace(/<br \/>/g, '')
         .replace(/<\/em>/g, '');
 
+      // Add search by regex where the query word is not preceeded by a letter and its last letter may be any
       if (
         textWoTags.toLowerCase().includes(query.toLowerCase())
         || name.toLowerCase().includes(query.toLowerCase())

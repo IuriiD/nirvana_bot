@@ -59,6 +59,7 @@ async function mainFlow(session, recognizer) {
             log.error(`Recognizer error: ${err}`);
             session.sendTyping();
             replies.sendAnswer(session, i18n.__('error_happened'), stickersObj);
+            return;
           }
 
           if (!data.answer) {

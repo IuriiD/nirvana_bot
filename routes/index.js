@@ -44,7 +44,7 @@ function redirectToS3(req, res) {
 function webChatPage(req, res) {
   try {
     res.send(
-      `<iframe src='https://webchat.botframework.com/embed/shipyard?s=${
+      `<iframe src='https://webchat.botframework.com/embed/${process.env.webChatId}?s=${
         process.env.webChatKey
       }'  style='min-width: 400px; width: 90%; min-height: 700px;'></iframe>`,
     );
