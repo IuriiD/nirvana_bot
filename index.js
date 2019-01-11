@@ -49,6 +49,7 @@ const recognizer = new Recognizer();
 recognizer.load(`./nlp/${modelName}`);
 
 const bot = new builder.UniversalBot(connector, (session) => {
+  // console.log(JSON.stringify(session.message, null, 2));
   mainFlow(session, recognizer);
 });
 
@@ -57,5 +58,12 @@ bot.set('storage', inMemoryStorage);
 
 // Especially for Skype - imitating FB's Getting started feature
 bot.on('contactRelationUpdate', (message) => {
+  console.log('contactRelationUpdate!');
   replies.gettingStartedSkype(bot, message, stickersObj);
+});
+
+// Especially for Skype - imitating FB's Getting started feature
+bot.on('conversationUpdate', (message) => {
+  console.log('conversationUpdate!');
+  replies.gettingStartedWebchat(bot, message, stickersObj);
 });

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://cdn.botframework.com/botframework-webchat/latest/botchat.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div>
+    <div id="bot" />
+  </div>
+  <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+  <script>
+    var user = {
+      id: 'user-id',
+      name: 'webchat user name'
+    };
+
+    var botConnection = new BotChat.DirectLine({
+      token: '[DirectLineSecretHere]',
+      user: user
+    });
+
+    BotChat.App({
+      user: user,
+      botConnection: botConnection,
+      bot: { id: 'bot-id', name: 'bot name' },
+      resize: 'detect'
+    }, document.getElementById("bot"));
+    
+    botConnection
+      .postActivity({
+        from: user,
+        name: 'requestWelcomeDialog',
+        type: 'event',
+        value: ''
+      })
+      .subscribe(function (id) {
+        console.log('"trigger requestWelcomeDialog" sent');
+      });
+  </script>
+</body>
+
+</html>
+
+`<iframe src='https://webchat.botframework.com/embed/${process.env.webChatId}?s=${
+        process.env.webChatKey
+      }'
+  style='min-width: 400px; width: 90%; min-height: 700px;'></iframe>`

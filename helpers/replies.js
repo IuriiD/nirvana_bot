@@ -180,7 +180,7 @@ async function getFaq(session, stickersObj) {
 
     const { channelId } = session.message.address;
     const { userId } = dataToLog(session);
-    log.info(`${channelId} - user ${userId} << FAQ message"`);
+    log.info(`${channelId} - user ${userId} << FAQ/Intro message"`);
 
     return true;
   } catch (error) {
@@ -216,6 +216,38 @@ function gettingStartedSkype(bot, message, stickersObj) {
   }
 }
 
+/**
+ * Greet Webchats's user when he loads the page
+ * @param {object} bot
+ * @param {object} message Received when user adds the bot to contacts
+ * @param {object} stickersObj Object with info for stickers (phrase, play name/url/audio etc)
+ */
+function gettingStartedWebchat(bot, message, stickersObj) {
+  console.log('function gettingStartedWebchat');
+  try {
+    console.log(JSON.stringify(message, null, 2));
+    const { channelId } = message.address;
+
+    if (channelId === 'webchat') {
+      const { id } = message.address.user;
+
+      bot.loadSession(message.address, async (error, session) => {
+        if (!session.userData[id] || session.userData[id] !== true) {
+          await getFaq(session, stickersObj);
+          session.userData[id] = true;
+        }
+      });
+
+      log.info(`${channelId} - user ${id} << Loaded webchat"`);
+    }
+
+    return true;
+  } catch (error) {
+    log.error(`\n⚠ gettingStartedWebchat():\n${error}`);
+    return false;
+  }
+}
+
 module.exports = {
   sendAnswer,
   presentPlays,
@@ -224,4 +256,5 @@ module.exports = {
   feedback,
   getFaq,
   gettingStartedSkype,
+  gettingStartedWebchat,
 };
