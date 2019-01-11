@@ -27,7 +27,6 @@ async function mainFlow(session, recognizer) {
       } else if (text.includes('[### next ###]')) {
         const nextPlaysIdsLetters = text.split('[### next ###]')[1].split('|');
         const nextPlaysIds = nextPlaysIdsLetters.map(letter => letter2Number[letter]);
-        console.log(`main-flow - nextPlaysIds: ${nextPlaysIds}`);
         session.sendTyping();
         replies.presentPlays(session, nextPlaysIds, stickersObj, true, letter2Number);
 

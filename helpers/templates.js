@@ -560,13 +560,11 @@ function makeSkypeCarousel(session, foundPlaysIds, stickersObj, nextIds = null, 
         },
       );
     } else {
-      skypeCardsCarousel[skypeCardsCarousel.length - 1].data.content.buttons.push(
-        {
-          type: 'postBack',
-          value: i18n.__('random_phrase_payload'),
-          title: i18n.__('random_phrase'),
-        },
-      );
+      skypeCardsCarousel[skypeCardsCarousel.length - 1].data.content.buttons.push({
+        type: 'postBack',
+        value: i18n.__('random_phrase_payload'),
+        title: i18n.__('random_phrase'),
+      });
     }
     return skypeCardsCarousel;
   } catch (error) {
@@ -960,6 +958,37 @@ function getFeedbackInfo4Skype(session) {
 }
 
 /**
+ * Returns payload with contacts for Webchat
+ */
+function getFeedbackInfo4Webchat(session) {
+  try {
+    const buttons = new builder.HeroCard(session).buttons([
+      {
+        type: 'openUrl',
+        value: process.env.tBotUrl,
+        title: i18n.__('telegram'),
+      },
+      {
+        type: 'openUrl',
+        value: process.env.fbmBotUrl,
+        title: i18n.__('fbm'),
+      },
+      {
+        type: 'openUrl',
+        value: process.env.skypeBotUrl,
+        title: i18n.__('skype'),
+      },
+    ]);
+    const message = [i18n.__('lp_fb_descr'), [buttons]];
+
+    return message;
+  } catch (error) {
+    log.error(`\n⚠ getFeedbackInfo4Webchat():\n${error}`);
+    return false;
+  }
+}
+
+/**
  * Returns a message with contacts of L.Poderviansky and me
  * @param {object} session Object to interact with BF platform
  */
@@ -982,11 +1011,19 @@ function getFeedbackInfo(session) {
       });
     }
 
-    if (channelId === 'skype' || channelId === 'webchat') {
+    if (channelId === 'skype') {
       const skypeMessage = getFeedbackInfo4Skype(session);
       msg = new builder.Message(session)
         .text(skypeMessage[0])
         .attachments(skypeMessage[1])
+        .attachmentLayout('list');
+    }
+
+    if (channelId === 'webchat') {
+      const wcMessage = getFeedbackInfo4Webchat(session);
+      msg = new builder.Message(session)
+        .text(wcMessage[0])
+        .attachments(wcMessage[1])
         .attachmentLayout('list');
     }
 
