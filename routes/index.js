@@ -1,3 +1,4 @@
+const i18n = require('i18n');
 const texts = require('../helpers/data/texts');
 const stickers = require('../helpers/data/stickers');
 const log = require('../config/logger');
@@ -23,7 +24,18 @@ function getPlay(req, res) {
 
 function indexPage(req, res) {
   try {
-    res.render('index');
+    const greeting = i18n.__('general_info', '', process.env.botName).replace(/\n/g, '<br>');
+    res.render('index', {
+      title: i18n.__('index_page_title'),
+      welcomePhrase: greeting,
+      sticker: `${process.env.domain}/sticker/1`,
+      telegramBotUrl: process.env.tBotUrl,
+      fbBotUrl: process.env.fbmBotUrl,
+      skypeBotUrl: process.env.skypeBotUrl,
+      webchatBotUrl: `${process.env.domain}/webchat`,
+      lpFbPage: process.env.lpFbPage,
+      myPage: process.env.myPage,
+    });
     return true;
   } catch (error) {
     log.error(`\n⚠ indexPage():\n${error}`);
