@@ -1,49 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <link href="https://cdn.botframework.com/botframework-webchat/latest/botchat.css" rel="stylesheet" />
-</head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700&amp;subset=cyrillic-ext" rel="stylesheet">
+  <title>
+    <%- title %>
+  </title>
 
 <body>
-  <div>
-    <div id="bot" />
+  <div class="container-fluid">
+      <iframe src="https://webchat.botframework.com/embed/<%- webChatId %>?s=<%- webChatKey %>"
+        style='min-width: 300px; width: 70%; min-height: 700px;'></iframe>
+        <br>
+        <div style="font-family: 'Roboto Condensed', sans-serif;">
+          <br>
+          <div style="font-size: 20px;">
+            Також доступний на:
+          </div>
+          <div style="font-size: 40px;">
+            <a href="<%- telegramBotUrl %>">Telegram</a> | <a href="<%- fbBotUrl %>">Facebook</a> | <a href="<%- skypeBotUrl %>">Skype</a>
+          </div>
+          <br>
+          <div style="font-size: 20px;">
+            <a href="<%- lpFbPage %>" target="_blank">Офіційна Facebook-сторінка</a> Л.Подерв’янського
+            <br>
+            Розробка: <a href="<%- myPage %>" target="_blank">Iurii Dziuban</a>
+          </div>
+        </div>
   </div>
-  <script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
-  <script>
-    var user = {
-      id: 'user-id',
-      name: 'webchat user name'
-    };
-
-    var botConnection = new BotChat.DirectLine({
-      token: '[DirectLineSecretHere]',
-      user: user
-    });
-
-    BotChat.App({
-      user: user,
-      botConnection: botConnection,
-      bot: { id: 'bot-id', name: 'bot name' },
-      resize: 'detect'
-    }, document.getElementById("bot"));
-    
-    botConnection
-      .postActivity({
-        from: user,
-        name: 'requestWelcomeDialog',
-        type: 'event',
-        value: ''
-      })
-      .subscribe(function (id) {
-        console.log('"trigger requestWelcomeDialog" sent');
-      });
-  </script>
 </body>
 
 </html>
-
-`<iframe src='https://webchat.botframework.com/embed/${process.env.webChatId}?s=${
-        process.env.webChatKey
-      }'
-  style='min-width: 400px; width: 90%; min-height: 700px;'></iframe>`

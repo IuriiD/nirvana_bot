@@ -55,11 +55,23 @@ function redirectToS3(req, res) {
 
 function webChatPage(req, res) {
   try {
-    res.send(
+    res.render('webchat', {
+      title: i18n.__('index_page_title'),
+      webChatId: process.env.webChatId,
+      webChatKey: process.env.webChatKey,
+      telegramBotUrl: process.env.tBotUrl,
+      fbBotUrl: process.env.fbmBotUrl,
+      skypeBotUrl: process.env.skypeBotUrl,
+      lpFbPage: process.env.lpFbPage,
+      myPage: process.env.myPage,
+    });
+    return true;
+
+    /* res.send(
       `<iframe src='https://webchat.botframework.com/embed/${process.env.webChatId}?s=${
         process.env.webChatKey
       }'  style='min-width: 400px; width: 90%; min-height: 700px;'></iframe>`,
-    );
+    ); */
   } catch (error) {
     log.error(`\n⚠ webChatPage():\n${error}`);
   }
