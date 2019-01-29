@@ -39,6 +39,8 @@ app.use(i18n.init);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use('/favicon.ico', express.static('public/images/favicon.ico'));
+
 app.post('/api/messages', connector.listen());
 app.get('/', (req, res) => routes.indexPage(req, res));
 app.get('/play/:playid', (req, res) => routes.getPlay(req, res));
