@@ -5,7 +5,7 @@
 </p>
 
 <p>
-  Try it on <b><br><a href="https://www.messenger.com/t/344980636080979" target="_blank">Facebook</a> | <a href="http://t.me/PodervianskogoBot" target="_blank">Telegram</a> | <a href="https://join.skype.com/bot/f8059dc4-587c-426f-a211-ab93b87cf905" target="_blank">Skype</a> |<a href="https://podervianskogobot.com/webchat" target="_blank">Web</a></b>
+  Try it on <b><a href="https://www.messenger.com/t/344980636080979" target="_blank">Facebook</a> | <a href="http://t.me/PodervianskogoBot" target="_blank">Telegram</a> | <a href="https://join.skype.com/bot/f8059dc4-587c-426f-a211-ab93b87cf905" target="_blank">Skype</a> | <a href="https://podervianskogobot.com/webchat" target="_blank">Web</a></b>
 </p>
 
 <p>
