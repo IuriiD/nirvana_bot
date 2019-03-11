@@ -69,9 +69,11 @@ async function mainFlow(session, recognizer) {
               session.sendTyping();
               replies.presentPlays(session, relevantPlaysIds, stickersObj, false, letter2Number);
             } else {
-              // If nothing found - Default fallback answer
+              // If nothing found - Default fallback answer 
+              // (for some reason i18n.__() takes only the 1st stiker, till "|"))
+              const dfi = '{stickers}20|24|30|59|76|82|87|89|96|99|108|109|116';
               session.sendTyping();
-              replies.sendAnswer(session, i18n.__('dont_understand'), stickersObj);
+              replies.sendAnswer(session, dfi, stickersObj);
             }
           } else {
             // We have result from NLP - this may be a response or trigger ([### trigger ###]triggerName)

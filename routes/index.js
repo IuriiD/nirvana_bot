@@ -54,6 +54,7 @@ function redirectToS3(req, res) {
 }
 
 function webChatPage(req, res) {
+  log.info(`webChatPage(): title = ${i18n.__('index_page_title')}, webChatId = ${process.env.webChatId}, webChatKey = ${process.env.webChatKey}`)
   try {
     res.render('webchat', {
       title: i18n.__('index_page_title'),

@@ -439,6 +439,9 @@ manager.addDocument('ru', 'давай Герой нaшого чaсу', 'smalltal
 manager.addDocument('ru', 'Герой нaшого чaсу', 'smalltalk.show_play_timeHero1');
 manager.addDocument('ru', 'Герой нaшого чaсу. Повiсть 1', 'smalltalk.show_play_timeHero1');
 manager.addDocument('ru', 'пєса Герой нaшого чaсу. Повiсть першa', 'smalltalk.show_play_timeHero1');
+manager.addDocument('ru', 'покажи герой нашого часу', 'smalltalk.show_play_timeHero1');
+manager.addDocument('ru', 'покажи героя нашого часу', 'smalltalk.show_play_timeHero1');
+manager.addDocument('ru', 'покажи героя', 'smalltalk.show_play_timeHero1');
 manager.addDocument(
   'ru',
   'покажи Герой нaшого чaсу. Повiсть першa',
@@ -551,6 +554,7 @@ manager.addDocument(
 manager.addDocument('ru', 'читай Гамлєта', 'smalltalk.show_play_hamlet');
 manager.addDocument('ru', 'читай Гамлета', 'smalltalk.show_play_hamlet');
 manager.addDocument('ru', 'читай про Гамлєта', 'smalltalk.show_play_hamlet');
+manager.addDocument('ru', 'покажи гамлета', 'smalltalk.show_play_hamlet');
 
 manager.addDocument('ru', 'Остановісь, мгновєньє – ти прєкрасно!', 'smalltalk.show_play_mgnovenie');
 manager.addDocument('ru', 'Остановісь, мгновєньє - ти прєкрасно!', 'smalltalk.show_play_mgnovenie');
@@ -735,7 +739,7 @@ manager.addAnswer('ru', 'smalltalk.agent.residence', '{stickers}9|13|29|44|140')
 manager.addAnswer('ru', 'smalltalk.agent.right', '{stickers}77|84|124|150|151');
 manager.addAnswer('ru', 'smalltalk.agent.sure', '{stickers}25|61');
 manager.addAnswer('ru', 'smalltalk.agent.talk_to_me', '{stickers}1|32|108|130');
-manager.addAnswer('ru', 'smalltalk.agent.there', '{stickers}58|165|100|127|134|140|142|149');
+manager.addAnswer('ru', 'smalltalk.agent.there', '{stickers}58|100|127|134|140|142|149');
 manager.addAnswer(
   'ru',
   'smalltalk.appraisal.bad',
