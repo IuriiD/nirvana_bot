@@ -1,5 +1,5 @@
 
-        # Podervianskogobot
+        <b>Podervianskogobot</b>
         <p>
         (August 2018 - February 2019)
         </p>
@@ -22,7 +22,7 @@
         
         <p>
         Stack of the bot:
-        <br><a href="public/img/podervianskogobot_stack.jpg" target="_blank"><img
+        <br><a href="https://iuriid.github.io/public/img/podervianskogobot_stack.jpg" target="_blank"><img
             src="public/img/podervianskogobot_stack.jpg" class="img-fluid"></a>
             </p>
 
@@ -80,21 +80,21 @@ This is a bot which replies
           So far the bot had about 20 users from Facebook, ~10 from Telegram and a few from Skype and Web version.
 </p>
 <p>
-            <a href="public/img/pd_bot_0.png" target="_blank"><img src="public/img/pd_bot_0.png"
+            <a href="https://iuriid.github.io/public/img/pd_bot_0.png" target="_blank"><img src="https://iuriid.github.io/public/img/pd_bot_0.png"
                 class="img-fluid img-thumbnail" style="max-width: 330px"></a>
 
-            <a href="public/img/pd_bot_2.png" target="_blank"><img src="public/img/pd_bot_2.png"
+            <a href="https://iuriid.github.io/public/img/pd_bot_2.png" target="_blank"><img src="https://iuriid.github.io/public/img/pd_bot_2.png"
                 class="img-fluid img-thumbnail" style="max-width: 335px"></a>
 
-            <a href="public/img/pd_bot_3.png" target="_blank"><img src="public/img/pd_bot_3.png"
+            <a href="https://iuriid.github.io/public/img/pd_bot_3.png" target="_blank"><img src="https://iuriid.github.io/public/img/pd_bot_3.png"
                 class="img-fluid img-thumbnail" style="max-width: 330px"></a>
 
-            <a href="public/img/pd_bot_1.png" target="_blank"><img src="public/img/pd_bot_1.png"
+            <a href="https://iuriid.github.io/public/img/pd_bot_1.png" target="_blank"><img src="https://iuriid.github.io/public/img/pd_bot_1.png"
                 class="img-fluid img-thumbnail" style="max-width: 330px"></a>
 
-            <a href="public/img/pd_bot_5.png" target="_blank"><img src="public/img/pd_bot_5.png"
+            <a href="https://iuriid.github.io/public/img/pd_bot_5.png" target="_blank"><img src="https://iuriid.github.io/public/img/pd_bot_5.png"
                 class="img-fluid img-thumbnail" style="max-width: 335px"></a>
 
-            <a href="public/img/pd_bot_6.png" target="_blank"><img src="public/img/pd_bot_6.png"
+            <a href="https://iuriid.github.io/public/img/pd_bot_6.png" target="_blank"><img src="https://iuriid.github.io/public/img/pd_bot_6.png"
                 class="img-fluid img-thumbnail" style="max-width: 330px"></a>
                 </p>
