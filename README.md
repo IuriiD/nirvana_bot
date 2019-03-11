@@ -50,25 +50,25 @@
 
 <p>
   To make this bot I:
-  => Read through >25 plays by L.P. from <a href="http://doslidy.org.ua/" target="_blank">this</a> source,
+  <br>=> Read through >25 plays by L.P. from <a href="http://doslidy.org.ua/" target="_blank">this</a> source,
   chose the most popular quotes (got ~140 of them);
-  => Took the most popular requests from Dialogflow's Smalltalk and assigned quotes from L.P.'s plays as
+  <br>=> Took the most popular requests from Dialogflow's Smalltalk and assigned quotes from L.P.'s plays as
   responses to those requests;
-  => Contacted with Les Podervianky's representative to discuss copyright moments and got an approval;
-  => Draw stickers for all those quotes + separate stickers for the plays (~140 in total, this took up to 60%
+  <br>=> Contacted with Les Podervianky's representative to discuss copyright moments and got an approval;
+  <br>=> Draw stickers for all those quotes + separate stickers for the plays (~140 in total, this took up to 60%
   of time working on this project ;);
-  => Copied, parsed and formatted the texts of the plays, downloaded and prepared the audios.
-  => Created the bot itself on Node.js using Microsoft Bot Framework for 4 platforms (Telegram, Facebook,
+  <br>=> Copied, parsed and formatted the texts of the plays, downloaded and prepared the audios.
+  <br>=> Created the bot itself on Node.js using Microsoft Bot Framework for 4 platforms (Telegram, Facebook,
   Skype, Web). Also wanted to make a version for Viber but their current policy doesn't allow that :(
   The bot is actually quite simple - after greeting each user's input is "fed" to NLU block which tries to
   respond with relevant quote. If no intens are triggered than a simple full-text search is made and user is
   presented with a list of plays in which his/her input was found. If no such phrases were found, user gets
   a default fallback response.
-  => In this bot I used open source library for NLU - nlp.js inspired by the above-mentioned <a
+  <br>=> In this bot I used open source library for NLU - nlp.js inspired by the above-mentioned <a
   href="https://chatbotslife.com/evaluating-nlu-for-chatbots-b19ecf5a2124" target="_blank">article</a>. My
   conclusion for npl.js - a nice tool and could be used if third-party solutions are not allowed for some
   reasons but for production I would still use Dialogflow or LUIS.
-  => Deployed the bot to an AWS EC2 instance. This bot is not using DB and ElasticSearch (thought these could
+  <br>=> Deployed the bot to an AWS EC2 instance. This bot is not using DB and ElasticSearch (thought these could
   be used and could improve the bot) and thus can be hosted on a single t2.micro instance which is free
   under free-tier
   plan.
