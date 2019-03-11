@@ -11,6 +11,7 @@ async function mainFlow(session, recognizer) {
 
   try {
     const { channelId, userId } = dataToLog(session);
+    console.log(`\nUSERID: ${userId}`);
 
     if (session.message.text) {
       // 1. Process callbacks/payloads from button clicks from different platforms
